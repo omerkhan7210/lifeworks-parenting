@@ -1,0 +1,2682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Works Parenting — Homepage Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --green-dark: #0d4a30;
+        --green-mid: #1a6b45;
+        --green-light: #2e9464;
+        --green-pale: #e6f4ed;
+        --green-paler: #f2faf5;
+        --cream: #faf8f3;
+        --warm-white: #fffef9;
+        --text-dark: #1a1a18;
+        --text-mid: #4a4a45;
+        --text-light: #7a7a72;
+        --gold: #c9a84c;
+        --gold-light: #f5e9c8;
+        --border: rgba(0, 0, 0, 0.08);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --radius-xl: 32px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--warm-white);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── TYPOGRAPHY ── */
+      .display {
+        font-family: "Playfair Display", Georgia, serif;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 254, 249, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 0.5px solid var(--border);
+        padding: 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .nav-logomark {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--green-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .nav-logotext {
+        line-height: 1.2;
+      }
+      .nav-logotext strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+      .nav-logotext span {
+        font-size: 11px;
+        color: var(--text-light);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .nav-links a {
+        font-size: 13.5px;
+        color: var(--text-mid);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--green-mid);
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .btn-ghost {
+        font-size: 13px;
+        color: var(--green-mid);
+        background: none;
+        border: 1.5px solid var(--green-mid);
+        border-radius: 8px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-ghost:hover {
+        background: var(--green-pale);
+      }
+      .btn-primary-nav {
+        font-size: 13px;
+        color: #fff;
+        background: var(--green-dark);
+        border: none;
+        border-radius: 8px;
+        padding: 9px 20px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .btn-primary-nav:hover {
+        background: var(--green-mid);
+      }
+
+      /* ── ANNOUNCEMENT BAR ── */
+      .announcement-bar {
+        background: var(--green-dark);
+        color: #fff;
+        text-align: center;
+        padding: 9px 20px;
+        font-size: 13px;
+        margin-top: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .announcement-bar a {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .new-pill {
+        background: var(--gold);
+        color: var(--green-dark);
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 20px;
+        letter-spacing: 0.05em;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 92vh;
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 0;
+        align-items: stretch;
+        background: var(--cream);
+        overflow: hidden;
+      }
+      .hero-left {
+        padding: 80px 60px 80px 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--green-pale);
+        border: 0.5px solid #9fd4b8;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: var(--green-dark);
+        font-weight: 500;
+        margin-bottom: 28px;
+        width: fit-content;
+      }
+      .hero-eyebrow svg {
+        width: 14px;
+        height: 14px;
+      }
+      .hero-h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 56px;
+        font-weight: 500;
+        line-height: 1.12;
+        color: var(--text-dark);
+        margin-bottom: 22px;
+        letter-spacing: -0.02em;
+      }
+      .hero-h1 .accent {
+        color: var(--green-mid);
+        font-style: italic;
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--text-mid);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 36px;
+      }
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+      .btn-hero-primary {
+        background: var(--green-dark);
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn-hero-primary:hover {
+        background: var(--green-mid);
+        transform: translateY(-1px);
+      }
+      .btn-hero-secondary {
+        background: #fff;
+        color: var(--green-dark);
+        padding: 14px 24px;
+        border-radius: 10px;
+        border: 1.5px solid #c0dece;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .btn-hero-secondary:hover {
+        border-color: var(--green-mid);
+      }
+      .hero-stats {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .hero-stat {
+      }
+      .hero-stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        color: var(--green-dark);
+        font-weight: 500;
+      }
+      .hero-stat-label {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .hero-stat-divider {
+        width: 0.5px;
+        background: var(--border);
+        align-self: stretch;
+      }
+
+      .hero-right {
+        position: relative;
+        overflow: hidden;
+        background: var(--green-dark);
+      }
+      .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.85;
+        display: block;
+      }
+      .hero-img-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to right, rgba(13, 74, 48, 0.5) 0%, transparent 60%),
+          linear-gradient(to top, rgba(13, 74, 48, 0.7) 0%, transparent 50%);
+      }
+      .hero-card-float {
+        position: absolute;
+        bottom: 32px;
+        left: 28px;
+        right: 28px;
+        background: rgba(255, 254, 249, 0.97);
+        border-radius: var(--radius-md);
+        padding: 20px 22px;
+        border: 0.5px solid var(--border);
+      }
+      .hero-card-label {
+        font-size: 11px;
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .hero-card-options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .hero-opt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.15s;
+      }
+      .hero-opt:hover {
+        border-color: #c0dece;
+        background: var(--green-paler);
+      }
+      .hero-opt.active {
+        border-color: var(--green-mid);
+        background: var(--green-pale);
+      }
+      .hero-opt-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .hero-opt-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green-light);
+      }
+      .hero-opt.active .hero-opt-dot {
+        background: var(--green-dark);
+      }
+      .hero-opt-name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .hero-opt-sub {
+        font-size: 11px;
+        color: var(--text-light);
+      }
+      .hero-opt-price {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--green-dark);
+      }
+      .hero-card-btn {
+        width: 100%;
+        margin-top: 12px;
+        background: var(--green-dark);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      /* ── TRUST BAR ── */
+      .trust-bar {
+        background: var(--green-dark);
+        padding: 18px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .trust-track {
+        display: flex;
+        align-items: stretch;
+        width: max-content;
+        animation: trust-marquee 26s linear infinite;
+        will-change: transform;
+      }
+      .trust-bar:hover .trust-track {
+        animation-play-state: paused;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 32px;
+        color: #c5e8d5;
+        font-size: 13.5px;
+        border-right: 0.5px solid rgba(255, 255, 255, 0.12);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .trust-item:first-child {
+        padding-left: 0;
+      }
+      .trust-item:last-child {
+        border-right: none;
+      }
+      .trust-icon {
+        font-size: 18px;
+      }
+
+      @keyframes trust-marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .trust-track {
+          animation: none;
+          transform: none;
+        }
+      }
+
+      /* ── FEATURED REVIEW ── */
+      .featured-review {
+        padding: 64px 72px;
+        background: var(--green-pale);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .review-quote {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.45;
+        color: var(--green-dark);
+        position: relative;
+        padding-left: 28px;
+      }
+      .review-quote::before {
+        content: '"';
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        line-height: 1;
+        color: var(--green-light);
+        position: absolute;
+        left: -8px;
+        top: -12px;
+        opacity: 0.4;
+      }
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .review-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--green-mid);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .review-name {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .review-meta {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .review-stars {
+        color: var(--gold);
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .review-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .review-stat-card {
+        background: #fff;
+        border-radius: var(--radius-md);
+        padding: 24px;
+        border: 0.5px solid var(--border);
+      }
+      .review-stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        color: var(--green-dark);
+        font-weight: 500;
+      }
+      .review-stat-label {
+        font-size: 13px;
+        color: var(--text-mid);
+        margin-top: 4px;
+      }
+
+      /* ── SECTION SHARED ── */
+      .section {
+        padding: 80px 72px;
+      }
+      .section-alt {
+        background: var(--cream);
+      }
+      .section-dark {
+        background: var(--green-dark);
+        color: #fff;
+      }
+      .section-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--green-mid);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+      }
+      .section-tag.light {
+        color: #7dd4a8;
+      }
+      .section-h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 38px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 14px;
+        letter-spacing: -0.01em;
+      }
+      .section-sub {
+        font-size: 16px;
+        color: var(--text-mid);
+        line-height: 1.7;
+        max-width: 560px;
+      }
+      .section-sub.light {
+        color: #a8d4be;
+      }
+
+      /* ── HOW IT WORKS ── */
+      .how-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .how-card {
+        padding: 28px 24px;
+        background: #fff;
+        border-radius: var(--radius-md);
+        border: 0.5px solid var(--border);
+        position: relative;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .how-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 32px rgba(13, 74, 48, 0.08);
+      }
+      .how-num {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        color: var(--green-pale);
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 14px;
+        user-select: none;
+      }
+      .how-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: var(--green-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+      .how-title {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .how-desc {
+        font-size: 13px;
+        color: var(--text-mid);
+        line-height: 1.65;
+      }
+
+      /* ── COURSES ── */
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .course-card {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 0.5px solid var(--border);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .course-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(13, 74, 48, 0.12);
+      }
+      .course-card.featured {
+        border: 2px solid var(--green-mid);
+      }
+      .course-img-wrap {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+      }
+      .course-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .course-card:hover .course-img {
+        transform: scale(1.04);
+      }
+      .course-img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(13, 74, 48, 0.6) 0%,
+          transparent 60%
+        );
+      }
+      .course-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--gold);
+        color: var(--green-dark);
+        font-size: 10px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 20px;
+        letter-spacing: 0.04em;
+      }
+      .course-state-tag {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: rgba(13, 74, 48, 0.85);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 20px;
+      }
+      .course-body {
+        padding: 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .course-name {
+        font-size: 17px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .course-desc {
+        font-size: 13px;
+        color: var(--text-mid);
+        line-height: 1.65;
+        margin-bottom: 16px;
+        flex: 1;
+      }
+      .course-pills {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+      .pill {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: var(--green-pale);
+        color: var(--green-dark);
+        font-weight: 500;
+      }
+      .course-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        border-top: 0.5px solid var(--border);
+      }
+      .course-price {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--green-dark);
+        font-family: "Playfair Display", serif;
+      }
+      .course-price small {
+        font-size: 13px;
+        color: var(--text-light);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+      }
+      .btn-course {
+        background: var(--green-dark);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-course:hover {
+        background: var(--green-mid);
+      }
+      .btn-course.secondary {
+        background: var(--green-pale);
+        color: var(--green-dark);
+      }
+      .btn-course.secondary:hover {
+        background: #c5e8d5;
+      }
+
+      /* ── VIDEO SECTION ── */
+      .video-section {
+        padding: 80px 72px;
+        background: var(--text-dark);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+      }
+      .video-wrap {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 16/9;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      }
+      .video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+      }
+      .video-text .section-h2 {
+        color: #fff;
+      }
+      .video-text .section-sub {
+        color: #a8a8a0;
+      }
+      .video-text .section-tag {
+        color: var(--gold);
+      }
+      .video-points {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .video-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .video-point-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--green-mid);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: #fff;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .video-point-text {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.6;
+      }
+      .video-cta {
+        margin-top: 32px;
+        background: var(--gold);
+        color: var(--green-dark);
+        border: none;
+        border-radius: 10px;
+        padding: 14px 26px;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .video-cta:hover {
+        opacity: 0.9;
+      }
+
+      /* ── FOUNDER ── */
+      .founder-section {
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 560px 1fr;
+        min-height: 600px;
+      }
+      .founder-img-wrap {
+        position: relative;
+        overflow: hidden;
+      }
+      .founder-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+      }
+      .founder-img-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(13, 74, 48, 0.9), transparent);
+        padding: 32px 28px 24px;
+        color: #fff;
+      }
+      .founder-img-name {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Playfair Display", serif;
+      }
+      .founder-img-title {
+        font-size: 13px;
+        color: #9fd4b8;
+        margin-top: 4px;
+      }
+      .founder-right {
+        background: var(--cream);
+        padding: 64px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .founder-quote {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--green-dark);
+        font-style: italic;
+        border-left: 3px solid var(--green-light);
+        padding-left: 20px;
+        margin: 24px 0 28px;
+      }
+      .founder-bio {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 1.75;
+        margin-bottom: 28px;
+      }
+      .founder-creds {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+      .cred-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 10px;
+        background: var(--green-pale);
+      }
+      .cred-icon {
+        font-size: 18px;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+      .cred-text {
+        font-size: 12.5px;
+        color: var(--green-dark);
+        line-height: 1.4;
+        font-weight: 500;
+      }
+      .btn-founder {
+        background: var(--green-dark);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 13px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s;
+      }
+      .btn-founder:hover {
+        background: var(--green-mid);
+      }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .testi-card {
+        background: #fff;
+        border-radius: var(--radius-md);
+        border: 0.5px solid var(--border);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: transform 0.2s;
+      }
+      .testi-card:hover {
+        transform: translateY(-2px);
+      }
+      .testi-stars {
+        color: var(--gold);
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+      .testi-text {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.7;
+        flex: 1;
+      }
+      .testi-text em {
+        font-style: italic;
+        color: var(--text-dark);
+      }
+      .testi-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .testi-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--green-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--green-dark);
+        flex-shrink: 0;
+      }
+      .testi-name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .testi-date {
+        font-size: 11px;
+        color: var(--text-light);
+        margin-top: 1px;
+      }
+
+      /* ── STATES ── */
+      .states-section {
+        padding: 72px;
+        background: var(--green-dark);
+        color: #fff;
+      }
+      .states-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+      }
+      .state-card {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius-md);
+        border: 0.5px solid rgba(255, 255, 255, 0.12);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: background 0.2s;
+      }
+      .state-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .state-card.new-state {
+        border-color: var(--gold);
+        background: rgba(201, 168, 76, 0.08);
+      }
+      .state-flag-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .state-flag {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+      .state-new-badge {
+        background: var(--gold);
+        color: var(--green-dark);
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 9px;
+        border-radius: 20px;
+      }
+      .state-name {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Playfair Display", serif;
+        color: #fff;
+      }
+      .state-desc {
+        font-size: 13px;
+        color: #7dd4a8;
+        line-height: 1.6;
+      }
+      .state-btn {
+        margin-top: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.2s;
+      }
+      .state-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+      .state-card.new-state .state-btn {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .state-coming {
+        background: rgba(255, 255, 255, 0.03);
+        border: 0.5px dashed rgba(255, 255, 255, 0.15);
+        border-radius: var(--radius-md);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .state-coming-icon {
+        font-size: 28px;
+        opacity: 0.4;
+      }
+      .state-coming-text {
+        font-size: 13px;
+      }
+
+      /* ── SISTER COMPANY ── */
+      .sister-section {
+        padding: 80px 72px;
+        background: var(--green-paler);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .sister-img-stack {
+        position: relative;
+      }
+      .sister-img-main {
+        width: 100%;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .sister-img-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sister-badge-card {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background: #fff;
+        border-radius: var(--radius-md);
+        padding: 18px 22px;
+        border: 0.5px solid var(--border);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        min-width: 200px;
+      }
+      .sister-badge-label {
+        font-size: 11px;
+        color: var(--text-light);
+        margin-bottom: 6px;
+      }
+      .sister-badge-name {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+      .sister-badge-sub {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .sister-content {
+        padding-left: 20px;
+      }
+      .sister-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: var(--green-mid);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+      }
+      .sister-h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--text-dark);
+        margin-bottom: 16px;
+      }
+      .sister-desc {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+      .sister-services {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+      .sister-service {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        background: #fff;
+        border-radius: 10px;
+        border: 0.5px solid var(--border);
+      }
+      .sister-service-icon {
+        font-size: 20px;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+      .sister-service-title {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+      .sister-service-sub {
+        font-size: 12px;
+        color: var(--text-light);
+      }
+      .btn-sister {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--green-dark);
+        border: 1.5px solid var(--green-dark);
+        border-radius: 10px;
+        padding: 12px 22px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+      }
+      .btn-sister:hover {
+        background: var(--green-dark);
+        color: #fff;
+      }
+
+      /* ── FAQ ── */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-top: 48px;
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .faq-item {
+        border-bottom: 0.5px solid var(--border);
+      }
+      .faq-q {
+        padding: 18px 0;
+        font-size: 14.5px;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: var(--text-dark);
+        gap: 16px;
+      }
+      .faq-q:hover {
+        color: var(--green-mid);
+      }
+      .faq-q-icon {
+        font-size: 18px;
+        flex-shrink: 0;
+        color: var(--green-mid);
+      }
+      .faq-a {
+        font-size: 13.5px;
+        color: var(--text-mid);
+        line-height: 1.7;
+        padding-bottom: 16px;
+      }
+      .faq-right-card {
+        background: var(--green-dark);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .faq-right-h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+      .faq-right-sub {
+        font-size: 14px;
+        color: #a8d4be;
+        line-height: 1.7;
+        margin-bottom: 28px;
+      }
+      .faq-contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 32px;
+      }
+      .faq-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        color: #c5e8d5;
+      }
+      .faq-contact-icon {
+        font-size: 18px;
+      }
+      .btn-faq {
+        background: #fff;
+        color: var(--green-dark);
+        border: none;
+        border-radius: 10px;
+        padding: 13px 22px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        width: 100%;
+      }
+      .btn-faq:hover {
+        opacity: 0.9;
+      }
+      .fee-waiver {
+        margin-top: 16px;
+        text-align: center;
+        font-size: 12px;
+        color: #7dd4a8;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      /* ── FINAL CTA ── */
+      .final-cta {
+        padding: 100px 72px;
+        text-align: center;
+        background: var(--cream);
+        position: relative;
+        overflow: hidden;
+      }
+      .final-cta::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(46, 148, 100, 0.07) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .final-cta-eyebrow {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--green-mid);
+        font-weight: 500;
+        margin-bottom: 18px;
+      }
+      .final-cta-h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 46px;
+        font-weight: 500;
+        line-height: 1.18;
+        color: var(--text-dark);
+        max-width: 680px;
+        margin: 0 auto 16px;
+      }
+      .final-cta-h2 em {
+        font-style: italic;
+        color: var(--green-mid);
+      }
+      .final-cta-sub {
+        font-size: 16px;
+        color: var(--text-mid);
+        margin-bottom: 36px;
+      }
+      .final-cta-btns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-cta-primary {
+        background: var(--green-dark);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-cta-primary:hover {
+        background: var(--green-mid);
+        transform: translateY(-2px);
+      }
+      .btn-cta-secondary {
+        background: #fff;
+        color: var(--green-dark);
+        border: 1.5px solid #c0dece;
+        border-radius: 10px;
+        padding: 15px 28px;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .btn-cta-secondary:hover {
+        border-color: var(--green-mid);
+      }
+      .final-cta-note {
+        margin-top: 18px;
+        font-size: 12px;
+        color: var(--text-light);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--text-dark);
+        color: #fff;
+        padding: 60px 72px 32px;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 48px;
+        padding-bottom: 48px;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 32px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: #6a6a62;
+        line-height: 1.7;
+        margin-top: 12px;
+        max-width: 280px;
+      }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+      .footer-logo-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--green-mid);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 13px;
+        color: #fff;
+      }
+      .footer-logo-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .footer-col-title {
+        font-size: 12px;
+        font-weight: 500;
+        color: #9a9a92;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+      }
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-links a {
+        font-size: 13.5px;
+        color: #7a7a72;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: #c5e8d5;
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer-copy {
+        font-size: 12px;
+        color: #4a4a42;
+      }
+      .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+      }
+      .footer-bottom-links a {
+        font-size: 12px;
+        color: #4a4a42;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-bottom-links a:hover {
+        color: #7dd4a8;
+      }
+
+      /* ── ANNOTATION BADGE ── */
+      .annotation {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 200;
+        background: rgba(26, 26, 24, 0.9);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-size: 11px;
+        line-height: 1.5;
+        backdrop-filter: blur(8px);
+        max-width: 220px;
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+      }
+      .annotation strong {
+        color: #7dd4a8;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      /* ── DIVIDER ── */
+      .divider {
+        height: 0.5px;
+        background: var(--border);
+      }
+
+      /* ── SCROLL ANIMATION ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.6s ease both;
+      }
+      .fade-up-2 {
+        animation: fadeUp 0.6s 0.1s ease both;
+      }
+      .fade-up-3 {
+        animation: fadeUp 0.6s 0.2s ease both;
+      }
+      .fade-up-4 {
+        animation: fadeUp 0.6s 0.3s ease both;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ANNOTATION -->
+    <div class="annotation">
+      <strong>📐 Figma Reference Mockup</strong>
+      Designed by Muhammad Umer Khan for Life Works Parenting. All sections
+      based on live site + Serene Guidance research.
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     NAV
+════════════════════════════════════════ -->
+    <nav>
+      <a href="#" class="nav-logo">
+        <div class="nav-logomark">LW</div>
+        <div class="nav-logotext">
+          <strong>Life Works Parenting</strong>
+          <span>Serving families since 1991</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#">Courses</a>
+        <a href="#">About Susan</a>
+        <a href="#">States Served</a>
+        <a href="#">Resources</a>
+        <a href="#">FAQs</a>
+        <a href="#">En Español</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost">Fee Waiver</button>
+        <button class="btn-primary-nav">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          Start Your Course
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+     ANNOUNCEMENT BAR
+════════════════════════════════════════ -->
+    <div class="announcement-bar">
+      <span class="new-pill">NEW</span>
+      Nebraska families: our court-approved co-parenting course is now available
+      in your state.
+      <a href="#">Start Nebraska Course →</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow fade-up">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+          DCF-Approved · Court-Mandated · 30+ Years Trusted
+        </div>
+        <h1 class="hero-h1 fade-up-2">
+          Your court-required<br />
+          parenting class,<br />
+          <span class="accent">done in 4 hours.</span>
+        </h1>
+        <p class="hero-sub fade-up-3">
+          Florida and Nebraska families navigating divorce deserve more than a
+          checkbox. Susan Dockerill's evidence-based course has helped thousands
+          of parents protect what matters most — their children.
+        </p>
+        <div class="hero-cta-row fade-up-4">
+          <button class="btn-hero-primary">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            Start Florida Course — $24.99
+          </button>
+          <button class="btn-hero-secondary">View All Courses</button>
+        </div>
+        <div class="hero-stats fade-up-4">
+          <div class="hero-stat">
+            <div class="hero-stat-num">30+</div>
+            <div class="hero-stat-label">Years of expertise</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4 hrs</div>
+            <div class="hero-stat-label">Complete anytime</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">All FL</div>
+            <div class="hero-stat-label">Circuits approved</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">$24.99</div>
+            <div class="hero-stat-label">Starting price</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900&q=80"
+          alt="Parent and child together"
+          onerror="
+            this.src =
+              'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=900&q=80'
+          "
+        />
+        <div class="hero-img-overlay"></div>
+        <div class="hero-card-float">
+          <div class="hero-card-label">Choose your state &amp; course</div>
+          <div class="hero-card-options">
+            <div class="hero-opt active">
+              <div class="hero-opt-info">
+                <div class="hero-opt-dot"></div>
+                <div>
+                  <div class="hero-opt-name">Co-Parenting 101 — Online</div>
+                  <div class="hero-opt-sub">
+                    Florida · Self-paced · EN &amp; ES
+                  </div>
+                </div>
+              </div>
+              <div class="hero-opt-price">$24.99</div>
+            </div>
+            <div class="hero-opt">
+              <div class="hero-opt-info">
+                <div class="hero-opt-dot"></div>
+                <div>
+                  <div class="hero-opt-name">Co-Parenting 101 — Nebraska</div>
+                  <div class="hero-opt-sub">Nebraska · Online · English</div>
+                </div>
+              </div>
+              <div class="hero-opt-price">Start →</div>
+            </div>
+            <div class="hero-opt">
+              <div class="hero-opt-info">
+                <div class="hero-opt-dot"></div>
+                <div>
+                  <div class="hero-opt-name">Advanced Co-Parenting 202</div>
+                  <div class="hero-opt-sub">Judge-recommended · Online</div>
+                </div>
+              </div>
+              <div class="hero-opt-price">Learn →</div>
+            </div>
+          </div>
+          <button class="hero-card-btn">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            Start My Court-Required Course
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════ -->
+    <div class="trust-bar">
+      <div class="trust-track" aria-label="Trust highlights">
+        <div class="trust-item">
+          <span class="trust-icon">✅</span> DCF Approved — All Florida Circuits
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⏱</span> Complete in 4 Hours, 24/7
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🌐</span> English &amp; Spanish Available
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">📜</span> Certificate Emailed Instantly
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">💰</span> Fee Waiver Available
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">📱</span> Mobile-Friendly
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">✅</span> DCF Approved — All Florida Circuits
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">⏱</span> Complete in 4 Hours, 24/7
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">🌐</span> English &amp; Spanish Available
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">📜</span> Certificate Emailed Instantly
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">💰</span> Fee Waiver Available
+        </div>
+        <div class="trust-item" aria-hidden="true">
+          <span class="trust-icon">📱</span> Mobile-Friendly
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     FEATURED REVIEW
+════════════════════════════════════════ -->
+    <section class="featured-review">
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote">
+          I just finished the course and I am in tears — it was very helpful and
+          I didn't think I even needed it. It's worth every penny. I have 13
+          pages of notes and lessons and tips and I am so thankful for this
+          course.
+        </div>
+        <div class="review-author">
+          <div class="review-avatar">TC</div>
+          <div>
+            <div class="review-name">Taylor C.</div>
+            <div class="review-meta">
+              Verified Student · April 2025 · Florida
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-stats-grid">
+        <div class="review-stat-card">
+          <div class="review-stat-num">4.9★</div>
+          <div class="review-stat-label">
+            Average course rating from verified students
+          </div>
+        </div>
+        <div class="review-stat-card">
+          <div class="review-stat-num">30+</div>
+          <div class="review-stat-label">
+            Years serving Florida families since 1991
+          </div>
+        </div>
+        <div class="review-stat-card">
+          <div class="review-stat-num">100%</div>
+          <div class="review-stat-label">
+            DCF-approved in every Florida circuit
+          </div>
+        </div>
+        <div class="review-stat-card">
+          <div class="review-stat-num">4 hrs</div>
+          <div class="review-stat-label">
+            To complete your court requirement, at your pace
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+    <section class="section section-alt">
+      <div class="section-tag">How it works</div>
+      <h2 class="section-h2">Done in 4 steps — start today</h2>
+      <p class="section-sub">
+        No scheduling, no waiting. Complete your court-required class at your
+        own pace, anytime on any device.
+      </p>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">01</div>
+          <div class="how-icon">🗺️</div>
+          <div class="how-title">Choose your state</div>
+          <div class="how-desc">
+            Select Florida or Nebraska to see the court-approved course for your
+            jurisdiction. Both English and Spanish available for Florida.
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">02</div>
+          <div class="how-icon">📝</div>
+          <div class="how-title">Enroll online</div>
+          <div class="how-desc">
+            Quick registration in under 2 minutes. Pay securely for $24.99 and
+            get instant access — no waiting, no appointments.
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">03</div>
+          <div class="how-icon">💻</div>
+          <div class="how-title">Complete the course</div>
+          <div class="how-desc">
+            Self-paced, 4-hour course developed by Susan Dockerill. Pause and
+            resume anytime on phone, tablet, or desktop.
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">04</div>
+          <div class="how-icon">📜</div>
+          <div class="how-title">Get your certificate</div>
+          <div class="how-desc">
+            Your official completion certificate arrives by email instantly on
+            finishing. Submit it directly to your court.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     COURSES
+════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-tag">Our courses</div>
+      <h2 class="section-h2">Choose the right program</h2>
+      <p class="section-sub">
+        All courses are court-approved and built on Susan Dockerill's 30+ years
+        of family education expertise.
+      </p>
+      <div class="courses-grid">
+        <!-- Course 1 -->
+        <div class="course-card featured">
+          <div class="course-img-wrap">
+            <img
+              class="course-img"
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80"
+              alt="Parent and children at home"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&q=80'
+              "
+            />
+            <div class="course-img-overlay"></div>
+            <div class="course-badge">Most Popular</div>
+            <div class="course-state-tag">Florida &amp; Nebraska</div>
+          </div>
+          <div class="course-body">
+            <div class="course-name">Co-Parenting 101 — Online</div>
+            <div class="course-desc">
+              The court-mandated Parent Education &amp; Family Stabilization
+              course. Covers emotional stages of divorce, child impact,
+              effective co-parenting communication, and conflict resolution.
+              Accepted in all Florida circuits and Nebraska.
+            </div>
+            <div class="course-pills">
+              <span class="pill">⏱ 4 Hours</span>
+              <span class="pill">🌐 EN &amp; ES</span>
+              <span class="pill">📱 Mobile-Friendly</span>
+              <span class="pill">✅ DCF Approved</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price">$24.99 <small>/ one time</small></div>
+              <button class="btn-course">Start Now →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card">
+          <div class="course-img-wrap">
+            <img
+              class="course-img"
+              src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=700&q=80"
+              alt="Group in person parenting class"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1558008258-3256797b43f3?w=700&q=80'
+              "
+            />
+            <div class="course-img-overlay"></div>
+            <div class="course-state-tag">Florida Only</div>
+          </div>
+          <div class="course-body">
+            <div class="course-name">Co-Parenting 101 — In Person</div>
+            <div class="course-desc">
+              Live, instructor-led sessions across Florida. Ideal for those who
+              prefer face-to-face learning or have limited internet access. Led
+              by Life Works certified instructors trained by Susan Dockerill.
+            </div>
+            <div class="course-pills">
+              <span class="pill">⏱ 4 Hours</span>
+              <span class="pill">📍 Florida Locations</span>
+              <span class="pill">👥 Live Instructor</span>
+            </div>
+            <div class="course-footer">
+              <div
+                class="course-price"
+                style="
+                  font-size: 15px;
+                  font-family: &quot;DM Sans&quot;, sans-serif;
+                  color: var(--text-mid);
+                "
+              >
+                Contact for pricing
+              </div>
+              <button class="btn-course secondary">Find a Session →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card">
+          <div class="course-img-wrap">
+            <img
+              class="course-img"
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&q=80"
+              alt="Advanced parenting course"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1535571788213-abc78df8b879?w=700&q=80'
+              "
+            />
+            <div class="course-img-overlay"></div>
+            <div class="course-badge" style="background: var(--green-dark)">
+              Judge-Recommended
+            </div>
+            <div class="course-state-tag">Online</div>
+          </div>
+          <div class="course-body">
+            <div class="course-name">Advanced Co-Parenting 202</div>
+            <div class="course-desc">
+              Recommended by Florida judges. Goes deeper into long-term
+              co-parenting strategy, advanced communication, managing conflict,
+              and protecting children from adult disputes. Builds on 101.
+            </div>
+            <div class="course-pills">
+              <span class="pill">🏆 Judge-Recommended</span>
+              <span class="pill">💻 Online</span>
+              <span class="pill">📈 Advanced</span>
+            </div>
+            <div class="course-footer">
+              <div
+                class="course-price"
+                style="
+                  font-size: 15px;
+                  font-family: &quot;DM Sans&quot;, sans-serif;
+                  color: var(--text-mid);
+                "
+              >
+                Learn more
+              </div>
+              <button class="btn-course secondary">
+                View Co-Parenting 202 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     VIDEO SECTION
+════════════════════════════════════════ -->
+    <section class="video-section">
+      <div class="video-wrap">
+        <video
+          controls
+          poster="https://lifeworksparenting.com/wp-content/uploads/2024/11/293341515_577613773797485_8957654581756212535_n.jpg"
+        >
+          <source
+            src="https://lifeworksparenting.com/wp-content/uploads/2025/02/video-ps.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support video.
+        </video>
+      </div>
+      <div class="video-text">
+        <div class="section-tag" style="color: var(--gold)">
+          Hear from Susan directly
+        </div>
+        <h2 class="section-h2" style="color: #fff; font-size: 34px">
+          A message from the founder
+        </h2>
+        <p class="section-sub" style="color: #a8a8a0">
+          Susan Dockerill shares the heart behind Life Works Parenting and why
+          this course changes families — not just satisfies a court requirement.
+        </p>
+        <div class="video-points">
+          <div class="video-point">
+            <div class="video-point-dot">✓</div>
+            <div class="video-point-text">
+              Why children's emotional wellbeing must come first — even when
+              parents are in conflict
+            </div>
+          </div>
+          <div class="video-point">
+            <div class="video-point-dot">✓</div>
+            <div class="video-point-text">
+              What the research says about divorce's impact on kids at different
+              developmental stages
+            </div>
+          </div>
+          <div class="video-point">
+            <div class="video-point-dot">✓</div>
+            <div class="video-point-text">
+              How "genuine encounter moments" transform co-parenting
+              communication
+            </div>
+          </div>
+          <div class="video-point">
+            <div class="video-point-dot">✓</div>
+            <div class="video-point-text">
+              Why judges across Florida recommend this course above others
+            </div>
+          </div>
+        </div>
+        <button class="video-cta">Start the Full Course — $24.99 →</button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FOUNDER
+════════════════════════════════════════ -->
+    <section class="founder-section">
+      <div class="founder-img-wrap">
+        <img
+          class="founder-img"
+          src="https://cdn-ildmbbn.nitrocdn.com/lSLEvgHxEMbJtuLLPAlppORgNqNGKEcK/assets/images/optimized/rev-24da638/lifeworksparenting.com/wp-content/uploads/2024/11/293341515_577613773797485_8957654581756212535_n.jpg"
+          alt="Susan Dockerill, Founder and CEO of Life Works Parenting"
+          onerror="this.style.background = '#0d4a30'"
+        />
+        <div class="founder-img-caption">
+          <div class="founder-img-name">Susan Dockerill</div>
+          <div class="founder-img-title">
+            Founder &amp; CEO · Life Works Parenting Tools
+          </div>
+        </div>
+      </div>
+      <div class="founder-right">
+        <div class="section-tag">Meet the founder</div>
+        <h2 class="section-h2" style="font-size: 32px">
+          A pioneering force for families
+        </h2>
+        <div class="founder-quote">
+          "Divorce ends a marriage. It doesn't end a family. Children still need
+          both parents — and both parents need the right tools."
+        </div>
+        <p class="founder-bio">
+          Susan Dockerill has spent over 30 years dedicated to parent education
+          and child development. Since founding Life Works in 1991, she and her
+          certified instructors have helped thousands of Florida families
+          navigate separation with compassion, dignity, and evidence-based
+          tools. Judges, educators, and parents across Florida praise her
+          approach because it prioritizes the children above the conflict.
+        </p>
+        <div class="founder-creds">
+          <div class="cred-item">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-text">
+              B.A. Education &amp; Child &amp; Family Studies — Washington State
+              University
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">🏅</div>
+            <div class="cred-text">
+              Certified Family Coach &amp; international parenting authority
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">📅</div>
+            <div class="cred-text">
+              Serving Florida families since 1991 — over 30 years
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">⚖️</div>
+            <div class="cred-text">
+              Praised by Florida judges for reducing courtroom conflict
+            </div>
+          </div>
+        </div>
+        <button class="btn-founder">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Read Susan's Full Story
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+    <section class="section section-alt">
+      <div class="testimonials-header">
+        <div>
+          <div class="section-tag">What parents say</div>
+          <h2 class="section-h2" style="margin-bottom: 0">
+            Real stories, real families
+          </h2>
+        </div>
+        <a
+          href="#"
+          style="
+            font-size: 14px;
+            color: var(--green-mid);
+            text-decoration: none;
+            font-weight: 500;
+          "
+          >View all reviews →</a
+        >
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"The course was super knowledgeable and kept my attention!
+              Definitely recommend it!"</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">IG</div>
+            <div>
+              <div class="testi-name">Ivonne G.</div>
+              <div class="testi-date">March 2025 · Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"This course was amazing! It really helped me feel better about
+              the divorce knowing both parents are required to take it."</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">KT</div>
+            <div>
+              <div class="testi-name">Katrina T.</div>
+              <div class="testi-date">April 2025 · Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"You will learn a lot and understand more about why kids feel the
+              way they do when their parents are getting a divorce."</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">SJ</div>
+            <div>
+              <div class="testi-name">Shantella J.</div>
+              <div class="testi-date">June 2025 · Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"I loved this course — it opened my eyes to so much I was blind
+              to! I recommend this to parents even if they don't divorce!"</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Sara</div>
+              <div class="testi-date">March 2026 · Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"If you are looking for a program to leave you feeling better
+              equipped to take on what's ahead — this is it."</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">PW</div>
+            <div>
+              <div class="testi-name">Patrick Ward</div>
+              <div class="testi-date">March 2026 · Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">
+            <em
+              >"Very informative and gave good insight and advice on how to
+              co-parent for the best interests of the children. Great
+              course!"</em
+            >
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div>
+              <div class="testi-name">Katherine</div>
+              <div class="testi-date">March 2026 · Florida</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     STATES
+════════════════════════════════════════ -->
+    <section class="states-section">
+      <div class="section-tag light">Where we serve</div>
+      <h2 class="section-h2" style="color: #fff">
+        Court-approved across the U.S.
+      </h2>
+      <p class="section-sub light">
+        Expanding to serve more families. Choose your state to start the
+        court-approved course for your jurisdiction.
+      </p>
+      <div class="states-grid">
+        <div class="state-card">
+          <div class="state-flag-row">
+            <div class="state-flag">🌴</div>
+          </div>
+          <div class="state-name">Florida</div>
+          <div class="state-desc">
+            DCF-approved in all circuits and counties. Available in English and
+            Spanish. Accepted by every Florida family court for the Parent
+            Education &amp; Family Stabilization requirement.
+          </div>
+          <button class="state-btn">Start Florida Course — $24.99 →</button>
+        </div>
+        <div class="state-card new-state">
+          <div class="state-flag-row">
+            <div class="state-flag">🌾</div>
+            <div class="state-new-badge">NEW 2024</div>
+          </div>
+          <div class="state-name">Nebraska</div>
+          <div class="state-desc">
+            Now available for Nebraska families navigating divorce and paternity
+            actions. Court-approved and accepted statewide. English language.
+          </div>
+          <button class="state-btn">Start Nebraska Course →</button>
+        </div>
+        <div class="state-coming">
+          <div class="state-coming-icon">🗺️</div>
+          <div class="state-coming-text">
+            More states coming soon. Life Works Parenting is expanding
+            nationwide to serve families across America.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     SISTER COMPANY — SERENE GUIDANCE
+════════════════════════════════════════ -->
+    <section class="sister-section">
+      <div class="sister-img-stack">
+        <div class="sister-img-main">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/a7dbd834-12da-465f-a388-536ca519fcbd/ProfessionalHeadshot4.25.jpg/:/cr=t:6.78%25,l:0%25,w:100%25,h:86.45%25/rs=w:600,h:600,cg:true"
+            alt="Shelly Bello, LMHC — Serene Guidance"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600&q=80'
+            "
+          />
+        </div>
+        <div class="sister-badge-card">
+          <div class="sister-badge-label">Partner Organization</div>
+          <div class="sister-badge-name">Serene Guidance, LLC</div>
+          <div class="sister-badge-sub">Wellington, Palm Beach County, FL</div>
+        </div>
+      </div>
+      <div class="sister-content">
+        <div class="sister-eyebrow">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+            <path d="M16 3.13a4 4 0 010 7.75" />
+          </svg>
+          Our Partner Team
+        </div>
+        <h2 class="sister-h2">Need deeper support? Meet Serene Guidance</h2>
+        <p class="sister-desc">
+          Life Works Parenting works alongside Serene Guidance, LLC — a licensed
+          mental health counseling practice led by "Shelly" Michelle Bello,
+          LMHC. For families who need ongoing therapeutic support beyond the
+          court course, Serene Guidance offers personalized counseling,
+          coaching, and ADHD services.
+        </p>
+        <div class="sister-services">
+          <div class="sister-service">
+            <div class="sister-service-icon">🧠</div>
+            <div>
+              <div class="sister-service-title">
+                Mental Health Counseling &amp; Wellness Coaching
+              </div>
+              <div class="sister-service-sub">
+                In-office and virtual therapy for individuals, children, and
+                families
+              </div>
+            </div>
+          </div>
+          <div class="sister-service">
+            <div class="sister-service-icon">👨‍👩‍👧</div>
+            <div>
+              <div class="sister-service-title">
+                Parenting &amp; Co-Parenting Coaching
+              </div>
+              <div class="sister-service-sub">
+                Including Triple P, Gottman's Bringing Baby Home, and
+                DCF-approved coursework
+              </div>
+            </div>
+          </div>
+          <div class="sister-service">
+            <div class="sister-service-icon">🎯</div>
+            <div>
+              <div class="sister-service-title">
+                ADHD Coaching (Coming 2026)
+              </div>
+              <div class="sister-service-sub">
+                ADHD-CCSP certified provider with specialized family focus
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://sereneguidance.com" target="_blank" class="btn-sister">
+          Visit Serene Guidance →
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FAQ
+════════════════════════════════════════ -->
+    <section class="section section-alt">
+      <div class="section-tag">Common questions</div>
+      <h2 class="section-h2">Things parents ask us</h2>
+      <div class="faq-grid">
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">
+              Is this course accepted by my Florida court?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Yes. Life Works Parenting is DCF-approved and accepted in every
+              circuit throughout Florida, including all counties. Nebraska is
+              also now available statewide.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              How long does it take to complete?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              The course takes approximately 4 hours. It's fully self-paced —
+              pause and resume anytime, on any device, 24 hours a day.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              When do I receive my certificate?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Your official completion certificate is emailed to you instantly
+              upon finishing the course. You can submit it directly to the
+              court.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              Is the course available in Spanish?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Yes. The Florida Co-Parenting 101 online course is fully available
+              in Spanish. Select "Iniciar Curso de Florida — Español" to begin.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              What if I can't afford the fee? <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              A reduced fee is available for those who qualify for indigent
+              status. Click the Fee Waiver link before enrolling to apply. We
+              believe no parent should be denied access.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              Do both parents need to take the course?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Florida law mandates that divorcing parents and those in paternity
+              actions complete a parenting class within 45 days of filing. Both
+              parents typically must complete it.
+            </div>
+          </div>
+        </div>
+        <div class="faq-right-card">
+          <div>
+            <div class="faq-right-h3">
+              Still have questions? We're here to help.
+            </div>
+            <p class="faq-right-sub">
+              Our team is available to assist with technical support, court
+              questions, and enrollment guidance.
+            </p>
+            <div class="faq-contact-list">
+              <div class="faq-contact-item">
+                <span class="faq-contact-icon">📞</span> (772) 288-9886
+              </div>
+              <div class="faq-contact-item">
+                <span class="faq-contact-icon">📍</span> Palm City, FL 34990
+              </div>
+              <div class="faq-contact-item">
+                <span class="faq-contact-icon">🕐</span> Mon–Fri 8am–9pm ·
+                Sat–Sun 9am–9pm
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn-faq">Start Your Course Now →</button>
+            <div class="fee-waiver">Apply for fee waiver (indigent status)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════ -->
+    <section class="final-cta">
+      <div class="final-cta-eyebrow">Ready to start?</div>
+      <h2 class="final-cta-h2">
+        Your kids deserve both parents<br />
+        at <em>their best.</em>
+      </h2>
+      <p class="final-cta-sub">
+        Start your court-approved parenting course today — complete in 4 hours,
+        anytime, on any device.
+      </p>
+      <div class="final-cta-btns">
+        <button class="btn-cta-primary">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          Start Florida Course — $24.99
+        </button>
+        <button class="btn-cta-secondary">Start Nebraska Course</button>
+        <button class="btn-cta-secondary">Iniciar en Español</button>
+      </div>
+      <div class="final-cta-note">
+        ✅ Instant access · 📜 Certificate emailed on completion · 💰 Fee waiver
+        available
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">LW</div>
+            <div class="footer-logo-text">Life Works Parenting Tools</div>
+          </div>
+          <p>
+            Supporting Florida and Nebraska families through separation and
+            divorce since 1991. Founded by Susan Dockerill, Certified Family
+            Coach and national parenting authority.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Courses</div>
+          <ul class="footer-links">
+            <li><a href="#">Co-Parenting 101 — Online</a></li>
+            <li><a href="#">Co-Parenting 101 — In Person</a></li>
+            <li><a href="#">Advanced Co-Parenting 202</a></li>
+            <li><a href="#">En Español</a></li>
+            <li><a href="#">Fee Waiver</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About Susan</a></li>
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Serene Guidance</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">FL Circuits We Serve</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="tel:7722889886">(772) 288-9886</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © 2025 Life Works Parenting Tools LLC · Palm City, FL 34990 · All
+          rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Participant Guide</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

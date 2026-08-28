@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dallas Home and Office Cleaning — Homepage Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#210C45;
+    --ink-soft:#4B3B63;
+    --paper:#F7F4FA;
+    --paper-raised:#FFFFFF;
+    --gold:#D4A73D;
+    --gold-deep:#B98B24;
+    --rose:#8C5A82;
+    --line:#E3DCEE;
+    --note:#FBF0D9;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-deep); display:inline-flex; align-items:center; gap:8px;}
+  .eyebrow::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); display:inline-block; animation:pulse 2.2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,167,61,.5);} 50%{box-shadow:0 0 0 6px rgba(212,167,61,0);}}
+  h1,h2,h3{font-family:'Playfair Display',serif; font-weight:600; letter-spacing:-0.01em;}
+  .btn{font-family:'Inter',sans-serif; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; display:inline-block; border:1.5px solid transparent; transition:transform .15s ease, box-shadow .15s ease; cursor:pointer;}
+  .btn-primary{background:var(--gold); color:var(--ink);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--gold-deep);}
+  .btn-primary:focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+  .btn-ghost{border-color:var(--paper); color:var(--paper); background:transparent;}
+  .btn-ghost:hover{background:var(--paper); color:var(--ink);}
+  .btn-dark{background:var(--ink); color:var(--paper);}
+  .btn-dark:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--gold);}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* NAV — flex isolated to its own class */
+  header{position:sticky; top:0; z-index:60; background:rgba(247,244,250,.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .logo{font-family:'Playfair Display',serif; font-size:19px; font-weight:600; line-height:1.15;}
+  .logo em{color:var(--gold-deep); font-style:italic;}
+  .nav-links{display:flex; gap:32px; font-size:14px; font-weight:500;}
+  .nav-links a{padding:6px 0; border-bottom:1px solid transparent; transition:border-color .15s;}
+  .nav-links a:hover{border-color:var(--gold-deep);}
+  @media (max-width: 780px){ .nav-links{display:none;} }
+
+  /* HERO — editorial full-bleed photo */
+  .hero{position:relative; min-height:640px; display:flex; align-items:flex-end; overflow:hidden;}
+  .hero-bg{position:absolute; inset:0; z-index:0;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover;}
+  .hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(100deg, rgba(33,12,69,.94) 18%, rgba(33,12,69,.72) 45%, rgba(33,12,69,.28) 75%, rgba(33,12,69,.05) 100%);}
+  .hero-content{position:relative; z-index:1; padding:120px 0 72px; color:var(--paper); width:100%;}
+  .hero-content h1{font-size:clamp(38px,5.6vw,64px); line-height:1.05; color:#fff; max-width:640px; margin:18px 0 20px;}
+  .hero-content h1 em{color:var(--gold); font-style:italic;}
+  .hero-content p{font-size:17px; color:#D9CFE6; max-width:460px; margin-bottom:32px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+
+  .seal{
+    position:absolute; z-index:2; top:44px; right:6%;
+    width:118px; height:118px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #E8C560, var(--gold-deep) 70%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(0,0,0,.5);
+    animation:seal-in .8s cubic-bezier(.2,.8,.3,1) .3s both, seal-float 5s ease-in-out 1.2s infinite;
+  }
+  @keyframes seal-in{from{opacity:0; transform:scale(.4) rotate(-18deg);} to{opacity:1; transform:scale(1) rotate(-8deg);}}
+  @keyframes seal-float{0%,100%{transform:rotate(-8deg) translateY(0);} 50%{transform:rotate(-8deg) translateY(-6px);}}
+  .seal-inner{width:96px; height:96px; border-radius:50%; border:1.5px dashed rgba(33,12,69,.5); display:flex; align-items:center; justify-content:center; text-align:center;}
+  .seal-inner span{font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); line-height:1.5; font-weight:600;}
+  @media (max-width:780px){ .seal{display:none;} }
+
+  /* SPLIT — Home / Office, now with real photography */
+  .split{display:grid; grid-template-columns:1fr 1fr;}
+  @media (max-width:820px){ .split{grid-template-columns:1fr;} }
+  .split-panel{position:relative; min-height:340px; display:flex; align-items:flex-end; overflow:hidden;}
+  .split-panel img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+  .split-panel:hover img{transform:scale(1.05);}
+  .split-panel::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(33,12,69,.15) 0%, rgba(33,12,69,.92) 88%);}
+  .split-panel-content{position:relative; z-index:1; padding:40px 40px 36px; color:var(--paper);}
+  .split-panel .tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:block;}
+  .split-panel h2{font-size:clamp(24px,2.8vw,30px); margin-bottom:12px; color:#fff;}
+  .split-panel p{font-size:14.5px; max-width:360px; margin-bottom:22px; color:#D9CFE6;}
+
+  /* TRUST STRIP */
+  .trust-strip{border-bottom:1px solid var(--line); background:var(--paper-raised); overflow:hidden;}
+  .trust-track{display:flex; gap:56px; padding:18px 0; width:max-content; animation:scroll-x 24s linear infinite;}
+  .trust-strip:hover .trust-track{animation-play-state:paused;}
+  @keyframes scroll-x{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  .trust-item{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft); display:flex; align-items:center; gap:8px; white-space:nowrap;}
+  .trust-item::before{content:"✓"; color:var(--gold-deep); font-weight:700;}
+
+  section{padding:90px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; gap:24px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(28px,3.4vw,38px);}
+  .section-head p{color:var(--ink-soft); max-width:360px; font-size:15px;}
+
+  /* STORY — editorial with drop cap + real photo */
+  .note-section{background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .note-grid{display:grid; grid-template-columns:1fr 1.15fr; gap:60px; align-items:center;}
+  @media (max-width:860px){ .note-grid{grid-template-columns:1fr;} }
+  .story-photo{position:relative; aspect-ratio:4/5; border-radius:3px; overflow:hidden; box-shadow:0 24px 50px -22px rgba(33,12,69,.45);}
+  .story-photo img{width:100%; height:100%; object-fit:cover;}
+  .story p{font-size:16.5px; color:var(--ink-soft); margin-bottom:16px;}
+  .story p.lead::first-letter{
+    font-family:'Playfair Display',serif; font-size:56px; font-weight:700; color:var(--gold-deep);
+    float:left; line-height:.8; padding-right:10px; padding-top:6px;
+  }
+  .note-card{background:var(--note); padding:26px 28px; border-radius:3px; transform:rotate(-1deg); box-shadow:0 16px 34px -18px rgba(33,12,69,.3); margin-top:22px; position:relative;}
+  .note-card::before{content:""; position:absolute; top:-10px; left:32px; width:32px; height:15px; background:rgba(200,180,120,.55); transform:rotate(-4deg);}
+  .note-card p{font-family:'Caveat',cursive; font-size:23px; line-height:1.35; color:#2B2318; margin:0;}
+
+  /* PILLARS */
+  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:820px){ .pillars{grid-template-columns:1fr;} }
+  .pillar{background:var(--paper-raised); border:1px solid var(--line); border-radius:3px; padding:30px 26px; transition:transform .25s ease, box-shadow .25s ease;}
+  .pillar:hover{transform:translateY(-5px); box-shadow:0 18px 32px -18px rgba(33,12,69,.3);}
+  .pillar .mark{font-family:'Playfair Display',serif; font-style:italic; font-size:34px; color:var(--gold-deep); margin-bottom:10px;}
+  .pillar h3{font-size:18px; margin-bottom:8px;}
+  .pillar p{font-size:14px; color:var(--ink-soft);}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width: 900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width: 560px){ .services-grid{grid-template-columns:1fr;} }
+  .svc-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:3px; padding:26px 22px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+  .svc-card:hover{transform:translateY(-6px); box-shadow:0 20px 36px -20px rgba(33,12,69,.35); border-color:var(--gold);}
+  .svc-card .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--rose); letter-spacing:.06em;}
+  .svc-card h3{font-size:19px; margin:10px 0 8px;}
+  .svc-card p{font-size:14px; color:var(--ink-soft);}
+
+  /* GALLERY — real photography */
+  .gallery-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:220px 220px; gap:14px;}
+  .gallery-grid a{overflow:hidden; border-radius:3px; display:block; position:relative;}
+  .gallery-grid img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gallery-grid a:hover img{transform:scale(1.06);}
+  .gallery-grid > *:first-child{grid-row:1 / 3;}
+  @media (max-width: 780px){ .gallery-grid{grid-template-columns:1fr 1fr; grid-template-rows:160px 160px 160px;} .gallery-grid > *:first-child{grid-row:1 / 2; grid-column:1/3;} }
+
+  /* PROCESS */
+  .process-row{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:780px){ .process-row{grid-template-columns:1fr;} }
+  .step .num-big{font-family:'Playfair Display',serif; font-style:italic; font-size:48px; color:var(--line); line-height:1; margin-bottom:8px;}
+  .step h3{font-size:19px; margin-bottom:8px;}
+  .step p{font-size:14px; color:var(--ink-soft);}
+
+  /* QUOTE FORM */
+  .quote-section{background:var(--ink); color:var(--paper); position:relative; overflow:hidden; border-radius:8px; margin:0 32px;}
+  .quote-section::before{content:""; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(212,167,61,.28), transparent 70%); top:-160px; left:-100px;}
+  .quote-inner{position:relative; display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:64px 56px;}
+  @media (max-width:900px){ .quote-inner{grid-template-columns:1fr; padding:48px 28px;} }
+  .quote-inner h2{font-size:clamp(28px,3.6vw,36px); margin-bottom:14px; color:#fff;}
+  .quote-inner p{color:#CFC3DE; font-size:15px; margin-bottom:24px; max-width:380px;}
+  .badge-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .badge{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; border:1px solid #4A3768; padding:8px 12px; border-radius:20px; color:#CFC3DE;}
+  .quote-form{background:var(--paper-raised); border-radius:6px; padding:28px; display:flex; flex-direction:column; gap:14px; border-top:3px solid var(--gold);}
+  .quote-form .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quote-form label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:-8px;}
+  .quote-form input, .quote-form select{font-family:'Inter',sans-serif; font-size:14px; padding:12px 14px; border:1px solid var(--line); border-radius:2px; background:var(--paper); color:var(--ink); outline:none; transition:border-color .15s;}
+  .quote-form input:focus, .quote-form select:focus{border-color:var(--gold-deep);}
+  .quote-form .btn-primary{margin-top:6px; width:100%; text-align:center; border:none;}
+  .quote-note{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); text-align:center;}
+
+  .float-cta{position:fixed; bottom:24px; right:24px; z-index:70; box-shadow:0 14px 30px -10px rgba(33,12,69,.5); transform:translateY(120%); transition:transform .35s ease;}
+  .float-cta.show{transform:translateY(0);}
+
+  footer{border-top:1px solid var(--line); padding:56px 0 96px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; margin-bottom:40px;}
+  @media (max-width: 780px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+  footer h4{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--rose); margin-bottom:14px;}
+  footer p, footer a{font-size:14px; color:var(--ink-soft); display:block; margin-bottom:8px;}
+  footer a:hover{color:var(--ink);}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="logo">Dallas Home <em>&amp;</em> Office<br>Cleaning</div>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#contact">Get a Quote</a>
+    </div>
+    <a class="btn btn-dark" href="#contact">Free Estimate</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?fm=jpg&q=80&w=1800&auto=format&fit=crop" alt="Bright, freshly cleaned living room">
+  </div>
+  <div class="seal">
+    <div class="seal-inner"><span>Trusted<br>&middot;&nbsp;Local&nbsp;&middot;<br>Detailed</span></div>
+  </div>
+  <div class="wrap hero-content reveal in">
+    <span class="eyebrow">Dallas, TX &middot; Locally Owned &amp; Operated</span>
+    <h1>One trusted team<br>for your <em>home</em> and<br>your <em>office.</em></h1>
+    <p>We remove the stress of cleaning from your life — reliable, detailed work, tailored to your schedule, treating every space like it's our own.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get a Free Estimate</a>
+      <a class="btn btn-ghost" href="#gallery">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<div class="split reveal in">
+  <div class="split-panel">
+    <img src="https://images.unsplash.com/photo-1647381518264-97ff1835026f?fm=jpg&q=80&w=1400&auto=format&fit=crop" alt="Cleaning a home kitchen">
+    <div class="split-panel-content">
+      <span class="tag">For Your Home</span>
+      <h2>A cleaner home, without the hassle.</h2>
+      <p>Routine cleaning, deep cleans, and move in/move out — scheduled around your life, not the other way around.</p>
+      <a class="btn btn-primary" href="#contact">Get a Home Quote</a>
+    </div>
+  </div>
+  <div class="split-panel">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?fm=jpg&q=80&w=1400&auto=format&fit=crop" alt="Clean modern office hallway">
+    <div class="split-panel-content">
+      <span class="tag">For Your Office</span>
+      <h2>A workspace your team is proud of.</h2>
+      <p>Flexible scheduling for offices and small commercial spaces, cleaned around your working hours.</p>
+      <a class="btn btn-primary" href="#contact">Get an Office Quote</a>
+    </div>
+  </div>
+</div>
+
+<div class="trust-strip">
+  <div class="trust-track">
+    <div class="trust-item">Locally Owned &amp; Operated</div>
+    <div class="trust-item">Home &amp; Office Cleaning</div>
+    <div class="trust-item">Flexible Scheduling</div>
+    <div class="trust-item">Free, No-Obligation Estimates</div>
+    <div class="trust-item">Serving the Dallas Area</div>
+    <div class="trust-item">Locally Owned &amp; Operated</div>
+    <div class="trust-item">Home &amp; Office Cleaning</div>
+    <div class="trust-item">Flexible Scheduling</div>
+    <div class="trust-item">Free, No-Obligation Estimates</div>
+    <div class="trust-item">Serving the Dallas Area</div>
+  </div>
+</div>
+
+<section id="story" class="note-section">
+  <div class="wrap note-grid">
+    <div class="story-photo reveal">
+      <img src="https://images.unsplash.com/photo-1646980241033-cd7abda2ee88?fm=jpg&q=80&w=1000&auto=format&fit=crop" alt="Carrying a cleaning caddy into a home">
+    </div>
+    <div class="story reveal" style="transition-delay:.1s;">
+      <span class="eyebrow">Our story</span>
+      <h2 style="margin-top:14px; margin-bottom:18px;">Peace of mind, one space at a time.</h2>
+      <p class="lead">As a locally owned and operated company, we're proud to serve families and businesses throughout the Dallas area with reliable, high-quality cleaning services you can trust.</p>
+      <p>Our mission is to remove the stress of cleaning from our clients' lives — while creating opportunities for hardworking families to support their loved ones. We treat every space with care and respect, as if it were our own.</p>
+      <div class="note-card">
+        <p>"What sets us apart is honesty, attention to detail, and customer satisfaction. We don't just clean spaces — we help create peace of mind."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Why families &amp; businesses choose us</h2>
+      <p>The three things we hold ourselves to on every job.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="mark">“</div>
+        <h3>Honesty first</h3>
+        <p>Clear pricing and clear communication — no surprises when the job's done.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.08s;">
+        <div class="mark">“</div>
+        <h3>Genuine attention to detail</h3>
+        <p>We treat every space with the same care and respect we'd give our own home.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.16s;">
+        <div class="mark">“</div>
+        <h3>Tailored to you</h3>
+        <p>Every client's needs are different, so your schedule and expectations shape the plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>What we clean</h2>
+      <p>From a single studio to a full office turnover.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <span class="num">01</span>
+        <h3>Routine Cleaning</h3>
+        <p>Regular upkeep for homes — kitchens, bathrooms, floors, and the everyday spots that pile up.</p>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.08s;">
+        <span class="num">02</span>
+        <h3>Deep Cleaning</h3>
+        <p>The detailed pass — baseboards, appliances, and everything routine cleaning tends to skip.</p>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.16s;">
+        <span class="num">03</span>
+        <h3>Move In / Move Out</h3>
+        <p>Top-to-bottom cleaning so a new place is ready to live in, or an old one ready to hand back.</p>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.24s;">
+        <span class="num">04</span>
+        <h3>Office Cleaning</h3>
+        <p>Flexible scheduling for offices and small commercial spaces, cleaned around your hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>The kind of clean we deliver</h2>
+      <p>What "detailed" looks like, in practice.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <a href="#"><img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?fm=jpg&q=80&w=900&auto=format&fit=crop" alt="Bright clean living room"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?fm=jpg&q=80&w=700&auto=format&fit=crop" alt="Cleaning supplies in hand"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1700809887584-0798672b1d48?fm=jpg&q=80&w=700&auto=format&fit=crop" alt="Clean modern office space"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?fm=jpg&q=80&w=700&auto=format&fit=crop" alt="Wiping down a surface"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1580256081112-e49377338b7f?fm=jpg&q=80&w=700&auto=format&fit=crop" alt="Cleaning cart in a hallway"></a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>How it works</h2>
+      <p>Simple, from first message to finished space.</p>
+    </div>
+    <div class="process-row">
+      <div class="step reveal">
+        <div class="num-big">01</div>
+        <h3>Send an inquiry</h3>
+        <p>Tell us the space and what you need — takes under a minute.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.1s;">
+        <div class="num-big">02</div>
+        <h3>We confirm details</h3>
+        <p>A real person calls or texts back to lock in timing and pricing.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.2s;">
+        <div class="num-big">03</div>
+        <h3>We clean, you relax</h3>
+        <p>Our team shows up on time and handles it — space done right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="quote-section reveal">
+    <div class="quote-inner">
+      <div>
+        <span class="eyebrow" style="color:var(--gold);">Get your free estimate</span>
+        <h2 style="margin-top:14px;">Let's get your space right.</h2>
+        <p>Fill in a few details and we'll call or text back with pricing — usually the same day.</p>
+        <div class="badge-row">
+          <div class="badge">No obligation</div>
+          <div class="badge">Same-day reply</div>
+          <div class="badge">Locally owned</div>
+        </div>
+      </div>
+      <form class="quote-form" onsubmit="return false;">
+        <div class="row2">
+          <div><label for="fname">First Name</label><input id="fname" type="text" placeholder="First name"></div>
+          <div><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Last name"></div>
+        </div>
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" placeholder="(214) 000-0000">
+        <label for="service">Desired Service</label>
+        <select id="service">
+          <option>Routine Cleaning</option>
+          <option>Deep Cleaning</option>
+          <option>Move In / Move Out</option>
+          <option>Office Cleaning</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Request Free Estimate</button>
+        <div class="quote-note">or call 214-531-5995 directly</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px; font-size:17px;">Dallas Home <em>&amp;</em> Office Cleaning</div>
+        <p style="max-width:260px;">Locally owned and operated, serving families and businesses throughout the Dallas area.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Routine Cleaning</a>
+        <a href="#services">Deep Cleaning</a>
+        <a href="#services">Move In / Out</a>
+        <a href="#services">Office Cleaning</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#gallery">Our Work</a>
+        <a href="#contact">Get a Quote</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="tel:2145315995">214-531-5995</a>
+        <a href="mailto:dallascleanhomes@gmail.com">dallascleanhomes@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dallas Home and Office Cleaning</span>
+      <span>Dallas, TX</span>
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-primary float-cta" id="floatCta" href="#contact">Get Free Estimate</a>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const floatCta = document.getElementById('floatCta');
+  const hero = document.querySelector('.hero');
+  const fio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ floatCta.classList.toggle('show', !e.isIntersecting); });
+  }, {threshold:0});
+  fio.observe(hero);
+</script>
+
+</body>
+</html>

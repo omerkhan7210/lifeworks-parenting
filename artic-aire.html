@@ -1,0 +1,1930 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artic Aire Heating and Cooling, Inc — Leesburg, GA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1c2321;
+        --ink-soft: #3c443f;
+        --paper: #f4f0e6;
+        --paper-raised: #fbf9f3;
+        --brand: #0b3d78;
+        --brand-deep: #082a55;
+        --steel: #5b6660;
+        --gold: #c08a2e;
+        --gold-deep: #9c6e20;
+        --rust: #ae3b2c;
+        --line: #dbd4c1;
+        --line-soft: #e7e1d1;
+        --radius: 4px;
+        --maxw: 1180px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Fraunces", serif;
+        margin: 0;
+        color: var(--ink);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.02em;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold-deep);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 16px;
+        height: 1px;
+        background: var(--gold-deep);
+        display: inline-block;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      /* ---------- Reveal on scroll ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ---------- Top utility bar ---------- */
+      .utility-bar {
+        background: var(--brand-deep);
+        color: #e8eef6;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12.5px;
+      }
+      .utility-bar .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 28px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .utility-bar .hours {
+        opacity: 0.85;
+      }
+      .utility-bar .badges {
+        display: flex;
+        gap: 18px;
+      }
+      .utility-bar .badges span {
+        opacity: 0.9;
+      }
+
+      /* ---------- Header ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--paper-raised);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 28px;
+        max-width: var(--maxw);
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--brand);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .logo-mark svg {
+        width: 20px;
+        height: 20px;
+      }
+      .logo-text {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 1.1;
+        color: var(--ink);
+      }
+      .logo-text small {
+        display: block;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.1em;
+        color: var(--steel);
+        font-weight: 500;
+        margin-top: 2px;
+      }
+      nav.primary-nav {
+        display: flex;
+        gap: 32px;
+        font-size: 14.5px;
+        font-weight: 500;
+      }
+      nav.primary-nav a {
+        color: var(--ink-soft);
+        position: relative;
+        padding: 4px 0;
+      }
+      nav.primary-nav a:hover {
+        color: var(--brand);
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .phone-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 600;
+        font-size: 15.5px;
+        color: var(--ink);
+      }
+      .phone-link svg {
+        width: 17px;
+        height: 17px;
+        color: var(--brand);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 14.5px;
+        border: 1px solid transparent;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.18s ease;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: #1c1300;
+      }
+      .btn-primary:hover {
+        background: var(--gold-deep);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(156, 110, 32, 0.28);
+      }
+      .btn-outline {
+        border-color: var(--ink);
+        color: var(--ink);
+        background: transparent;
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn-light {
+        background: var(--paper-raised);
+        color: var(--brand-deep);
+        border-color: var(--line);
+      }
+      .btn-light:hover {
+        border-color: var(--brand);
+      }
+      .btn-block {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        padding: 6px;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--ink);
+        margin: 5px 0;
+      }
+
+      /* ---------- Mobile sticky call bar ---------- */
+      .mobile-call-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        background: var(--brand-deep);
+        padding: 12px 16px;
+        box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.18);
+      }
+      .mobile-call-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #fff;
+        font-weight: 700;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 16px;
+        padding: 12px;
+        background: var(--gold);
+        border-radius: var(--radius);
+        color: #1c1300;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        background: linear-gradient(
+          180deg,
+          var(--paper-raised) 0%,
+          var(--paper) 100%
+        );
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 56px;
+        align-items: center;
+        padding: 64px 0 56px;
+      }
+      .hero-copy h1 {
+        font-size: clamp(32px, 4.4vw, 52px);
+        line-height: 1.06;
+        margin: 18px 0 20px;
+      }
+      .hero-copy h1 em {
+        font-style: normal;
+        color: var(--brand);
+        border-bottom: 3px solid var(--gold);
+      }
+      .hero-copy p.lede {
+        font-size: 17.5px;
+        color: var(--ink-soft);
+        max-width: 52ch;
+        margin-bottom: 30px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 34px;
+      }
+      .hero-ctas .btn {
+        padding: 15px 26px;
+        font-size: 15.5px;
+      }
+      .trust-strip {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+      .trust-strip .item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .trust-strip svg {
+        width: 18px;
+        height: 18px;
+        color: var(--gold-deep);
+        flex-shrink: 0;
+      }
+
+      .hero-media {
+        position: relative;
+      }
+      .hero-media .frame {
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        box-shadow: 0 24px 50px -20px rgba(8, 42, 85, 0.35);
+      }
+      .hero-media img {
+        width: 100%;
+        height: 345px;
+        object-fit: cover;
+      }
+      .hero-badge {
+        position: absolute;
+        left: -18px;
+        bottom: -22px;
+        background: var(--brand-deep);
+        color: #fff;
+        padding: 16px 20px;
+        border-radius: 6px;
+        box-shadow: 0 14px 30px -10px rgba(8, 42, 85, 0.5);
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        max-width: 260px;
+      }
+      .hero-badge .dial {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 3px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+      .hero-badge .label {
+        font-size: 12px;
+        line-height: 1.35;
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.02em;
+      }
+
+      /* ---------- Section shell ---------- */
+      section {
+        padding: 88px 0;
+      }
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 48px;
+      }
+      .section-head h2 {
+        font-size: clamp(26px, 3vw, 36px);
+        margin-top: 14px;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        margin-top: 14px;
+        font-size: 16px;
+      }
+
+      /* ---------- Services ---------- */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .service-card {
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0;
+        overflow: hidden;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -22px rgba(28, 35, 33, 0.3);
+      }
+      .service-card .thumb {
+        height: 170px;
+        overflow: hidden;
+        background: var(--brand-deep);
+      }
+      .service-card .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .service-card:hover .thumb img {
+        transform: scale(1.06);
+      }
+      .service-card .body {
+        padding: 26px 24px 28px;
+      }
+      .service-card .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold-deep);
+        font-weight: 600;
+      }
+      .service-card h3 {
+        font-size: 21px;
+        margin: 10px 0 10px;
+      }
+      .service-card p {
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        margin-bottom: 18px;
+      }
+      .service-card .learn {
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--brand);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .service-card .learn svg {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.2s ease;
+      }
+      .service-card:hover .learn svg {
+        transform: translateX(3px);
+      }
+
+      /* ---------- Why section ---------- */
+      .why-section {
+        background: var(--paper-raised);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .why-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .why-grid .media {
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .why-grid .media img {
+        height: 460px;
+        object-fit: cover;
+      }
+      .why-list {
+        display: grid;
+        gap: 26px;
+        margin-top: 32px;
+      }
+      .why-item {
+        display: flex;
+        gap: 16px;
+      }
+      .why-item .num {
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gold-deep);
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .why-item h4 {
+        font-size: 17px;
+        margin-bottom: 6px;
+      }
+      .why-item p {
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        margin: 0;
+      }
+
+      /* ---------- Emergency band ---------- */
+      .emergency {
+        background: var(--ink);
+        color: #f4f0e6;
+        position: relative;
+        overflow: hidden;
+      }
+      .emergency::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 85% 20%,
+          rgba(174, 59, 44, 0.28),
+          transparent 55%
+        );
+      }
+      .emergency .wrap {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+      .emergency .eyebrow {
+        color: var(--gold);
+      }
+      .emergency .eyebrow::before {
+        background: var(--gold);
+      }
+      .emergency h2 {
+        color: #fff;
+        font-size: clamp(24px, 3vw, 32px);
+        margin-top: 12px;
+        max-width: 520px;
+      }
+      .emergency p {
+        color: #c9cfc9;
+        margin-top: 10px;
+        max-width: 480px;
+        font-size: 15px;
+      }
+      .emergency .call-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .emergency .call-cta .btn {
+        padding: 18px 30px;
+        font-size: 18px;
+      }
+      .emergency .call-cta .sub {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12.5px;
+        color: #9ba39d;
+      }
+
+      /* ---------- Service areas ---------- */
+      .areas-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .area-map {
+        position: relative;
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 28px;
+      }
+      .area-map svg {
+        width: 100%;
+        height: auto;
+      }
+      .area-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 20px;
+        margin-top: 28px;
+      }
+      .area-list .area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 14.5px;
+      }
+      .area-list .area svg {
+        width: 15px;
+        height: 15px;
+        color: var(--brand);
+        flex-shrink: 0;
+      }
+      .area-list .area.wide {
+        grid-column: 1/-1;
+        color: var(--ink-soft);
+        font-weight: 500;
+        font-size: 13.5px;
+      }
+
+      /* ---------- Trust / review ---------- */
+      .trust-section {
+        background: var(--brand-deep);
+        color: #edf1f6;
+      }
+      .trust-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 40px;
+        align-items: center;
+      }
+      .trust-section h2 {
+        color: #fff;
+        font-size: clamp(24px, 3vw, 30px);
+      }
+      .trust-section p {
+        color: #c7d2e1;
+        margin-top: 12px;
+        max-width: 52ch;
+        font-size: 15px;
+      }
+      .stars {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 14px;
+      }
+      .stars svg {
+        width: 18px;
+        height: 18px;
+        color: var(--gold);
+      }
+
+      /* ---------- Contact ---------- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--paper-raised);
+      }
+      .contact-info {
+        background: var(--brand-deep);
+        color: #fff;
+        padding: 48px 40px;
+      }
+      .contact-info h3 {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+      .contact-info p.lede {
+        color: #c7d2e1;
+        font-size: 14.5px;
+        margin-bottom: 32px;
+      }
+      .contact-line {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 16px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .contact-line:first-of-type {
+        border-top: none;
+      }
+      .contact-line svg {
+        width: 19px;
+        height: 19px;
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .contact-line .label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9bb0cc;
+        margin-bottom: 4px;
+      }
+      .contact-line .val {
+        font-size: 14.5px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      .contact-form {
+        padding: 48px 40px;
+      }
+      .contact-form h3 {
+        font-size: 22px;
+        margin-bottom: 22px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field.full {
+        grid-column: 1/-1;
+      }
+      .field label {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 12px 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 14.5px;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        outline: 2px solid var(--brand);
+        outline-offset: 1px;
+        border-color: var(--brand);
+      }
+      .field textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+
+      /* ---------- Final CTA ---------- */
+      .final-cta {
+        background: linear-gradient(
+          180deg,
+          var(--paper) 0%,
+          var(--paper-raised) 100%
+        );
+        border-top: 1px solid var(--line);
+      }
+      .final-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .final-grid .media {
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .final-grid .media img {
+        height: 340px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .final-copy h2 {
+        font-size: clamp(26px, 3.4vw, 38px);
+        margin-bottom: 16px;
+      }
+      .final-copy p {
+        color: var(--ink-soft);
+        font-size: 16px;
+        margin-bottom: 28px;
+        max-width: 46ch;
+      }
+      .final-ctas {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      /* ---------- Footer ---------- */
+      footer {
+        background: var(--ink);
+        color: #cbd1cc;
+        padding: 64px 0 28px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+      .footer-brand .logo-text {
+        color: #fff;
+      }
+      .footer-brand .logo-text small {
+        color: #8b948e;
+      }
+      .footer-brand p {
+        font-size: 13.5px;
+        color: #9ba39d;
+        margin-top: 16px;
+        max-width: 32ch;
+      }
+      .footer-col h5 {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #8b948e;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .footer-col a {
+        font-size: 14px;
+        color: #cbd1cc;
+      }
+      .footer-col a:hover {
+        color: var(--gold);
+      }
+      .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .footer-social a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #3b433e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .footer-social a:hover {
+        border-color: var(--gold);
+      }
+      .footer-social svg {
+        width: 16px;
+        height: 16px;
+      }
+      .footer-bottom {
+        border-top: 1px solid #333a35;
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 12.5px;
+        color: #7c857f;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 980px) {
+        .hero-grid,
+        .why-grid,
+        .areas-grid,
+        .final-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .why-grid .media,
+        .hero-media {
+          order: -1;
+        }
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .trust-inner {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        nav.primary-nav {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+        .header-actions .btn-outline {
+          display: none;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .area-list {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .mobile-call-bar {
+          display: block;
+        }
+        body {
+          padding-bottom: 74px;
+        }
+        .utility-bar .badges {
+          display: none;
+        }
+        .hero-badge {
+          position: static;
+          margin-top: -40px;
+          margin-left: 16px;
+          max-width: none;
+        }
+        .emergency .wrap {
+          padding-top: 44px;
+          padding-bottom: 44px;
+        }
+        .emergency .call-cta {
+          align-items: flex-start;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .contact-info,
+        .contact-form {
+          padding: 34px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ UTILITY BAR ============ -->
+    <div class="utility-bar">
+      <div class="wrap">
+        <span class="hours"
+          >MON&ndash;FRI 8:00&ndash;5:00 &middot; SAT&ndash;SUN EMERGENCY
+          ONLY</span
+        >
+        <div class="badges">
+          <span>LEESBURG, GA</span>
+          <span>FREE QUOTES</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+      <div class="nav-row">
+        <a class="logo" href="#top">
+          <span class="logo-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#F4F0E6"
+              stroke-width="1.8"
+            >
+              <path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11" />
+              <circle cx="12" cy="12" r="2.6" fill="#F4F0E6" stroke="none" />
+            </svg>
+          </span>
+          <span class="logo-text"
+            >Artic Aire<small>HEATING &amp; COOLING, INC</small></span
+          >
+        </a>
+        <nav class="primary-nav">
+          <a href="#services">Services</a>
+          <a href="#why">About</a>
+          <a href="#areas">Service Areas</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="phone-link" href="tel:2297594049">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            229-759-4049
+          </a>
+          <a class="btn btn-outline" href="tel:2297594049">Call Now</a>
+          <a class="btn btn-primary" href="#contact">Request Service</a>
+          <button
+            class="hamburger"
+            aria-label="Menu"
+            onclick="
+              document.getElementById('mobileNav').classList.toggle('open')
+            "
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div id="mobileNav" style="display: none" class="wrap">
+        <div
+          style="
+            display: grid;
+            gap: 2px;
+            padding: 12px 0 20px;
+            border-top: 1px solid var(--line);
+          "
+        >
+          <a style="padding: 12px 4px; font-weight: 600" href="#services"
+            >Services</a
+          >
+          <a style="padding: 12px 4px; font-weight: 600" href="#why">About</a>
+          <a style="padding: 12px 4px; font-weight: 600" href="#areas"
+            >Service Areas</a
+          >
+          <a style="padding: 12px 4px; font-weight: 600" href="#contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <a id="top"></a>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" style="padding: 0">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Leesburg &amp; Southwest Georgia</span>
+          <h1>
+            When your AC quits in August, <em>you need Leesburg's own crew</em>,
+            not a call center.
+          </h1>
+          <p class="lede">
+            Artic Aire Heating and Cooling has been the local name for repairs,
+            installs, and maintenance across Leesburg, Albany, Dawson, Sasser,
+            Cordele, Sylvester, and the surrounding counties. Straightforward
+            help from people who live here too.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Request Service</a>
+            <a class="btn btn-outline" href="tel:2297594049"
+              >Call 229-759-4049</a
+            >
+          </div>
+          <div class="trust-strip">
+            <div class="item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5" /></svg
+              >Free Quotes on Installs
+            </div>
+            <div class="item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5" /></svg
+              >After-Hours Emergency Service
+            </div>
+            <div class="item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5" /></svg
+              >Locally Based in Leesburg
+            </div>
+          </div>
+        </div>
+        <div class="hero-media reveal">
+          <div class="frame">
+            <img
+              src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/1fe06cc3-892d-4ed7-a8f4-791c9062f63b.jpg"
+              alt="Artic Aire Heating and Cooling"
+            />
+          </div>
+          <div class="hero-badge">
+            <div class="dial">24/7</div>
+            <div class="label">
+              AFTER-HOURS<br />EMERGENCY<br />SERVICE AVAILABLE
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Residential &amp; Commercial</span>
+          <h2>Heating and air, handled by people who actually show up.</h2>
+          <p>
+            Three things customers call Artic Aire for most. Whatever your
+            system needs, it starts with a call.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="thumb">
+              <img
+                src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/Untitled%20design.png/:/cr=t:10.31%25,l:0%25,w:100%25,h:89.69%25/rs=w:640,h:480,cg:true"
+                alt="Preventative maintenance"
+              />
+            </div>
+            <div class="body">
+              <span class="tag">Maintenance</span>
+              <h3>Preventative Maintenance</h3>
+              <p>
+                Regular care that keeps your system running at peak efficiency
+                and catches small issues before they become expensive ones.
+                Plans built around your home.
+              </p>
+              <a class="learn" href="#contact"
+                >Request Service
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="service-card reveal">
+            <div class="thumb">
+              <img
+                src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/IMG_E3757.JPG/:/cr=t:21.8%25,l:0%25,w:100%25,h:56.39%25/rs=w:640,h:480,cg:true"
+                alt="Service and repair"
+              />
+            </div>
+            <div class="body">
+              <span class="tag">Repair</span>
+              <h3>Service &amp; Repair</h3>
+              <p>
+                Prompt, dependable repairs from experienced technicians. HVAC
+                problems don't wait for business hours, and we offer after-hours
+                service when you need us.
+              </p>
+              <a class="learn" href="#contact"
+                >Request Service
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="service-card reveal">
+            <div class="thumb">
+              <img
+                src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/blob-918a5e9.png/:/cr=t:16.93%25,l:0%25,w:100%25,h:56.36%25/rs=w:640,h:480,cg:true"
+                alt="System installation"
+              />
+            </div>
+            <div class="body">
+              <span class="tag">Installation</span>
+              <h3>Installation</h3>
+              <p>
+                Older system costing you more every month? We help you choose
+                the right replacement for your home or business, with free
+                quotes and estimates.
+              </p>
+              <a class="learn" href="#contact"
+                >Get a Free Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ARTIC AIRE ============ -->
+    <section id="why" class="why-section">
+      <div class="wrap why-grid">
+        <div class="media reveal">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/IMG_E3781.JPG"
+            alt="Artic Aire service location in Leesburg, GA"
+          />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Why Artic Aire</span>
+          <h2>Local service. Straightforward help.</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <span class="num">01</span>
+              <div>
+                <h4>Based right in Leesburg</h4>
+                <p>
+                  Not a national dispatch line. A local team that knows the
+                  towns it serves.
+                </p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="num">02</span>
+              <div>
+                <h4>Honest communication, transparent pricing</h4>
+                <p>
+                  You'll know what's wrong and what it costs before any work
+                  begins.
+                </p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="num">03</span>
+              <div>
+                <h4>Plans built around your home</h4>
+                <p>
+                  Personalized quotes and maintenance plans, not
+                  one-size-fits-all packages.
+                </p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="num">04</span>
+              <div>
+                <h4>Financing available</h4>
+                <p>
+                  Flexible options when a new system makes more sense than
+                  another repair.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMERGENCY ============ -->
+    <section class="emergency">
+      <div class="wrap">
+        <span class="eyebrow">After-Hours &amp; Weekend Service</span>
+        <h2>Need HVAC help now?</h2>
+        <p>
+          Weekdays 8:00&ndash;5:00 for scheduled work. Nights and weekends for
+          the system that won't wait. Same phone number, either way.
+        </p>
+        <div class="call-cta" style="margin-top: 22px">
+          <a class="btn btn-primary" href="tel:2297594049"
+            >Call Now &middot; 229-759-4049</a
+          >
+          <span class="sub mono">SAT&ndash;SUN: EMERGENCY SERVICE ONLY</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICE AREAS ============ -->
+    <section id="areas">
+      <div class="wrap areas-grid">
+        <div class="reveal">
+          <span class="eyebrow">Where We Work</span>
+          <h2>Serving Leesburg and the surrounding counties.</h2>
+          <p style="color: var(--ink-soft); margin-top: 14px; font-size: 16px">
+            Artic Aire is dispatched out of Leesburg and covers the towns and
+            counties nearby. If you're close to one of these, we're close to
+            you.
+          </p>
+          <div class="area-list">
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Leesburg
+            </div>
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Albany
+            </div>
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Dawson
+            </div>
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Sasser
+            </div>
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Cordele
+            </div>
+            <div class="area">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
+                <circle cx="12" cy="9" r="2.5" /></svg
+              >Sylvester
+            </div>
+            <div class="area wide">
+              + Surrounding counties &mdash; not sure if you're in range? Just
+              call.
+            </div>
+          </div>
+          <a class="btn btn-primary" style="margin-top: 26px" href="#contact"
+            >Request Service</a
+          >
+        </div>
+        <div class="area-map reveal">
+          <svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#DBD4C1" stroke-width="1">
+              <line x1="180" y1="160" x2="180" y2="60" />
+              <line x1="180" y1="160" x2="80" y2="90" />
+              <line x1="180" y1="160" x2="70" y2="190" />
+              <line x1="180" y1="160" x2="150" y2="260" />
+              <line x1="180" y1="160" x2="260" y2="230" />
+              <line x1="180" y1="160" x2="290" y2="120" />
+            </g>
+            <circle cx="180" cy="160" r="9" fill="#0B3D78" />
+            <text
+              x="196"
+              y="164"
+              font-family="IBM Plex Mono, monospace"
+              font-size="12"
+              font-weight="600"
+              fill="#1C2321"
+            >
+              Leesburg
+            </text>
+
+            <circle cx="180" cy="60" r="5.5" fill="#C08A2E" />
+            <text
+              x="192"
+              y="64"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              Dawson
+            </text>
+
+            <circle cx="80" cy="90" r="5.5" fill="#C08A2E" />
+            <text
+              x="20"
+              y="78"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              Sylvester
+            </text>
+
+            <circle cx="70" cy="190" r="5.5" fill="#C08A2E" />
+            <text
+              x="14"
+              y="212"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              Albany
+            </text>
+
+            <circle cx="150" cy="260" r="5.5" fill="#C08A2E" />
+            <text
+              x="105"
+              y="286"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              Sasser
+            </text>
+
+            <circle cx="260" cy="230" r="5.5" fill="#C08A2E" />
+            <text
+              x="270"
+              y="234"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              Cordele
+            </text>
+
+            <circle cx="290" cy="120" r="5.5" fill="#C08A2E" />
+            <text
+              x="300"
+              y="116"
+              font-family="IBM Plex Mono, monospace"
+              font-size="11"
+              fill="#3C443F"
+            >
+              + counties
+            </text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST / REVIEW ============ -->
+    <section class="trust-section">
+      <div class="wrap trust-inner">
+        <div>
+          <span class="eyebrow" style="color: #8fb0da"
+            >Customer Satisfaction Guaranteed</span
+          >
+          <h2 style="margin-top: 12px">
+            Honest work, backed by a guarantee &mdash; and by the neighbors
+            who've used it.
+          </h2>
+          <p>
+            Artic Aire stands behind every job with straightforward pricing and
+            clear communication. See what customers in the area are saying on
+            Google, or leave a review of your own.
+          </p>
+        </div>
+        <div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <a
+            class="btn btn-light"
+            href="https://g.page/r/Cc79baS8zqkNEAE/review"
+            target="_blank"
+            rel="noopener"
+            >Read Reviews on Google</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Request Service</span>
+          <h2>Tell us what's going on. We'll take it from there.</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Artic Aire Heating and Cooling, Inc</h3>
+            <p class="lede">
+              Your comfort is our privilege. For a free quote or emergency
+              service, reach out any time that works for you.
+            </p>
+
+            <div class="contact-line">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <div>
+                <div class="label">Phone</div>
+                <div class="val mono">
+                  <a href="tel:2297594049" style="color: #fff">229-759-4049</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <div>
+                <div class="label">Address</div>
+                <div class="val">
+                  1451 Georgia Highway 32<br />Leesburg, GA 31763
+                </div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <div>
+                <div class="label">Hours</div>
+                <div class="val">
+                  Mon&ndash;Fri, 8:00am&ndash;5:00pm<br />Sat&ndash;Sun:
+                  Emergency service only
+                </div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
+                />
+                <path d="M12 18h.01" />
+              </svg>
+              <div>
+                <div class="label">Facebook</div>
+                <div class="val">
+                  <a
+                    href="https://www.facebook.com/articaire"
+                    target="_blank"
+                    rel="noopener"
+                    style="color: #fff"
+                    >facebook.com/articaire</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Request Service</h3>
+            <form
+              onsubmit="
+                event.preventDefault();
+                alert(
+                  'This is a design concept — the live site would connect this form to email or CRM.',
+                );
+              "
+            >
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Name</label
+                  ><input
+                    id="name"
+                    type="text"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label
+                  ><input
+                    id="phone"
+                    type="tel"
+                    placeholder="(229) 555-0100"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field full">
+                  <label for="email">Email</label
+                  ><input id="email" type="email" placeholder="you@email.com" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field full">
+                  <label for="service">Service Needed</label>
+                  <select id="service">
+                    <option>Preventative Maintenance</option>
+                    <option>Service &amp; Repair</option>
+                    <option>Installation / Free Quote</option>
+                    <option>Emergency Service</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field full">
+                  <label for="message">Message</label
+                  ><textarea
+                    id="message"
+                    placeholder="Tell us what's happening with your system"
+                  ></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Request Service
+              </button>
+              <p
+                style="
+                  font-size: 12.5px;
+                  color: var(--steel);
+                  margin-top: 14px;
+                  text-align: center;
+                "
+              >
+                Prefer to talk it through? Call
+                <a
+                  href="tel:2297594049"
+                  style="color: var(--brand); font-weight: 600"
+                  >229-759-4049</a
+                >.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta">
+      <div class="wrap final-grid">
+        <div class="final-copy reveal">
+          <span class="eyebrow">Ready When You Are</span>
+          <h2>Comfort starts with the right team.</h2>
+          <p>
+            Whether it's a tune-up, a repair, or a system that's finally ready
+            to be replaced, Artic Aire is a call away.
+          </p>
+          <div class="final-ctas">
+            <a class="btn btn-primary" href="#contact">Request Service</a>
+            <a class="btn btn-outline" href="tel:2297594049">Call Now</a>
+          </div>
+        </div>
+        <div class="media reveal">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/9e94ba26-5b05-4397-9d99-9dd16bebb3cd/blob-dd18afd.png"
+            alt="Artic Aire Heating and Cooling"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="#top">
+              <span class="logo-mark">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1C2321"
+                  stroke-width="1.8"
+                >
+                  <path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11" />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="2.6"
+                    fill="#1C2321"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
+              <span class="logo-text"
+                >Artic Aire<small>HEATING &amp; COOLING, INC</small></span
+              >
+            </a>
+            <p>1451 Georgia Highway 32<br />Leesburg, GA 31763</p>
+            <p
+              class="mono"
+              style="color: #fff; font-size: 15px; margin-top: 10px"
+            >
+              <a href="tel:2297594049">229-759-4049</a>
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/articaire"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#CBD1CC"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#why">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#areas">Service Areas</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#services">Preventative Maintenance</a></li>
+              <li><a href="#services">Service &amp; Repair</a></li>
+              <li><a href="#services">Installation</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Hours</h5>
+            <ul>
+              <li>Mon&ndash;Fri: 8:00am&ndash;5:00pm</li>
+              <li>Sat&ndash;Sun: Emergency only</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 Artic Aire Heating and Cooling, Inc. All rights
+            reserved.</span
+          >
+          <span>Design concept &middot; not the live site</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ MOBILE STICKY CALL BAR ============ -->
+    <div class="mobile-call-bar">
+      <a href="tel:2297594049">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          width="18"
+          height="18"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+        Call Now &middot; 229-759-4049
+      </a>
+    </div>
+
+    <script>
+      // Scroll reveal
+      var els = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        els.forEach(function (el) {
+          el.classList.add("in");
+        });
+      }
+
+      // Sticky header shadow on scroll
+      var header = document.querySelector("header");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 12) {
+          header.style.boxShadow = "0 4px 16px rgba(28,35,33,0.08)";
+        } else {
+          header.style.boxShadow = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

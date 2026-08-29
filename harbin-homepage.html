@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harbin Heating & Air Conditioning, Inc. — Comfort You Can Trust Since 1988</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17181A;
+    --ink-soft:#2B2C2E;
+    --paper:#EEECE3;
+    --paper-2:#E4E1D6;
+    --white:#FDFCFA;
+    --red:#CB0203;
+    --red-dark:#9E0203;
+    --brass:#A9762B;
+    --slate:#48575F;
+    --slate-2:#7C8A90;
+    --line: rgba(23,24,26,0.12);
+    --line-dark: rgba(255,255,255,0.14);
+    --shadow: 0 24px 60px -30px rgba(23,24,26,0.35);
+    --radius: 2px;
+    --maxw: 1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--red);display:inline-block;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15px;
+    padding:15px 26px;border-radius:var(--radius);cursor:pointer;
+    border:1.5px solid transparent;transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(203,2,3,0.55);}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:#fff;transform:translateY(-2px);}
+  .btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,0.55);}
+  .btn-outline-light:hover{background:#fff;color:var(--ink);}
+  .btn-ghost{background:transparent;color:var(--red);border-color:transparent;padding:8px 0;font-size:14px;}
+  .btn-ghost::after{content:"→";margin-left:8px;transition:transform .2s ease;}
+  .btn-ghost:hover::after{transform:translateX(4px);}
+
+  /* reveal animation */
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1);}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
+  [data-reveal-delay="1"]{transition-delay:.08s;}
+  [data-reveal-delay="2"]{transition-delay:.16s;}
+  [data-reveal-delay="3"]{transition-delay:.24s;}
+  [data-reveal-delay="4"]{transition-delay:.32s;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important;}
+    *{animation:none !important;}
+  }
+
+  /* ===== HEADER ===== */
+  header.site{
+    position:sticky;top:0;z-index:100;
+    background:rgba(238,236,227,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease, background .3s ease;
+  }
+  header.site.scrolled{box-shadow:0 8px 24px -18px rgba(0,0,0,0.3);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 32px;max-width:var(--maxw);margin:0 auto;gap:24px;
+  }
+  .logo img{height:46px;width:auto;}
+  nav.primary{display:flex;align-items:center;gap:30px;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-soft);position:relative;padding:4px 0;}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .25s ease;}
+  nav.primary a:hover::after{width:100%;}
+  .header-cta{display:flex;align-items:center;gap:22px;}
+  .header-phone{display:flex;flex-direction:column;line-height:1.2;text-align:right;}
+  .header-phone small{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--slate-2);letter-spacing:.08em;text-transform:uppercase;}
+  .header-phone a{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;color:var(--ink);}
+  .btn-sm{padding:11px 20px;font-size:13.5px;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;overflow:hidden;background:var(--ink);
+    min-height:88vh;display:flex;align-items:flex-end;
+  }
+  .hero-bg{position:absolute;inset:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.55;}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(17,18,19,0.55) 0%, rgba(17,18,19,0.35) 35%, rgba(17,18,19,0.92) 92%),
+               linear-gradient(90deg, rgba(17,18,19,0.9) 0%, rgba(17,18,19,0.35) 55%);
+  }
+  .hero-content{position:relative;z-index:2;color:#fff;padding:120px 32px 64px;width:100%;}
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .hero-eyebrow{color:#EAD9B0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+  .hero-eyebrow::before{content:"";width:26px;height:2px;background:var(--red);}
+  .hero h1{
+    font-size:clamp(40px, 6.2vw, 76px);
+    font-weight:600;line-height:1.02;color:#fff;max-width:15ch;
+  }
+  .hero h1 em{font-style:normal;color:#F0B8B8;}
+  .hero-sub{margin:26px 0 36px;font-size:18px;color:#D8D5CB;max-width:52ch;font-weight:400;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+  .trust-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:26px;gap:20px;
+  }
+  .trust-item{display:flex;flex-direction:column;gap:6px;}
+  .trust-item .num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.1em;}
+  .trust-item .label{font-size:14px;color:#fff;font-weight:600;line-height:1.3;}
+  .trust-item .label small{display:block;font-weight:400;color:#B9B6AC;font-size:12.5px;margin-top:2px;}
+
+  /* ===== SECTION SHELL ===== */
+  section{padding:110px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(30px,3.6vw,44px);font-weight:600;margin-top:16px;color:var(--ink);}
+  .section-head p{font-size:17px;color:var(--slate);margin-top:16px;max-width:56ch;}
+  .dark{background:var(--ink);color:var(--paper);}
+  .dark .eyebrow{color:#EAD9B0;}
+  .dark .eyebrow::before{background:var(--red);}
+  .dark .section-head p{color:#B9B6AC;}
+  .dark h2{color:#fff;}
+
+  /* nameplate signature element */
+  .plate{
+    position:relative;border:1px solid var(--line);background:var(--white);
+    padding:22px 24px;border-radius:1px;
+  }
+  .plate::before,.plate::after{
+    content:"";position:absolute;width:6px;height:6px;border-radius:50%;
+    background:var(--brass);box-shadow:inset 0 1px 1px rgba(0,0,0,.4);
+    top:8px;
+  }
+  .plate::before{left:8px;}
+  .plate::after{right:8px;}
+  .plate .plate-bottom-l,.plate .plate-bottom-r{
+    position:absolute;bottom:8px;width:6px;height:6px;border-radius:50%;background:var(--brass);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.4);
+  }
+  .plate .plate-bottom-l{left:8px;}
+  .plate .plate-bottom-r{right:8px;}
+
+  /* ===== TRUST / 1988 STORY ===== */
+  .story{background:var(--paper);}
+  .story-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;}
+  .story-media{position:relative;}
+  .story-media img{border-radius:2px;width:100%;height:520px;object-fit:cover;box-shadow:var(--shadow);}
+  .story-tag{
+    position:absolute;bottom:-28px;left:-28px;background:var(--ink);color:#fff;
+    padding:20px 22px;max-width:220px;border-radius:1px;
+  }
+  .story-tag .yr{font-family:'IBM Plex Mono',monospace;color:var(--red);font-size:13px;letter-spacing:.08em;}
+  .story-tag .txt{font-size:14px;margin-top:6px;color:#D8D5CB;line-height:1.4;}
+  .story-copy p{font-size:16.5px;color:var(--slate);margin:0 0 18px;}
+  .story-copy p strong{color:var(--ink);}
+  .gen-row{display:flex;gap:28px;margin:32px 0 34px;flex-wrap:wrap;}
+  .gen-item{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate-2);border-left:2px solid var(--red);padding-left:12px;line-height:1.4;}
+  .gen-item b{display:block;color:var(--ink);font-family:'Inter',sans-serif;font-size:14.5px;font-weight:700;}
+
+  /* ===== SERVICES ===== */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--white);padding:34px 30px 30px;position:relative;overflow:hidden;transition:background .3s ease;}
+  .service-card:hover{background:var(--paper-2);}
+  .service-img{width:100%;height:190px;object-fit:cover;border-radius:1px;margin-bottom:22px;filter:grayscale(15%);transition:transform .5s cubic-bezier(.16,.8,.24,1), filter .5s ease;}
+  .service-card:hover .service-img{transform:scale(1.035);filter:grayscale(0%);}
+  .service-idx{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red);margin-bottom:10px;letter-spacing:.08em;}
+  .service-card h3{font-size:21px;font-weight:600;margin-bottom:10px;}
+  .service-card p{font-size:14.5px;color:var(--slate);margin:0 0 16px;}
+  .service-card .btn-ghost{font-size:13.5px;font-weight:700;}
+
+  /* ===== SECOND OPINION ===== */
+  .second-opinion{
+    background:var(--red);color:#fff;position:relative;overflow:hidden;
+  }
+  .so-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  .second-opinion .eyebrow{color:#FBD7D7;}
+  .second-opinion .eyebrow::before{background:#fff;}
+  .second-opinion h2{color:#fff;font-size:clamp(30px,3.4vw,42px);margin-top:16px;max-width:16ch;}
+  .second-opinion p{color:#FBD7D7;font-size:16.5px;margin:20px 0 30px;max-width:52ch;}
+  .so-card{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.28);
+    padding:30px;border-radius:2px;
+  }
+  .so-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;}
+  .so-steps li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:#fff;}
+  .so-steps .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FBD7D7;border:1px solid rgba(255,255,255,0.4);border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+  /* ===== WHY HARBIN ===== */
+  .why{background:var(--paper);}
+  .why-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .why-media img{width:100%;height:560px;object-fit:cover;border-radius:2px;box-shadow:var(--shadow);}
+  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
+  .why-list .item{padding:24px 4px;border-bottom:1px solid var(--line);}
+  .why-list .item:nth-child(odd){border-right:1px solid var(--line);padding-right:24px;}
+  .why-list .item:nth-child(even){padding-left:24px;}
+  .why-list h3{font-size:17px;font-weight:700;margin-bottom:6px;font-family:'Inter',sans-serif;}
+  .why-list p{font-size:14px;color:var(--slate);margin:0;}
+  .why-list .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--red);letter-spacing:.08em;margin-bottom:8px;display:block;}
+
+  /* ===== REVIEWS ===== */
+  .reviews{background:var(--ink);color:#fff;}
+  .review-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px;}
+  .badges-row{display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+  .badges-row img{height:74px;width:auto;border-radius:2px;background:#fff;padding:6px;}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .review-card{
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);
+    padding:28px;border-radius:2px;
+  }
+  .review-card .stars{color:var(--brass);letter-spacing:2px;font-size:15px;margin-bottom:14px;}
+  .review-card p{font-size:14.5px;color:#D8D5CB;line-height:1.6;margin:0 0 18px;}
+  .review-card .who{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8F9AA0;}
+  .review-note{margin-top:34px;font-size:13.5px;color:#8F9AA0;border-top:1px solid rgba(255,255,255,0.14);padding-top:22px;}
+  .review-note a{color:var(--brass);font-weight:600;}
+
+  /* ===== MILITARY ===== */
+  .military{background:var(--paper-2);}
+  .mil-grid{display:grid;grid-template-columns:0.7fr 1.3fr;gap:52px;align-items:center;}
+  .mil-badge{
+    width:100%;aspect-ratio:1;background:var(--ink);border-radius:2px;
+    display:flex;align-items:center;justify-content:center;padding:34px;
+  }
+  .mil-badge img{filter:brightness(0) invert(1);opacity:.92;}
+  .mil-copy h2{font-size:clamp(28px,3.2vw,38px);}
+  .mil-copy p{font-size:16px;color:var(--slate);margin:18px 0 26px;max-width:60ch;}
+
+  /* ===== SERVICE AREA ===== */
+  .area{background:var(--white);}
+  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .area-map img{width:100%;border-radius:2px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .area-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:30px 0 34px;}
+  .area-col h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+  .area-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .area-col li{font-size:15px;color:var(--ink-soft);font-weight:500;padding-left:16px;position:relative;}
+  .area-col li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--red);}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:0;}
+  .final-inner{position:relative;z-index:2;padding:120px 32px;text-align:center;}
+  .final-bg{position:absolute;inset:0;}
+  .final-bg img{width:100%;height:100%;object-fit:cover;opacity:.4;}
+  .final-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(23,24,26,0.35) 0%, rgba(23,24,26,0.94) 78%);}
+  .final-inner h2{color:#fff;font-size:clamp(34px,5vw,58px);max-width:18ch;margin:18px auto 0;}
+  .final-inner p{color:#D8D5CB;font-size:17px;max-width:52ch;margin:22px auto 38px;}
+  .final-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:#B9B6AC;border-top:1px solid var(--line-dark);padding:70px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px;}
+  .footer-logo img{height:40px;filter:brightness(0) invert(1);margin-bottom:18px;}
+  .footer-grid p{font-size:14px;line-height:1.7;margin:0 0 6px;}
+  .footer-col h4{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin:0 0 18px;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .footer-col a{font-size:14.5px;color:#B9B6AC;transition:color .2s;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid var(--line-dark);padding-top:26px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13px;color:#7C8A90;
+  }
+  .social-row{display:flex;gap:16px;}
+  .social-row a{border:1px solid var(--line-dark);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;}
+
+  /* ===== MOBILE STICKY BAR ===== */
+  .mobile-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+    background:var(--ink);border-top:1px solid rgba(255,255,255,0.14);
+  }
+  .mobile-bar .row{display:grid;grid-template-columns:1fr 1fr;}
+  .mobile-bar a{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 8px;font-weight:700;font-size:14.5px;color:#fff;
+  }
+  .mobile-bar a.call{background:var(--red);}
+  .mobile-bar a.schedule{background:#fff;color:var(--ink);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:1080px){
+    .story-grid,.why-grid,.mil-grid,.area-grid,.so-grid{grid-template-columns:1fr;}
+    .why-media img{height:380px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:860px){
+    nav.primary,.header-phone{display:none;}
+    .menu-toggle{display:block;}
+    .trust-strip{grid-template-columns:repeat(2,1fr);}
+    .mobile-bar{display:block;}
+    body{padding-bottom:64px;}
+  }
+  @media (max-width:700px){
+    section{padding:72px 0;}
+    .wrap{padding:0 22px;}
+    .services-grid{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .area-cols{grid-template-columns:1fr;}
+    .why-list{grid-template-columns:1fr;}
+    .why-list .item:nth-child(odd){border-right:none;padding-right:4px;}
+    .why-list .item:nth-child(even){padding-left:4px;}
+    .badges-row img{height:56px;}
+    .story-tag{position:static;margin-top:18px;max-width:none;}
+    .header-inner{padding:12px 22px;}
+    .logo img{height:36px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/d4f1c2c9-7dd4-4d20-8839-866e8a0f68a0/2026+Header.png?format=1500w" alt="Harbin Heating & Air Conditioning, Inc.">
+    </a>
+    <nav class="primary">
+      <a href="#services">Services</a>
+      <a href="#heating">Heating</a>
+      <a href="#cooling">Cooling</a>
+      <a href="#story">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <div class="header-phone">
+        <small>Call the office</small>
+        <a href="tel:+17316893651">731-689-3651</a>
+      </div>
+      <a href="https://www.harbinair.com/schedule-your-repair" class="btn btn-primary btn-sm">Schedule Service</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-bg">
+      <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1461601043644-I3B8PIVRDY2E8IQGHB80/image-asset.jpeg" alt="Harbin Heating & Air Conditioning equipment and service work">
+    </div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <p class="hero-eyebrow" data-reveal>Family Owned &amp; Operated · Counce, TN</p>
+        <h1 data-reveal data-reveal-delay="1">Comfort you can trust, <em>since 1988.</em></h1>
+        <p class="hero-sub" data-reveal data-reveal-delay="2">Three generations of the Harbin family have kept homes across West Tennessee and North Mississippi heated, cooled, and running right. Licensed technicians, honest recommendations, and a 100% satisfaction guarantee in writing.</p>
+        <div class="hero-actions" data-reveal data-reveal-delay="3">
+          <a href="https://www.harbinair.com/schedule-your-repair" class="btn btn-primary">Schedule Service</a>
+          <a href="tel:+17316893651" class="btn btn-outline-light">Call Now — 731-689-3651</a>
+        </div>
+        <div class="trust-strip" data-reveal data-reveal-delay="4">
+          <div class="trust-item"><span class="num">EST. 1988</span><span class="label">Serving Families Since 1988<small>Three generations, one family</small></span></div>
+          <div class="trust-item"><span class="num">NO CHARGE</span><span class="label">Free Second Opinions<small>Before you commit to a big repair</small></span></div>
+          <div class="trust-item"><span class="num">THANK YOU</span><span class="label">Military Discount<small>Active duty, veterans &amp; families</small></span></div>
+          <div class="trust-item"><span class="num">IN WRITING</span><span class="label">100% Satisfaction Guarantee<small>On every service call</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1988 STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="story-media" data-reveal>
+        <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/db5912b1-219f-448a-943b-4531293232ac/IMG_8869.JPEG" alt="Harbin Heating and Air Conditioning technician and equipment">
+        <div class="story-tag">
+          <div class="yr">FOUNDED 1988</div>
+          <div class="txt">Randall Harbin, Founder &amp; President</div>
+        </div>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow" data-reveal>A Local HVAC Company You Can Trust</p>
+        <h2 data-reveal data-reveal-delay="1">Built by one family. Trusted by thousands.</h2>
+        <div style="margin-top:24px;" data-reveal data-reveal-delay="2">
+          <p>Randall Harbin founded the company in 1988 on a simple idea: do the job right and treat every customer like family. Today his son Kevin serves as Vice President, and a third generation is already coming up behind him.</p>
+          <p>Hundreds of heating and air companies have opened and closed across the Tri-State area since 1988. Harbin is still here — family owned, still answering the phone, still standing behind every job with a guarantee in writing.</p>
+        </div>
+        <div class="gen-row" data-reveal data-reveal-delay="3">
+          <div class="gen-item"><b>Randall Harbin</b>Founder &amp; President</div>
+          <div class="gen-item"><b>Kevin Harbin</b>Vice President</div>
+          <div class="gen-item"><b>3rd Generation</b>Growing into the business</div>
+        </div>
+        <a href="https://www.harbinair.com/our-history" class="btn btn-outline" data-reveal data-reveal-delay="4">Meet Harbin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Heating &amp; Cooling Services</p>
+        <h2>Whatever it takes to keep your home comfortable.</h2>
+        <p>From same-day repairs to full system replacements, our licensed technicians handle every major brand of heating and cooling equipment.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" id="cooling" data-reveal>
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1460232534060-IB21PC4UV4GYVO5ZKIRD/Residential+Central+Air+Conditioning+System" alt="Residential central air conditioning system">
+          <div class="service-idx">01 / COOLING</div>
+          <h3>AC Repair &amp; Installation</h3>
+          <p>Fast diagnosis and repair for every major air conditioning brand, plus high-efficiency system installation when it's time to replace.</p>
+          <a href="https://www.harbinair.com/residential-services" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="service-card" id="heating" data-reveal data-reveal-delay="1">
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1461601043644-I3B8PIVRDY2E8IQGHB80/image-asset.jpeg" alt="Heating and air conditioning equipment and installation work">
+          <div class="service-idx">02 / HEATING</div>
+          <h3>Heating Repair &amp; Replacement</h3>
+          <p>Furnace and heat pump service to get your home warm again fast, with honest guidance on repair versus replacement.</p>
+          <a href="https://www.harbinair.com/residential-services" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="service-card" data-reveal data-reveal-delay="2">
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1603397273029-4RCBWL2SU1SHZDQQNSNF/harbin+helmet.png" alt="Harbin Heating and Air Conditioning maintenance plan">
+          <div class="service-idx">03 / MAINTENANCE</div>
+          <h3>Tune-Ups &amp; Maintenance Plans</h3>
+          <p>Twice-a-year tune-ups that catch small problems early, protect your warranty, and keep your system running efficiently.</p>
+          <a href="https://www.harbinair.com/maintenance-plans" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="service-card" data-reveal>
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/cb042e76-60f3-4cfb-b1a7-217fda978a38/Daikin-100-Logo.png" alt="Daikin heating and cooling systems">
+          <div class="service-idx">04 / SYSTEMS</div>
+          <h3>New System Installation</h3>
+          <p>Daikin equipment sized and installed for your home, with financing available so comfort doesn't have to wait.</p>
+          <a href="https://www.harbinair.com/daikin-residential" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="service-card" data-reveal data-reveal-delay="1">
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1462313774582-YC5W82XRUVPM13C27MPE/image-asset.png" alt="Indoor air quality and duct cleaning services">
+          <div class="service-idx">05 / AIR QUALITY</div>
+          <h3>Indoor Air Quality &amp; Duct Cleaning</h3>
+          <p>Air purification, sanitization, and duct cleaning so the air moving through your home is actually clean.</p>
+          <a href="https://www.harbinair.com/sanitization-services" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="service-card" data-reveal data-reveal-delay="2">
+          <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/d8e088bc-dade-4d21-b8e4-15dfcac1495e/IMG_4542.jpg" alt="Harbin Heating and Air Conditioning generator services">
+          <div class="service-idx">06 / BACKUP POWER</div>
+          <h3>Generac Whole-Home Generators</h3>
+          <p>Keep the lights, and the HVAC system, running through the next storm with a professionally installed Generac generator.</p>
+          <a href="https://www.harbinair.com/generac-generators" class="btn-ghost">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE SECOND OPINION -->
+  <section class="second-opinion">
+    <div class="wrap so-grid">
+      <div data-reveal>
+        <p class="eyebrow">A Second Set of Eyes</p>
+        <h2>Got a big HVAC recommendation? Get a free second opinion.</h2>
+        <p>If another company just told you that your system needs to be replaced, or handed you a repair estimate that felt too big to swallow, get a licensed Harbin technician to take an honest, no-cost look before you spend a dime.</p>
+        <a href="https://www.harbinair.com/contact" class="btn" style="background:#fff;color:var(--red);">Get a Free Second Opinion</a>
+      </div>
+      <div class="so-card" data-reveal data-reveal-delay="1">
+        <ul class="so-steps">
+          <li><span class="n">1</span> Call our office and tell us what you were quoted.</li>
+          <li><span class="n">2</span> A licensed Harbin technician inspects your system in person.</li>
+          <li><span class="n">3</span> You get an honest, no-pressure recommendation — repair or replace.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HARBIN -->
+  <section class="why">
+    <div class="wrap why-grid">
+      <div class="why-media" data-reveal>
+        <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1461601043644-I3B8PIVRDY2E8IQGHB80/image-asset.jpeg" alt="Harbin Heating and Air Conditioning equipment and work">
+      </div>
+      <div>
+        <p class="eyebrow" data-reveal>Why Homeowners Choose Harbin</p>
+        <h2 data-reveal data-reveal-delay="1" style="margin-top:16px;font-size:clamp(28px,3.2vw,38px);">Nearly four decades of doing right by the customer.</h2>
+        <div class="why-list" data-reveal data-reveal-delay="2">
+          <div class="item">
+            <span class="tag">SINCE 1988</span>
+            <h3>Family Owned, Three Generations</h3>
+            <p>Still run by the Harbin family, with a third generation already learning the business.</p>
+          </div>
+          <div class="item">
+            <span class="tag">LICENSED &amp; CERTIFIED</span>
+            <h3>Trained, Certified Technicians</h3>
+            <p>Fully licensed for heating and cooling, backed by a full inventory of parts and equipment.</p>
+          </div>
+          <div class="item">
+            <span class="tag">IN WRITING</span>
+            <h3>100% Satisfaction Guaranteed</h3>
+            <p>Every job is backed by a written guarantee, plus extended warranties on equipment.</p>
+          </div>
+          <div class="item">
+            <span class="tag">WHEN YOU NEED US</span>
+            <h3>Same-Day &amp; Weekend Service</h3>
+            <p>Same-day service when possible, plus weekend, holiday, and night availability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="review-top">
+        <div data-reveal>
+          <p class="eyebrow">What Our Customers Say</p>
+          <h2 style="margin-top:16px;">Thousands of satisfied customers across two states.</h2>
+        </div>
+        <div class="badges-row" data-reveal data-reveal-delay="1">
+          <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/602186a6-459c-4765-b308-69523c5e85bd/image001.png" alt="Tishomingo Readers' Choice Award">
+          <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/d8e088bc-dade-4d21-b8e4-15dfcac1495e/IMG_4542.jpg" alt="2024 Reader's Choice Award">
+        </div>
+      </div>
+      <div class="review-grid">
+        <div class="review-card" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>"Our mission is to carry on the tradition of integrity and quality service that was started in 1988." That's how Harbin describes itself — and it shows in how the company is recognized locally, year after year, as a Reader's Choice award winner.</p>
+          <div class="who">TISHOMINGO READERS' CHOICE</div>
+        </div>
+        <div class="review-card" data-reveal data-reveal-delay="1">
+          <div class="stars">★★★★★</div>
+          <p>Harbin is BBB accredited, with a public profile customers can check before booking service — a level of transparency not every local HVAC company offers.</p>
+          <div class="who">BETTER BUSINESS BUREAU</div>
+        </div>
+        <div class="review-card" data-reveal data-reveal-delay="2">
+          <div class="stars">★★★★★</div>
+          <p>"Harbin Heating & Air Conditioning Inc. has thousands of satisfied customers" and is recognized as one of the top rated HVAC companies in the region.</p>
+          <div class="who">FROM HARBINAIR.COM</div>
+        </div>
+      </div>
+      <p class="review-note" data-reveal>Read verified customer reviews and our accreditation on the <a href="https://www.bbb.org/us/tn/counce/profile/heating-and-air-conditioning/harbin-heating-air-conditioning-inc-0543-44073783" target="_blank" rel="noopener">Better Business Bureau</a>, or <a href="http://bit.ly/2ZeshWT" target="_blank" rel="noopener">leave us a review</a> of your own.</p>
+    </div>
+  </section>
+
+  <!-- MILITARY DISCOUNT -->
+  <section class="military">
+    <div class="wrap mil-grid">
+      <div class="mil-badge" data-reveal>
+        <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/1462313774582-YC5W82XRUVPM13C27MPE/image-asset.png" alt="Military discount">
+      </div>
+      <div class="mil-copy" data-reveal data-reveal-delay="1">
+        <p class="eyebrow">A Thank You to Those Who Serve</p>
+        <h2>A thank you to those who serve.</h2>
+        <p>Active duty and veteran members of the U.S. Armed Forces, including the National Guard and Reserves, along with their spouses and dependents, are eligible for a discount on Harbin service. Some exclusions may apply.</p>
+        <a href="https://www.harbinair.com/contact" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area">
+    <div class="wrap area-grid">
+      <div data-reveal>
+        <p class="eyebrow">Where We Work</p>
+        <h2 style="margin-top:16px;font-size:clamp(28px,3.2vw,38px);">Serving West Tennessee &amp; North Mississippi.</h2>
+        <div class="area-cols">
+          <div class="area-col">
+            <h3>Tennessee</h3>
+            <ul>
+              <li>Clifton</li><li>Counce</li><li>Guys</li><li>Lutts</li>
+              <li>Michie</li><li>Middleton</li><li>Ramer</li><li>Savannah</li><li>Selmer</li>
+            </ul>
+          </div>
+          <div class="area-col">
+            <h3>Mississippi</h3>
+            <ul>
+              <li>Corinth</li><li>Iuka</li><li>Kossuth</li><li>Ripley</li>
+              <li>Tishomingo</li><li>Walnut</li><li>Booneville</li><li>Biggersville</li>
+              <li>Rienzi</li><li>Baldwin</li><li>Blue Mountain</li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://www.harbinair.com/request-a-quote" class="btn btn-primary">Request Service</a>
+      </div>
+      <div class="area-map" data-reveal data-reveal-delay="1">
+        <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/99e76c14-439a-440f-ba45-738556874c71/Screenshot+2025-02-05+at+12.04.46%E2%80%AFPM.png" alt="Harbin Heating and Air Conditioning service area map">
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="contact">
+    <div class="final-bg">
+      <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/db5912b1-219f-448a-943b-4531293232ac/IMG_8869.JPEG" alt="Harbin Heating and Air Conditioning">
+    </div>
+    <div class="final-inner">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Ready When You Are</p>
+      <h2 data-reveal data-reveal-delay="1">Let's get your home comfortable again.</h2>
+      <p data-reveal data-reveal-delay="2">Same-day service when possible. Weekend, holiday, and night appointments available. Call the office or schedule online — a real person picks up.</p>
+      <div class="final-actions" data-reveal data-reveal-delay="3">
+        <a href="https://www.harbinair.com/schedule-your-repair" class="btn btn-primary">Schedule Service</a>
+        <a href="tel:+17316893651" class="btn btn-outline-light">Call Now — 731-689-3651</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="https://images.squarespace-cdn.com/content/v1/5706e13ff8baf375d876a967/d4f1c2c9-7dd4-4d20-8839-866e8a0f68a0/2026+Header.png?format=1500w" alt="Harbin Heating & Air Conditioning, Inc.">
+        </div>
+        <p>Harbin Heating &amp; Air Conditioning, Inc.<br>PO Box 53 / 5910 Hwy 57<br>Counce, Tennessee 38326</p>
+        <p><a href="tel:+17316893651" style="color:#fff;font-weight:700;">731-689-3651</a></p>
+        <p style="margin-top:14px;">Weekday office hours · weekend, holiday &amp; night service available.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#story">About Us</a></li>
+          <li><a href="https://www.harbinair.com/our-history">Our History</a></li>
+          <li><a href="https://www.harbinair.com/faq">FAQ</a></li>
+          <li><a href="https://www.harbinair.com/positions-available">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://www.harbinair.com/residential-services">Residential</a></li>
+          <li><a href="https://www.harbinair.com/commercial-services">Commercial</a></li>
+          <li><a href="https://www.harbinair.com/maintenance-plans">Maintenance Plans</a></li>
+          <li><a href="https://www.harbinair.com/duct-cleaning">Duct Cleaning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="https://www.harbinair.com/contact">Contact</a></li>
+          <li><a href="#area">Service Areas</a></li>
+          <li><a href="https://www.facebook.com/harbinair" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Harbin Heating &amp; Air Conditioning, Inc. All rights reserved.</span>
+      <div class="social-row">
+        <a href="https://www.facebook.com/harbinair" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="http://instagram.com/harbinair" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.youtube.com/channel/UC9e_td-tn1R_ZwLmv1So6Tg" target="_blank" rel="noopener" aria-label="YouTube">yt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <div class="row">
+    <a href="tel:+17316893651" class="call">Call Now</a>
+    <a href="https://www.harbinair.com/schedule-your-repair" class="schedule">Schedule Service</a>
+  </div>
+</div>
+
+<script>
+  // sticky header shadow
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // scroll reveal
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+  }
+
+  // mobile menu toggle -> smooth scroll fallback (simple anchor nav shown via native scroll on click since nav hidden on mobile in favor of sticky bar)
+  document.querySelectorAll('.menu-toggle').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.getElementById('services').scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>

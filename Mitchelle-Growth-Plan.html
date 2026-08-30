@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mitchelle's Growth Plan — Dallas Home and Office Cleaning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2C2540; --ink-soft:#5A5470; --plum:#4A3F66; --gold:#C79A4B; --sage:#7C9885;
+    --paper:#FAF8F4; --card:#FFFFFF; --line:#E6E1D8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 40px 60px;}
+
+  .hero{padding:56px 40px 36px;text-align:center;
+    background:radial-gradient(600px 220px at 50% -80px, rgba(199,154,75,0.16), transparent 70%), var(--paper);}
+  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:14px;}
+  h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1.15;margin:0 0 12px;}
+  .title .accent{color:var(--gold);font-style:italic;font-weight:500;}
+  .lede{max-width:600px;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--ink-soft);}
+
+  section{padding:38px 0 4px;}
+  .section-head{margin-bottom:18px;}
+  .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin:0;}
+  .sub{color:var(--ink-soft);font-size:13.5px;margin-top:6px;max-width:640px;line-height:1.5;}
+
+  .finding{
+    background:var(--plum);color:#fff;border-radius:14px;padding:16px 20px;
+    display:flex;gap:12px;align-items:flex-start;margin-bottom:6px;
+  }
+  .finding .icon{font-size:18px;}
+  .finding .t{font-weight:700;font-size:13px;margin-bottom:3px;}
+  .finding .d{font-size:12.5px;line-height:1.5;color:#E9E4F1;}
+
+  /* phase cards */
+  .phase{
+    border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;margin-bottom:14px;background:var(--card);
+  }
+  .phase-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
+  .phase-num{font-family:'Fraunces',serif;font-size:13px;color:var(--gold);font-weight:700;}
+  .phase-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;}
+  .phase-when{font-size:11.5px;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);padding:2px 9px;border-radius:20px;}
+  .cost-badge{font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:#EDF2EE;color:#4E6A57;}
+  .phase-goal{font-size:13.5px;color:var(--ink-soft);margin:8px 0 14px;line-height:1.5;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .col-box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .col-box .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:8px;}
+  .col-box ul{margin:0;padding:0;list-style:none;}
+  .col-box li{font-size:13px;line-height:1.5;padding:4px 0 4px 15px;position:relative;color:var(--ink);}
+  .col-box li::before{content:"–";position:absolute;left:0;color:var(--ink-soft);}
+  .col-box.mine .lbl{color:var(--plum);}
+
+  .outcome-strip{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:12px;
+    display:flex;gap:10px;align-items:flex-start;
+  }
+  .outcome-strip .oico{font-size:15px;}
+  .outcome-strip .otext{font-size:13px;color:var(--ink);line-height:1.5;}
+  .outcome-strip b{color:var(--plum);}
+
+  /* why phased */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .why-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;}
+  .why-card .wt{font-weight:700;font-size:14px;margin-bottom:6px;color:var(--ink);}
+  .why-card .wd{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+
+  footer{margin-top:36px;padding:26px 0 8px;border-top:1px solid var(--line);text-align:center;color:var(--ink-soft);font-size:12.5px;}
+  .cta-line{font-family:'Fraunces',serif;font-size:17px;color:var(--ink);margin-bottom:5px;font-style:italic;}
+
+  @media (max-width:720px){
+    .two-col,.why-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    h1.title{font-size:26px;} .wrap{padding:0 18px 44px;} .hero{padding:40px 18px 30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">A Simple Plan · For Mitchelle, Dallas Home and Office Cleaning</div>
+  <h1 class="title">Grow one step at a time —<br><span class="accent">no big spend, no guesswork.</span></h1>
+  <p class="lede">This isn't an all-or-nothing pitch. It's a low-cost starting point, phase by phase, so you only spend more once the last phase is actually paying off.</p>
+</div>
+
+<div class="wrap">
+
+  <section style="padding-top:4px;">
+    <div class="finding">
+      <div class="icon">🔎</div>
+      <div>
+        <div class="t">What I found when I checked</div>
+        <div class="d">Your business doesn't show up in any Google-connected listings — meaning there's likely no active Google Business Profile. That's probably the single biggest reason people who search for a cleaner in your area aren't finding you. It's also free to fix, which is exactly where Phase 1 starts.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="kicker">The plan</div>
+      <h2>Three small phases, not one big project</h2>
+      <p class="sub">Each phase shows what you'd need to do on your own if you went at this alone, and what I'd take off your plate. Costs stay small and grow only when there's proof it's working.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-top">
+        <span class="phase-num">Phase 1</span>
+        <span class="phase-name">Get found</span>
+        <span class="phase-when">Weeks 1–4</span>
+        <span class="cost-badge">Lowest cost</span>
+      </div>
+      <p class="phase-goal">Goal: make sure people who search Google or Facebook for a cleaner near them can actually find you, and trust what they see.</p>
+      <div class="two-col">
+        <div class="col-box">
+          <div class="lbl">If you did it yourself</div>
+          <ul>
+            <li>Claim and fill out Google Business Profile</li>
+            <li>Swap stock photos on your site for real ones</li>
+            <li>Add a "book now" line to Facebook posts</li>
+          </ul>
+        </div>
+        <div class="col-box mine">
+          <div class="lbl">What I'd handle</div>
+          <ul>
+            <li>Set up and fully complete your Google Business Profile</li>
+            <li>Rebuild your website (moving off Wix to WordPress) with your real photos and a clear quote form</li>
+            <li>Clean up Facebook so every post points toward a booking</li>
+          </ul>
+        </div>
+      </div>
+      <div class="outcome-strip"><span class="oico">✅</span><span class="otext"><b>By end of Phase 1:</b> you show up on Google, your site actually represents your work, and every lead has an easy way to reach you.</span></div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-top">
+        <span class="phase-num">Phase 2</span>
+        <span class="phase-name">Stay visible, build trust</span>
+        <span class="phase-when">Months 2–4</span>
+        <span class="cost-badge">Small monthly step-up</span>
+      </div>
+      <p class="phase-goal">Goal: show up consistently, not just once — and start collecting the reviews that make strangers trust you before they call.</p>
+      <div class="two-col">
+        <div class="col-box">
+          <div class="lbl">If you did it yourself</div>
+          <ul>
+            <li>Post weekly on Google, Facebook, Instagram</li>
+            <li>Text every customer for a review</li>
+            <li>Learn and apply basic SEO to your site</li>
+          </ul>
+        </div>
+        <div class="col-box mine">
+          <div class="lbl">What I'd handle</div>
+          <ul>
+            <li>Weekly content: graphics, reels, real job videos, testimonial posts</li>
+            <li>SEO on your website, run for a real 3–4 month stretch (this doesn't work overnight)</li>
+            <li>Automatic review requests after every job</li>
+            <li>Short YouTube videos reusing the same footage — no extra filming</li>
+          </ul>
+        </div>
+      </div>
+      <div class="outcome-strip"><span class="oico">✅</span><span class="otext"><b>By end of Phase 2:</b> you're ranking higher on Google, posting consistently without lifting a finger, and building a real base of reviews.</span></div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-top">
+        <span class="phase-num">Phase 3</span>
+        <span class="phase-name">Add paid growth — only once it's proven</span>
+        <span class="phase-when">Month 4+</span>
+        <span class="cost-badge">Optional, data-backed</span>
+      </div>
+      <p class="phase-goal">Goal: put a little paid budget behind what's already working, instead of guessing where to spend it.</p>
+      <div class="two-col">
+        <div class="col-box">
+          <div class="lbl">If you did it yourself</div>
+          <ul>
+            <li>Try boosting posts and hope for the best</li>
+            <li>No clear way to know what's actually bringing bookings</li>
+          </ul>
+        </div>
+        <div class="col-box mine">
+          <div class="lbl">What I'd handle</div>
+          <ul>
+            <li>Small, targeted Facebook/Instagram ad budget behind your best-performing content</li>
+            <li>Track exactly what each dollar brings back before spending more</li>
+            <li>Launch a simple referral offer for existing customers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="outcome-strip"><span class="oico">✅</span><span class="otext"><b>By end of Phase 3:</b> steady bookings from search, social, and referrals — with real numbers behind every dollar spent, so growing the budget is a safe decision, not a leap of faith.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="kicker">Why phase by phase</div>
+      <h2>Why not just do it all at once?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="wt">Small spend to start</div>
+        <div class="wd">Phase 1 is nearly free — it's mostly setup and fixing what's already broken. You're not asked to commit real money until you've already seen movement.</div>
+      </div>
+      <div class="why-card">
+        <div class="wt">Every phase pays for the next</div>
+        <div class="wd">Getting found (Phase 1) is what makes content and reviews (Phase 2) worth doing. Phase 2 is what makes paid ads (Phase 3) actually work instead of wasting money.</div>
+      </div>
+      <div class="why-card">
+        <div class="wt">Nothing wasted on ads too early</div>
+        <div class="wd">Spending on ads before your site and Google listing are ready is the most common way small cleaning businesses waste money. This order avoids that.</div>
+      </div>
+      <div class="why-card">
+        <div class="wt">You stay in control</div>
+        <div class="wd">After each phase, you decide whether to continue based on real results — not a long contract signed on day one.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="cta-line">"I finally show up when someone searches for a cleaner — and I know exactly why."</div>
+    <div>That's the real outcome. Happy to start with Phase 1 whenever you're ready.</div>
+  </footer>
+
+</div>
+</body>
+</html>

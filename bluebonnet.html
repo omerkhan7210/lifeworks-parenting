@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluebonnet Cleaning Services, LLC | Commercial Cleaning in Austin &amp; San Antonio</title>
+<meta name="description" content="Licensed and bonded commercial cleaning in Austin and San Antonio since 2019. Free walk-through and quote. Janitorial, floor care, carpet, window, pressure washing and event cleaning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "Bluebonnet Cleaning Services, LLC",
+  "telephone": "512-971-3231",
+  "email": "Msalinas@bluebonnetcs.com",
+  "areaServed": ["Austin, TX", "San Antonio, TX"],
+  "founder": "Martin Salinas",
+  "foundingDate": "2019-07",
+  "description": "Licensed and bonded commercial and janitorial cleaning services in Austin and San Antonio, Texas."
+}
+</script>
+<style>
+  :root{
+    --ink:#1C2033;
+    --ink-soft:#52586E;
+    --paper:#F4F1E9;
+    --paper-raised:#FFFFFF;
+    --bb:#3B4A8C;
+    --bb-deep:#2A3566;
+    --paintbrush:#C1502E;
+    --line:#DDD8C8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Public Sans',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 32px;}
+  @media (max-width:700px){ .wrap{padding:0 20px;} }
+  section[id]{scroll-margin-top:88px;}
+
+  .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--paintbrush); display:inline-flex; align-items:center; gap:8px;}
+  .eyebrow::before{content:""; width:20px; height:1px; background:var(--paintbrush);}
+  h1,h2,h3{font-family:'Newsreader',serif; font-weight:600; letter-spacing:-0.01em;}
+  .btn{font-family:'Public Sans',sans-serif; font-weight:700; font-size:14.5px; padding:15px 28px; border-radius:2px; display:inline-flex; align-items:center; gap:8px; border:1.5px solid transparent; transition:transform .18s ease, box-shadow .18s ease; cursor:pointer;}
+  .btn-primary{background:var(--paintbrush); color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 6px 0 #8f3a20;}
+  .btn-dark{background:var(--ink); color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--bb);}
+  .btn-outline{border-color:currentColor; background:transparent;}
+  .btn-outline:hover{background:currentColor; color:var(--ink);}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none;} }
+
+  /* HEADER */
+  header{position:sticky; top:0; z-index:70; background:rgba(244,241,233,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:20px;}
+  .nav-brand{display:flex; align-items:center; gap:12px;}
+  .nav-brand img{height:42px; width:auto;}
+  .nav-brand-text{font-family:'Newsreader',serif; font-size:16px; font-weight:600; line-height:1.15;}
+  .nav-brand-text span{display:block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--ink-soft); font-weight:400; text-transform:uppercase; margin-top:2px;}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:13.5px; font-weight:600;}
+  .nav-links a:not(.btn){padding:6px 0; border-bottom:1px solid transparent; transition:border-color .15s;}
+  .nav-links a:not(.btn):hover{border-color:var(--paintbrush);}
+  .nav-phone{font-family:'IBM Plex Mono',monospace; font-size:13.5px; color:var(--bb);}
+  @media (max-width:920px){ .nav-links a:not(.nav-cta):not(.nav-phone-link){display:none;} }
+  @media (max-width:600px){ .nav-phone-link{display:none;} .nav-brand-text{display:none;} }
+
+  /* HERO */
+  .hero{position:relative; min-height:88vh; display:flex; align-items:center; overflow:hidden;}
+  .hero-bg{position:absolute; inset:0; z-index:0;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover;}
+  .hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(100deg, rgba(28,32,51,.92) 24%, rgba(28,32,51,.68) 52%, rgba(28,32,51,.2) 82%);}
+  .hero-content{position:relative; z-index:1; color:#fff; padding:70px 0;}
+  .hero-content h1{font-size:clamp(38px,5.4vw,60px); line-height:1.08; color:#fff; max-width:640px; margin:18px 0 20px;}
+  .hero-content p{font-size:17px; color:#D4D6E4; max-width:460px; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
+  .hero-trust{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.03em; color:#B7BAD0; display:flex; gap:10px; align-items:center;}
+  .hero-trust b{color:#fff; font-weight:600;}
+
+  .trust-strip{border-bottom:1px solid var(--line); background:var(--paper-raised);}
+  .trust-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px 30px; padding:24px 0;}
+  .trust-item{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.03em; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
+  .trust-item::before{content:"✓"; color:var(--bb); font-weight:700;}
+
+  section{padding:96px 0;}
+  @media (max-width:700px){ section{padding:64px 0;} }
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:46px; gap:24px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(30px,3.6vw,42px);}
+  .section-head p{color:var(--ink-soft); max-width:340px; font-size:15px; padding-bottom:5px;}
+
+  /* NO ONE LIKES A DIRTY OFFICE */
+  .dirty-office{background:var(--paper-raised);}
+  .dirty-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  @media (max-width:880px){ .dirty-grid{grid-template-columns:1fr;} }
+  .dirty-photo{position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:2px; box-shadow:0 24px 50px -24px rgba(28,32,51,.4);}
+  .dirty-photo img{width:100%; height:100%; object-fit:cover;}
+  .dirty-text h2{font-size:clamp(30px,3.8vw,44px); margin-bottom:20px;}
+  .dirty-text p{font-size:16.5px; color:var(--ink-soft); margin-bottom:16px;}
+
+  /* SERVICES */
+  .services-layout{display:grid; grid-template-columns:1.3fr 1fr; gap:22px;}
+  @media (max-width:900px){ .services-layout{grid-template-columns:1fr;} }
+  .service-feature{position:relative; border-radius:2px; overflow:hidden; min-height:440px; display:flex; align-items:flex-end;}
+  .service-feature img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .service-feature::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(28,32,51,.9) 100%);}
+  .service-feature-content{position:relative; z-index:1; padding:32px; color:#fff;}
+  .service-feature-content span{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#EFC9B8;}
+  .service-feature-content h3{color:#fff; font-size:28px; margin:8px 0 10px;}
+  .service-feature-content p{color:#D4D6E4; font-size:14.5px; max-width:340px;}
+  .services-small{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .svc-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:2px; padding:24px 20px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+  .svc-card:hover{transform:translateY(-4px); box-shadow:0 16px 28px -18px rgba(28,32,51,.3); border-color:var(--bb);}
+  .svc-card h4{font-family:'Newsreader',serif; font-size:19px; font-weight:600; margin-bottom:8px;}
+  .svc-card p{font-size:13px; color:var(--ink-soft);}
+
+  /* WHERE WE CLEAN */
+  .where-section{background:var(--paper-raised);}
+  .where-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+  @media (max-width:900px){ .where-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:560px){ .where-grid{grid-template-columns:repeat(2,1fr);} }
+  .where-item{position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;}
+  .where-item img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease;}
+  .where-item:hover img{transform:scale(1.07);}
+  .where-item::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 45%, rgba(28,32,51,.88) 100%);}
+  .where-label{position:absolute; bottom:14px; left:14px; right:14px; z-index:1; color:#fff; font-family:'Public Sans',sans-serif; font-weight:700; font-size:14px;}
+  .where-more{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft); margin-top:22px;}
+
+  /* PROOF */
+  .proof-section{background:var(--ink); color:#fff;}
+  .proof-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  @media (max-width:880px){ .proof-grid{grid-template-columns:1fr;} }
+  .proof-text .eyebrow{color:var(--paintbrush);} .proof-text .eyebrow::before{background:var(--paintbrush);}
+  .proof-text h2{color:#fff; font-size:clamp(28px,3.6vw,38px); margin:14px 0 18px;}
+  .proof-text p{color:#B7BAD0; font-size:16px; margin-bottom:18px;}
+  .client-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .client-chip{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.03em; border:1px solid #3B3F58; padding:9px 14px; border-radius:20px; color:#D4D6E4;}
+  .proof-photos{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .proof-photo{position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:2px;}
+  .proof-photo img{width:100%; height:100%; object-fit:cover;}
+  .proof-photo-tag{position:absolute; bottom:10px; left:10px; right:10px; background:rgba(28,32,51,.85); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.03em; text-transform:uppercase; padding:8px 10px; border-radius:1px;}
+
+  /* REVIEWS */
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:880px){ .review-grid{grid-template-columns:1fr;} }
+  .review-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:2px; padding:28px; transition:transform .2s ease, box-shadow .2s ease;}
+  .review-card:hover{transform:translateY(-5px); box-shadow:0 18px 32px -20px rgba(28,32,51,.3);}
+  .review-card .stars{color:var(--paintbrush); font-size:14px; letter-spacing:2px; margin-bottom:14px;}
+  .review-card p{font-size:15px; color:var(--ink-soft); margin-bottom:16px; font-style:italic;}
+  .review-card .who{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink); text-transform:uppercase; letter-spacing:.03em;}
+
+  /* STORY */
+  .story-section{background:var(--paper-raised);}
+  .story-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:center;}
+  @media (max-width:880px){ .story-grid{grid-template-columns:1fr;} }
+  .story-photo{position:relative; aspect-ratio:1/1; overflow:hidden; border-radius:2px; box-shadow:0 24px 48px -24px rgba(28,32,51,.4);}
+  .story-photo img{width:100%; height:100%; object-fit:cover;}
+  .story-name-tag{margin-top:16px; text-align:center;}
+  .story-name-tag b{display:block; font-family:'Newsreader',serif; font-size:18px;}
+  .story-name-tag span{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft);}
+  .story-text p.lead::first-letter{font-family:'Newsreader',serif; font-size:54px; font-weight:700; color:var(--bb); float:left; line-height:.75; padding-right:10px; padding-top:8px;}
+  .story-text p{font-size:16px; color:var(--ink-soft); margin-bottom:16px;}
+
+  /* HOW IT WORKS */
+  .how-row{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:780px){ .how-row{grid-template-columns:1fr;} }
+  .how-step{position:relative; padding:30px 26px; background:var(--paper-raised); border:1px solid var(--line); border-radius:2px;}
+  .how-step .no{font-family:'Newsreader',serif; font-style:italic; font-size:42px; color:var(--bb); line-height:1; margin-bottom:12px;}
+  .how-step h3{font-size:19px; margin-bottom:8px;}
+  .how-step p{font-size:14px; color:var(--ink-soft);}
+
+  /* QUOTE FORM */
+  .quote-section{background:var(--bb); color:#fff; border-radius:6px; overflow:hidden; position:relative;}
+  .quote-section::before{content:""; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(193,80,46,.28), transparent 70%); top:-160px; right:-100px;}
+  .quote-inner{position:relative; display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:60px 52px;}
+  @media (max-width:900px){ .quote-inner{grid-template-columns:1fr; padding:44px 26px;} }
+  .quote-inner h2{color:#fff; font-size:clamp(26px,3.4vw,34px); margin-bottom:14px;}
+  .quote-inner p{color:#D6DAF0; font-size:15px; margin-bottom:20px;}
+  .quote-form{background:var(--paper-raised); color:var(--ink); border-radius:4px; padding:28px; display:flex; flex-direction:column; gap:14px;}
+  .quote-form .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quote-form label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:-8px;}
+  .quote-form input, .quote-form select{font-family:'Public Sans',sans-serif; font-size:14px; padding:12px 14px; border:1px solid var(--line); border-radius:2px; background:var(--paper); color:var(--ink); outline:none;}
+  .quote-form input:focus, .quote-form select:focus{border-color:var(--bb);}
+  .quote-note{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); text-align:center;}
+
+  /* FINAL CTA */
+  .final-cta{position:relative; min-height:52vh; display:flex; align-items:center; overflow:hidden; border-radius:6px;}
+  .final-bg{position:absolute; inset:0;}
+  .final-bg img{width:100%; height:100%; object-fit:cover;}
+  .final-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(100deg, rgba(28,32,51,.92) 30%, rgba(28,32,51,.55) 70%);}
+  .final-content{position:relative; z-index:1; color:#fff; padding:64px 52px;}
+  .final-content h2{color:#fff; font-size:clamp(30px,4vw,44px); margin-bottom:14px;}
+  .final-content p{color:#D4D6E4; font-size:15.5px; margin-bottom:28px; max-width:420px;}
+
+  footer{background:var(--ink); color:#B7BAD0; padding:56px 0 36px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; margin-bottom:40px;}
+  @media (max-width:780px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+  .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
+  .footer-brand img{height:44px;}
+  .footer-brand b{font-family:'Newsreader',serif; color:#fff; font-size:17px;}
+  footer h4{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--paintbrush); margin-bottom:14px;}
+  footer a, footer p.line{font-size:14px; color:#B7BAD0; display:block; margin-bottom:9px;}
+  footer a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid #2E3350; padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7A7E99;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="nav-brand">
+      <img src="https://static.wixstatic.com/media/f7f988_c99b70d01fa4458d80a222d72db03e4f~mv2.png/v1/fill/w_252,h_291,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BCS%20Logo%20Flower%20Transparent.png" alt="Bluebonnet Cleaning Services logo">
+      <div class="nav-brand-text">Bluebonnet Cleaning<span>Services, LLC</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#story">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:5129713231" class="nav-phone nav-phone-link">512-971-3231</a>
+      <a class="btn btn-primary nav-cta" href="#quote" style="padding:11px 20px; font-size:13px;">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://static.wixstatic.com/media/f7f988_b34a23d7170d436ba4a9afaea373afbd~mv2.jpg/v1/fill/w_1800,h_1100,q_90,enc_avif,quality_auto/f7f988_b34a23d7170d436ba4a9afaea373afbd~mv2.jpg" alt="Bluebonnet Cleaning Services commercial cleaning crew at work">
+  </div>
+  <div class="wrap hero-content reveal in">
+    <span class="eyebrow">Austin &amp; San Antonio, Texas</span>
+    <h1>A cleaner workplace.<br>A service you can<br>count on.</h1>
+    <p>Fair prices, superior quality, and exceptional customer service — commercial cleaning done right, every time.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+      <a class="btn btn-outline" style="color:#fff;" href="tel:5129713231">Call Martin: 512-971-3231</a>
+    </div>
+    <div class="hero-trust"><b>Licensed &amp; Bonded</b> &middot; Serving Since 2019</div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-inner">
+    <div class="trust-item">Licensed &amp; Bonded</div>
+    <div class="trust-item">Serving Since 2019</div>
+    <div class="trust-item">Free Walk-Through &amp; Quote</div>
+    <div class="trust-item">$2M Liability Insurance</div>
+    <div class="trust-item">Austin &amp; San Antonio</div>
+  </div>
+</div>
+
+<section class="dirty-office">
+  <div class="wrap dirty-grid">
+    <div class="dirty-photo reveal">
+      <img src="https://static.wixstatic.com/media/f7f988_a7fca03dcb7e46b7a38aea0144981033~mv2.jpg/v1/fill/w_800,h_600,q_90,enc_avif,quality_auto/f7f988_a7fca03dcb7e46b7a38aea0144981033~mv2.jpg" alt="Professional office cleaning by Bluebonnet Cleaning Services">
+    </div>
+    <div class="dirty-text reveal" style="transition-delay:.1s;">
+      <span class="eyebrow">The bluebonnet difference</span>
+      <h2 style="margin-top:14px;">No one likes a dirty office.</h2>
+      <p>A clean workplace isn't just about appearances — it's about the impression you make on clients, and the environment you give your team every day.</p>
+      <p>Since 2019, Bluebonnet has kept offices, showrooms, and facilities across Austin and San Antonio spotless — without disrupting how our clients actually run their business.</p>
+      <a class="btn btn-dark" href="#quote">Schedule a Free Walk-Through</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>What we clean.</h2>
+      <p>Six real services, built around commercial &amp; facility needs.</p>
+    </div>
+    <div class="services-layout">
+      <div class="service-feature reveal">
+        <img src="https://static.wixstatic.com/media/f7f988_bddd574746f54bb3a4150b23951e5f8d~mv2.jpeg/v1/crop/x_0,y_6,w_1168,h_877/fill/w_800,h_720,q_90,enc_avif,quality_auto/IMG_5300.jpeg" alt="Commercial and janitorial cleaning by Bluebonnet">
+        <div class="service-feature-content">
+          <span>Featured Service</span>
+          <h3>Commercial &amp; Janitorial Cleaning</h3>
+          <p>Detail cleaning in bathrooms, kitchens and offices — floors vacuumed, swept and mopped, trash removed, and every fixture wiped down, on the schedule that fits your business.</p>
+        </div>
+      </div>
+      <div class="services-small">
+        <div class="svc-card reveal" style="transition-delay:.05s;"><h4>Hard Floor Cleaning</h4><p>Strip, wax, buff and polish — floors that actually shine.</p></div>
+        <div class="svc-card reveal" style="transition-delay:.1s;"><h4>Carpet Cleaning</h4><p>Shampooing and spot/stain removal for a genuinely fresh carpet.</p></div>
+        <div class="svc-card reveal" style="transition-delay:.15s;"><h4>Window Cleaning</h4><p>Entrance glass, interior mirrors and windows, squeegeed to a streak-free finish.</p></div>
+        <div class="svc-card reveal" style="transition-delay:.2s;"><h4>Pressure Washing</h4><p>Exteriors and hardscapes, restored to a like-new look.</p></div>
+        <div class="svc-card reveal" style="transition-delay:.25s; grid-column:1/3;"><h4>Event Cleaning</h4><p>Before, during, or after — your event space, handled start to finish.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="where-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Built around the way<br>your business works.</h2>
+      <p>From offices to theme parks, we adapt to the facility.</p>
+    </div>
+    <div class="where-grid">
+      <div class="where-item reveal"><img src="https://static.wixstatic.com/media/f7f988_cea9fe646c554ee3a5dc69ce7556f87a~mv2.jpeg/v1/fill/w_500,h_667,q_90,enc_avif,quality_auto/f7f988_cea9fe646c554ee3a5dc69ce7556f87a~mv2.jpeg" alt="Bluebonnet cleaning crew servicing an office facility"><div class="where-label">Offices</div></div>
+      <div class="where-item reveal" style="transition-delay:.05s;"><img src="https://static.wixstatic.com/media/f7f988_43d6e40040e2412ca79cd09b6775c8f8~mv2.jpg/v1/fill/w_500,h_667,q_90,enc_avif,quality_auto/f7f988_43d6e40040e2412ca79cd09b6775c8f8~mv2.jpg" alt="Bluebonnet cleaning crew servicing a medical office"><div class="where-label">Medical Offices</div></div>
+      <div class="where-item reveal" style="transition-delay:.1s;"><img src="https://static.wixstatic.com/media/f7f988_6fe3fb74d78a488794993e34a3f80a62~mv2.jpg/v1/fill/w_500,h_667,q_90,enc_avif,quality_auto/f7f988_6fe3fb74d78a488794993e34a3f80a62~mv2.jpg" alt="Bluebonnet cleaning crew at a restaurant or event center"><div class="where-label">Restaurants &amp; Event Centers</div></div>
+      <div class="where-item reveal" style="transition-delay:.15s;"><img src="https://static.wixstatic.com/media/f7f988_18f4055cda5f44c0b267fa12eb308dd8~mv2.jpg/v1/fill/w_500,h_667,q_90,enc_avif,quality_auto/f7f988_18f4055cda5f44c0b267fa12eb308dd8~mv2.jpg" alt="Bluebonnet cleaning crew at a showroom or theater"><div class="where-label">Showrooms &amp; Theaters</div></div>
+      <div class="where-item reveal" style="transition-delay:.2s;"><img src="https://static.wixstatic.com/media/f7f988_196b99bea3364368a42ecf567913f2a4~mv2.jpg/v1/fill/w_500,h_667,q_90,enc_avif,quality_auto/f7f988_196b99bea3364368a42ecf567913f2a4~mv2.jpg" alt="Bluebonnet post-construction cleaning"><div class="where-label">Post-Construction</div></div>
+    </div>
+    <p class="where-more reveal">Also servicing: churches &amp; child care facilities, theme parks, and public restrooms.</p>
+  </div>
+</section>
+
+<section class="proof-section">
+  <div class="wrap proof-grid">
+    <div class="proof-text reveal">
+      <span class="eyebrow">Trusted across the region</span>
+      <h2>Real clients. Real results.</h2>
+      <p>Bluebonnet currently services organizations including Six Flags Fiesta Texas and the San Antonio Zoo, alongside businesses across Austin and San Antonio.</p>
+      <div class="client-list">
+        <div class="client-chip">Six Flags Fiesta Texas</div>
+        <div class="client-chip">San Antonio Zoo</div>
+        <div class="client-chip">Texas AirSystems</div>
+        <div class="client-chip">ETTL Engineers &amp; Consultants</div>
+      </div>
+    </div>
+    <div class="proof-photos reveal" style="transition-delay:.1s;">
+      <div class="proof-photo">
+        <img src="https://static.wixstatic.com/media/f7f988_2a68d15f1054400b940ec103b73b483f~mv2.jpg/v1/fill/w_500,h_625,q_90,enc_avif,quality_auto/f7f988_2a68d15f1054400b940ec103b73b483f~mv2.jpg" alt="Bluebonnet cleaning team at Six Flags Fiesta Texas">
+        <div class="proof-photo-tag">Six Flags Fiesta Texas Team</div>
+      </div>
+      <div class="proof-photo" style="margin-top:26px;">
+        <img src="https://static.wixstatic.com/media/f7f988_8eca752346f7499fbfa01b56c880e497~mv2.jpg/v1/fill/w_500,h_625,q_90,enc_avif,quality_auto/f7f988_8eca752346f7499fbfa01b56c880e497~mv2.jpg" alt="Bluebonnet cleaning team at San Antonio Zoo">
+        <div class="proof-photo-tag">San Antonio Zoo Team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>What clients say.</h2>
+      <p>Real reviews from Google and Facebook.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>Bluebonnet is the most reliable and consistent service I've ever worked with — I always know the job will be done right, and they even leave a note if we're running low on supplies.</p>
+        <div class="who">Faye &middot; Google Reviews</div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.08s;">
+        <div class="stars">★★★★★</div>
+        <p>They clean our office while we're away on weekends, and every week it's more outstanding than the last. Great job.</p>
+        <div class="who">Madison Bayles &middot; Google Reviews</div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.16s;">
+        <div class="stars">★★★★★</div>
+        <p>Our crew is professional and always on point — twice a week, without fail. I'd recommend Bluebonnet to everyone.</p>
+        <div class="who">Shannon &middot; Facebook</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="story-section">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <div class="story-photo">
+        <img src="https://static.wixstatic.com/media/f7f988_6b8e6bf602a24d6887a194107b255199~mv2.png/v1/crop/x_0,y_134,w_3356,h_3709/fill/w_500,h_552,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/headshot.png" alt="Martin Salinas, Founder of Bluebonnet Cleaning Services">
+      </div>
+      <div class="story-name-tag"><b>Martin Salinas</b><span>Founder &amp; CEO</span></div>
+    </div>
+    <div class="story-text reveal" style="transition-delay:.1s;">
+      <span class="eyebrow">Built on hard work, rooted in family</span>
+      <h2 style="margin-top:14px; margin-bottom:18px;">Named after a grandmother's favorite flower.</h2>
+      <p class="lead">Martin Salinas started Bluebonnet Cleaning Services in July 2019 with a simple vision: provide a straightforward, honest service at a fair price. He reached out to his first client and hasn't stopped since.</p>
+      <p>The name is a tribute to his grandmother, Flora Eureste — the bluebonnet, Texas's state flower, was her favorite. She was a cleaning woman herself, and Martin has carried that family tradition forward, keeping the business simple, local, and grass-roots as it's grown from Austin into the greater San Antonio area.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>How it works.</h2>
+      <p>Simple, from first call to first clean.</p>
+    </div>
+    <div class="how-row">
+      <div class="how-step reveal">
+        <div class="no">01</div>
+        <h3>Request a Quote</h3>
+        <p>Tell us about your facility and cleaning needs — takes a minute, no obligation.</p>
+      </div>
+      <div class="how-step reveal" style="transition-delay:.08s;">
+        <div class="no">02</div>
+        <h3>Schedule Your Walk-Through</h3>
+        <p>We walk your space with you and talk through your specific requirements in person.</p>
+      </div>
+      <div class="how-step reveal" style="transition-delay:.16s;">
+        <div class="no">03</div>
+        <h3>Get a Cleaning Plan</h3>
+        <p>A service plan tailored to your facility, your schedule, and your budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <div class="quote-section reveal">
+      <div class="quote-inner">
+        <div>
+          <span class="eyebrow" style="color:#EFC9B8;">Get started today</span>
+          <h2 style="margin-top:14px;">Ready for a cleaner workplace?</h2>
+          <p>Fill in a few details and Martin will follow up directly — usually the same day.</p>
+        </div>
+        <form class="quote-form" onsubmit="return false;">
+          <div class="row2">
+            <div><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
+            <div><label for="company">Company</label><input id="company" type="text" placeholder="Business name"></div>
+          </div>
+          <div class="row2">
+            <div><label for="phone">Phone</label><input id="phone" type="tel" placeholder="(512) 000-0000"></div>
+            <div><label for="email">Email</label><input id="email" type="email" placeholder="you@company.com"></div>
+          </div>
+          <label for="svc">Service Needed</label>
+          <select id="svc">
+            <option>Commercial / Janitorial Cleaning</option>
+            <option>Hard Floor Cleaning</option>
+            <option>Carpet Cleaning</option>
+            <option>Window Cleaning</option>
+            <option>Pressure Washing</option>
+            <option>Event Cleaning</option>
+          </select>
+          <button class="btn btn-primary" type="submit" style="justify-content:center;">Request My Free Quote</button>
+          <div class="quote-note">or call Martin directly at 512-971-3231</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <div class="final-bg">
+        <img src="https://static.wixstatic.com/media/f7f988_836caca09b2c414190101cb027e6a186~mv2.jpg/v1/fill/w_1400,h_900,q_90,enc_avif,quality_auto/f7f988_836caca09b2c414190101cb027e6a186~mv2.jpg" alt="Bluebonnet Cleaning Services professional team">
+      </div>
+      <div class="final-content">
+        <h2>Ready for a<br>cleaner workplace?</h2>
+        <p>Fair pricing, superior quality, and a team you can count on — since 2019.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+          <a class="btn btn-outline" style="color:#fff;" href="tel:5129713231">512-971-3231</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://static.wixstatic.com/media/f7f988_c99b70d01fa4458d80a222d72db03e4f~mv2.png/v1/fill/w_252,h_291,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BCS%20Logo%20Flower%20Transparent.png" alt="Bluebonnet Cleaning Services logo">
+          <b>Bluebonnet Cleaning Services, LLC</b>
+        </div>
+        <p style="max-width:280px; color:#B7BAD0; font-size:14px;">Licensed and bonded commercial cleaning, proudly serving Austin and the greater San Antonio area since 2019.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#story">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="tel:5129713231">512-971-3231</a>
+        <a href="mailto:Msalinas@bluebonnetcs.com">Msalinas@bluebonnetcs.com</a>
+        <a href="https://web.facebook.com/profile.php?id=100063244330007" target="_blank" rel="noopener">Facebook</a>
+        <a href="#quote">Get a Free Quote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Bluebonnet Cleaning Services, LLC</span>
+      <span>Austin &amp; San Antonio, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

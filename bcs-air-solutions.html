@@ -1,0 +1,1433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      BCS Air Solutions | HVAC Service in Bryan &amp; College Station, TX
+    </title>
+    <meta
+      name="description"
+      content="Air Solutions provides HVAC service in Bryan and College Station, TX — air conditioning, heating, inspections, and preventative maintenance for residential and commercial customers. Proud Bryant dealer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HVACBusiness",
+        "name": "BCS Air Solutions",
+        "telephone": "979-693-2984",
+        "email": "admin@airsolutionsbcs.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14262 Tonkaway Lake Road",
+          "addressLocality": "College Station",
+          "addressRegion": "TX",
+          "postalCode": "77845",
+          "addressCountry": "US"
+        },
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "areaServed": ["Bryan, TX", "College Station, TX"],
+        "description": "HVAC service including air conditioning, heating, inspections, and preventative maintenance for residential and commercial customers. Proud Bryant dealer."
+      }
+    </script>
+    <style>
+      :root {
+        --ink: #16232e;
+        --ink-soft: #4a5560;
+        --paper: #eff1ee;
+        --paper-raised: #ffffff;
+        --steel: #3d5a73;
+        --steel-deep: #2a4258;
+        --copper: #bd6b36;
+        --copper-deep: #96522a;
+        --line: #dadfe0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .wrap {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 700px) {
+        .wrap {
+          padding: 0 20px;
+        }
+      }
+      section[id] {
+        scroll-margin-top: 84px;
+      }
+
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--copper);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background: var(--copper);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Big Shoulders Display", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        text-transform: none;
+      }
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 14.5px;
+        padding: 15px 28px;
+        border-radius: 2px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1.5px solid transparent;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--copper);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 var(--copper-deep);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 var(--steel);
+      }
+      .btn-outline {
+        border-color: currentColor;
+        background: transparent;
+      }
+      .btn-outline:hover {
+        background: currentColor;
+        color: var(--ink);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* HEADER */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 70;
+        background: rgba(239, 241, 238, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .top-bar {
+        background: var(--ink);
+        color: #b8c4cc;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+      }
+      .top-bar-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+      }
+      .top-bar a {
+        color: #fff;
+        font-weight: 600;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 20px;
+      }
+      .nav-brand img {
+        height: 46px;
+        width: auto;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        font-size: 13.5px;
+        font-weight: 600;
+      }
+      .nav-links a:not(.btn) {
+        padding: 6px 0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s;
+      }
+      .nav-links a:not(.btn):hover {
+        border-color: var(--copper);
+      }
+      .nav-phone {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 14px;
+        color: var(--steel);
+        font-weight: 600;
+      }
+      @media (max-width: 920px) {
+        .nav-links a:not(.nav-cta):not(.nav-phone-link) {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .top-bar {
+          display: none;
+        }
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        min-height: 86vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(22, 35, 46, 0.93) 26%,
+          rgba(22, 35, 46, 0.7) 55%,
+          rgba(22, 35, 46, 0.22) 85%
+        );
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+      }
+      .hero-content h1 {
+        font-size: clamp(42px, 6vw, 68px);
+        line-height: 1;
+        color: #fff;
+        max-width: 680px;
+        margin: 16px 0 20px;
+        text-transform: uppercase;
+      }
+      .hero-content h1 span {
+        color: var(--copper);
+      }
+      .hero-content p {
+        font-size: 17px;
+        color: #cbd3d8;
+        max-width: 460px;
+        margin-bottom: 30px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+      .hero-trust-row {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .hero-trust-item {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.03em;
+        color: #b8c4cc;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .hero-trust-item::before {
+        content: "●";
+        color: var(--copper);
+        font-size: 8px;
+      }
+
+      .trust-strip {
+        border-bottom: 1px solid var(--line);
+        background: var(--paper-raised);
+      }
+      .trust-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px 30px;
+        padding: 22px 0;
+      }
+      .trust-item {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        color: var(--ink-soft);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .trust-item::before {
+        content: "✓";
+        color: var(--steel);
+        font-weight: 700;
+      }
+
+      section {
+        padding: 96px 0;
+      }
+      @media (max-width: 700px) {
+        section {
+          padding: 64px 0;
+        }
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 46px;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .section-head h2 {
+        font-size: clamp(30px, 4vw, 46px);
+        text-transform: uppercase;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        max-width: 340px;
+        font-size: 15px;
+        padding-bottom: 6px;
+      }
+
+      /* PROBLEM/SOLUTION */
+      .problem-section {
+        background: var(--paper-raised);
+      }
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 880px) {
+        .problem-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .problem-photo {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: 0 24px 50px -24px rgba(22, 35, 46, 0.4);
+      }
+      .problem-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .problem-text h2 {
+        font-size: clamp(30px, 3.8vw, 42px);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .problem-text p {
+        font-size: 16px;
+        color: var(--ink-soft);
+        margin-bottom: 14px;
+      }
+      .problem-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+        margin: 22px 0 26px;
+      }
+      .problem-list div {
+        font-size: 14px;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .problem-list div::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--copper);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* SERVICES */
+      .services-layout {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 22px;
+      }
+      @media (max-width: 900px) {
+        .services-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      .service-feature {
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+        min-height: 460px;
+        display: flex;
+        align-items: flex-end;
+      }
+      .service-feature img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .service-feature::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 38%,
+          rgba(22, 35, 46, 0.92) 100%
+        );
+      }
+      .service-feature-content {
+        position: relative;
+        z-index: 1;
+        padding: 32px;
+        color: #fff;
+      }
+      .service-feature-content span {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #f0c4a0;
+      }
+      .service-feature-content h3 {
+        color: #fff;
+        font-size: 30px;
+        margin: 8px 0 10px;
+        text-transform: uppercase;
+      }
+      .service-feature-content p {
+        color: #cbd3d8;
+        font-size: 14.5px;
+        max-width: 340px;
+      }
+      .services-small {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .svc-card {
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 2px;
+        padding: 24px 20px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .svc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 28px -18px rgba(22, 35, 46, 0.3);
+        border-color: var(--steel);
+      }
+      .svc-card h4 {
+        font-family: "Big Shoulders Display", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .svc-card p {
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+
+      /* RESIDENTIAL / COMMERCIAL */
+      .split-panels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 780px) {
+        .split-panels {
+          grid-template-columns: 1fr;
+        }
+      }
+      .rc-panel {
+        position: relative;
+        min-height: 340px;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+      }
+      .rc-panel img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .rc-panel.residential::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(61, 90, 115, 0.15),
+          rgba(42, 66, 88, 0.92)
+        );
+      }
+      .rc-panel.commercial::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(189, 107, 54, 0.15),
+          rgba(150, 82, 42, 0.92)
+        );
+      }
+      .rc-content {
+        position: relative;
+        z-index: 1;
+        padding: 32px;
+        color: #fff;
+      }
+      .rc-content span {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .rc-content h3 {
+        color: #fff;
+        font-size: 30px;
+        margin: 8px 0 10px;
+        text-transform: uppercase;
+      }
+      .rc-content p {
+        font-size: 14.5px;
+        opacity: 0.9;
+        max-width: 320px;
+      }
+
+      /* MAINTENANCE FEATURE */
+      .maint-section {
+        background: var(--ink);
+        color: #fff;
+      }
+      .maint-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      @media (max-width: 880px) {
+        .maint-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .maint-photo {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: 2px;
+      }
+      .maint-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .maint-text .eyebrow {
+        color: #f0c4a0;
+      }
+      .maint-text .eyebrow::before {
+        background: #f0c4a0;
+      }
+      .maint-text h2 {
+        color: #fff;
+        font-size: clamp(28px, 3.6vw, 38px);
+        margin: 14px 0 18px;
+        text-transform: uppercase;
+      }
+      .maint-text p {
+        color: #b8c4cc;
+        font-size: 16px;
+        margin-bottom: 22px;
+      }
+
+      /* PRODUCTS */
+      .products-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      @media (max-width: 780px) {
+        .products-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .product-chip {
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        padding: 22px 18px;
+        text-align: center;
+        border-radius: 2px;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .product-chip:hover {
+        transform: translateY(-4px);
+        border-color: var(--steel);
+      }
+      .product-chip b {
+        font-family: "Big Shoulders Display", sans-serif;
+        font-size: 17px;
+        text-transform: uppercase;
+        display: block;
+      }
+
+      /* REVIEW + TECH TRUST */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      @media (max-width: 880px) {
+        .trust-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .review-card {
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 2px;
+        padding: 34px;
+      }
+      .review-card .stars {
+        color: var(--copper);
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+      }
+      .review-card p {
+        font-size: 17px;
+        color: var(--ink);
+        font-style: italic;
+        margin-bottom: 18px;
+        line-height: 1.5;
+      }
+      .review-card .who {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .review-card a {
+        color: var(--steel);
+        font-size: 12px;
+        text-decoration: underline;
+      }
+      .tech-photo {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: 0 24px 50px -24px rgba(22, 35, 46, 0.4);
+      }
+      .tech-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .tech-tag {
+        margin-top: 14px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--ink-soft);
+        text-align: center;
+      }
+
+      /* LOCAL */
+      .local-section {
+        background: var(--steel);
+        color: #fff;
+      }
+      .local-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      @media (max-width: 880px) {
+        .local-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .local-text h2 {
+        color: #fff;
+        font-size: clamp(28px, 3.6vw, 40px);
+        margin: 14px 0 18px;
+        text-transform: uppercase;
+      }
+      .local-text .eyebrow {
+        color: #d8e4ea;
+      }
+      .local-text .eyebrow::before {
+        background: #d8e4ea;
+      }
+      .local-text p {
+        color: #d8e4ea;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .local-address {
+        margin-top: 20px;
+        padding: 18px 22px;
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 3px solid #fff;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .local-map-card {
+        background: var(--paper-raised);
+        color: var(--ink);
+        border-radius: 2px;
+        padding: 30px;
+        text-align: center;
+      }
+      .local-map-card .pin {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+      .local-map-card b {
+        display: block;
+        font-family: "Big Shoulders Display", sans-serif;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+
+      /* FINANCING/REBATES */
+      .finance-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 780px) {
+        .finance-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .finance-card {
+        background: var(--paper-raised);
+        border: 1px solid var(--line);
+        border-radius: 2px;
+        padding: 34px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .finance-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 32px -20px rgba(22, 35, 46, 0.3);
+      }
+      .finance-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .finance-card p {
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        margin-bottom: 18px;
+      }
+
+      /* FINAL CTA */
+      .final-cta {
+        position: relative;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 6px;
+      }
+      .final-bg {
+        position: absolute;
+        inset: 0;
+      }
+      .final-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .final-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(22, 35, 46, 0.93) 32%,
+          rgba(22, 35, 46, 0.55) 72%
+        );
+      }
+      .final-content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        padding: 64px 52px;
+      }
+      .final-content h2 {
+        color: #fff;
+        font-size: clamp(30px, 4.2vw, 46px);
+        margin-bottom: 14px;
+        text-transform: uppercase;
+      }
+      .final-content p {
+        color: #cbd3d8;
+        font-size: 15.5px;
+        margin-bottom: 28px;
+        max-width: 420px;
+      }
+
+      footer {
+        background: var(--ink);
+        color: #b8c4cc;
+        padding: 56px 0 36px;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid #2a3b48;
+        margin-bottom: 36px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .footer-brand img {
+        height: 50px;
+        background: #fff;
+        padding: 6px;
+        border-radius: 2px;
+      }
+      .bryant-badge {
+        background: #fff;
+        padding: 8px 14px;
+        border-radius: 2px;
+      }
+      .bryant-badge img {
+        height: 26px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+      @media (max-width: 780px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      footer h4 {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--copper);
+        margin-bottom: 14px;
+      }
+      footer a,
+      footer p.line {
+        font-size: 14px;
+        color: #b8c4cc;
+        display: block;
+        margin-bottom: 9px;
+      }
+      footer a:hover {
+        color: #fff;
+      }
+      .footer-bottom {
+        border-top: 1px solid #2a3b48;
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: #7a8894;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="wrap top-bar-inner">
+          <span
+            >Bryan &amp; College Station, TX &middot; Mon&ndash;Fri,
+            8:00am&ndash;5:00pm</span
+          >
+          <a href="tel:9796932984">979.693.2984</a>
+        </div>
+      </div>
+      <div class="wrap nav-inner">
+        <div class="nav-brand">
+          <img
+            src="https://static.wixstatic.com/media/98ccad_b3b102a9280d400a9018510573318dc6.png/v1/fill/w_366,h_158,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98ccad_b3b102a9280d400a9018510573318dc6.png"
+            alt="BCS Air Solutions logo"
+          />
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#financing">Financing</a>
+          <a href="tel:9796932984" class="nav-phone nav-phone-link"
+            >979.693.2984</a
+          >
+          <a
+            class="btn btn-primary nav-cta"
+            href="#request"
+            style="padding: 11px 20px; font-size: 13px"
+            >Request Service</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg">
+        <img
+          src="https://static.wixstatic.com/media/98ccad_81c8788e5a5d469aab58be483d83f065.jpg/v1/fit/w_2500,h_1330,al_c/98ccad_81c8788e5a5d469aab58be483d83f065.jpg"
+          alt="BCS Air Solutions HVAC technician performing service"
+        />
+      </div>
+      <div class="wrap hero-content reveal in">
+        <span class="eyebrow">Bryan &amp; College Station, Texas</span>
+        <h1>Comfort you can<br /><span>count on.</span></h1>
+        <p>
+          Honest, professional HVAC service — air conditioning, heating,
+          inspections, and preventative maintenance for homes and businesses
+          across the Brazos Valley.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#request">Request Service</a>
+          <a class="btn btn-outline" style="color: #fff" href="tel:9796932984"
+            >Call 979.693.2984</a
+          >
+        </div>
+        <div class="hero-trust-row">
+          <div class="hero-trust-item">Residential + Commercial</div>
+          <div class="hero-trust-item">Emergency Service</div>
+          <div class="hero-trust-item">Proud Bryant&reg; Dealer</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="wrap trust-inner">
+        <div class="trust-item">Lic# TACLB713C</div>
+        <div class="trust-item">Bryant&reg; Dealer</div>
+        <div class="trust-item">Residential &amp; Commercial</div>
+        <div class="trust-item">Emergency Service Available</div>
+        <div class="trust-item">Bryan &amp; College Station, TX</div>
+      </div>
+    </div>
+
+    <section class="problem-section">
+      <div class="wrap problem-grid">
+        <div class="problem-photo reveal">
+          <img
+            src="https://static.wixstatic.com/media/98ccad_9a9248138be744d5b45b112632f0e885~mv2.jpg/v1/fill/w_800,h_600,al_c,q_90,enc_auto/98ccad_9a9248138be744d5b45b112632f0e885~mv2.jpg"
+            alt="BCS Air Solutions service van"
+          />
+        </div>
+        <div class="problem-text reveal" style="transition-delay: 0.1s">
+          <span class="eyebrow">When comfort can't wait</span>
+          <h2 style="margin-top: 14px">We solve real HVAC problems.</h2>
+          <p>
+            AC not keeping up. Heat that won't kick on. A system overdue for an
+            inspection. Whatever's bringing you here, our team works directly
+            with you to find the right solution for your home, business, or
+            commercial property.
+          </p>
+          <div class="problem-list">
+            <div>AC not cooling</div>
+            <div>Heating issues</div>
+            <div>HVAC inspections</div>
+            <div>Preventative maintenance</div>
+            <div>Indoor air quality</div>
+            <div>Ductwork problems</div>
+            <div>System upgrades</div>
+            <div>Emergency service</div>
+          </div>
+          <a class="btn btn-dark" href="#request">Request Service</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Heating &amp; air conditioning.</h2>
+          <p>A full range of HVAC service, customized to your needs.</p>
+        </div>
+        <div class="services-layout">
+          <div class="service-feature reveal">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_070f10a7b05a4ac78c237afd6673ece5.jpg/v1/fill/w_800,h_720,al_c,q_90,enc_auto/98ccad_070f10a7b05a4ac78c237afd6673ece5.jpg"
+              alt="BCS Air Solutions HVAC technician"
+            />
+            <div class="service-feature-content">
+              <span>Featured Service</span>
+              <h3>Air Conditioning &amp; Heating</h3>
+              <p>
+                Full-service repair, replacement, and tune-ups for every make
+                and model — because a system that isn't running right isn't
+                really running at all.
+              </p>
+            </div>
+          </div>
+          <div class="services-small">
+            <div class="svc-card reveal" style="transition-delay: 0.05s">
+              <h4>HVAC Inspections</h4>
+              <p>
+                Thorough system checks that catch small issues before they
+                become expensive ones.
+              </p>
+            </div>
+            <div class="svc-card reveal" style="transition-delay: 0.1s">
+              <h4>Preventative Maintenance</h4>
+              <p>
+                Scheduled care that keeps your system running efficiently,
+                year-round.
+              </p>
+            </div>
+            <div class="svc-card reveal" style="transition-delay: 0.15s">
+              <h4>Indoor Air Quality</h4>
+              <p>
+                Ductwork analysis and duct cleaning for air that's actually
+                clean.
+              </p>
+            </div>
+            <div class="svc-card reveal" style="transition-delay: 0.2s">
+              <h4>Emergency Service</h4>
+              <p>
+                When it can't wait, we're ready — repair, sales, and system
+                upgrades.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Comfort for homes.<br />Solutions for business.</h2>
+          <p>Full residential and commercial HVAC service.</p>
+        </div>
+        <div class="split-panels">
+          <div class="rc-panel residential reveal">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_92b906bf388c41c5911b00a7fd27530e.jpg/v1/fill/w_700,h_500,al_c,q_90,enc_auto/98ccad_92b906bf388c41c5911b00a7fd27530e.jpg"
+              alt="Residential HVAC service by BCS Air Solutions"
+            />
+            <div class="rc-content">
+              <span>Residential</span>
+              <h3>For Your Home</h3>
+              <p>
+                Comfortable, efficient HVAC solutions built around how your
+                household actually lives.
+              </p>
+            </div>
+          </div>
+          <div
+            class="rc-panel commercial reveal"
+            style="transition-delay: 0.08s"
+          >
+            <img
+              src="https://static.wixstatic.com/media/98ccad_d1cfed9ccff74a23812a63d4517595ed.jpg/v1/fill/w_700,h_500,al_c,q_90,enc_auto/98ccad_d1cfed9ccff74a23812a63d4517595ed.jpg"
+              alt="Commercial HVAC service by BCS Air Solutions"
+            />
+            <div class="rc-content">
+              <span>Commercial</span>
+              <h3>For Your Business</h3>
+              <p>
+                Reliable HVAC service for offices, commercial properties, and
+                property management portfolios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="maint-section">
+      <div class="wrap maint-grid">
+        <div class="maint-photo reveal">
+          <img
+            src="https://static.wixstatic.com/media/98ccad_210e52e275f242b2bff1c53b7d9bea9b.jpg/v1/fill/w_800,h_600,al_c,q_90,enc_auto/98ccad_210e52e275f242b2bff1c53b7d9bea9b.jpg"
+            alt="Preventative HVAC maintenance by BCS Air Solutions"
+          />
+        </div>
+        <div class="maint-text reveal" style="transition-delay: 0.1s">
+          <span class="eyebrow">Preventative maintenance plan</span>
+          <h2>Prevent problems before<br />they get expensive.</h2>
+          <p>
+            A well-maintained system runs more efficiently and breaks down less.
+            Our Preventative Maintenance Plan is built to help you save on
+            repairs and your utility bill — before small issues become big ones.
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://www.airsolutionsbcs.com/preventative-maintenance"
+            target="_blank"
+            rel="noopener"
+            >Learn About Our Maintenance Plan</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>The right system<br />for your space.</h2>
+          <p>Sales and service on every major HVAC product category.</p>
+        </div>
+        <div class="products-strip">
+          <div class="product-chip reveal"><b>Air Conditioners</b></div>
+          <div class="product-chip reveal" style="transition-delay: 0.05s">
+            <b>Gas Furnaces</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.1s">
+            <b>Heat Pumps</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.15s">
+            <b>Ductless Systems</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.2s">
+            <b>Fan Coils</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.25s">
+            <b>Evaporator Coils</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.3s">
+            <b>Thermostats</b>
+          </div>
+          <div class="product-chip reveal" style="transition-delay: 0.35s">
+            <b>Indoor Air Quality</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" style="padding-top: 0">
+      <div class="wrap trust-grid">
+        <div class="reveal">
+          <span class="eyebrow">Real review</span>
+          <div class="review-card" style="margin-top: 16px">
+            <div class="stars">★★★★★</div>
+            <p>
+              "We own a rental property, and Air Solutions is always quick to
+              take care of our A/C needs — I trust them completely to be honest
+              with me and give it to me straight."
+            </p>
+            <div class="who">Chloe Bush</div>
+            <a
+              href="https://www.facebook.com/airsolutionsbcs/reviews/"
+              target="_blank"
+              rel="noopener"
+              >See this review on Facebook &rarr;</a
+            >
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.1s">
+          <div class="tech-photo">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_c3e9abf4d0484b51b5a1b64c06ac0e24.jpg/v1/fill/w_700,h_525,al_c,q_90,enc_auto/98ccad_c3e9abf4d0484b51b5a1b64c06ac0e24.jpg"
+              alt="BCS Air Solutions technician performing an HVAC inspection"
+            />
+          </div>
+          <div class="tech-tag">Local technicians. Honest HVAC service.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="local" class="local-section">
+      <div class="wrap local-grid">
+        <div class="local-text reveal">
+          <span class="eyebrow">Local &amp; established</span>
+          <h2>Proudly serving Bryan<br />&amp; College Station.</h2>
+          <p>
+            Based right here in the Brazos Valley, not a call center somewhere
+            else.
+          </p>
+          <div class="local-address">
+            BCS AIR SOLUTIONS<br />
+            14262 TONKAWAY LAKE ROAD<br />
+            COLLEGE STATION, TX 77845
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.1s">
+          <div class="local-map-card">
+            <div class="pin">📍</div>
+            <b>Bryan / College Station</b>
+            <p
+              style="margin-top: 10px; color: var(--ink-soft); font-size: 14px"
+            >
+              Residential &amp; commercial service across the greater Brazos
+              Valley area.
+            </p>
+            <a
+              class="btn btn-dark"
+              style="margin-top: 18px"
+              href="https://www.google.com/maps/place/BCS+Air+Solutions/@30.6068776,-96.2305637,17z"
+              target="_blank"
+              rel="noopener"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="financing">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Make your upgrade more affordable.</h2>
+          <p>Options to help your next HVAC investment go further.</p>
+        </div>
+        <div class="finance-grid">
+          <div class="finance-card reveal">
+            <h3>Financing Options</h3>
+            <p>
+              Flexible ways to finance a new system or major repair — see
+              current options available to you.
+            </p>
+            <a
+              class="btn btn-outline"
+              href="https://www.airsolutionsbcs.com/financing"
+              target="_blank"
+              rel="noopener"
+              >View Financing Options</a
+            >
+          </div>
+          <div class="finance-card reveal" style="transition-delay: 0.08s">
+            <h3>Available Rebates &amp; Credits</h3>
+            <p>
+              Save money on your unit and your energy bill with current
+              manufacturer and utility rebates.
+            </p>
+            <a
+              class="btn btn-outline"
+              href="https://www.airsolutionsbcs.com/rebates"
+              target="_blank"
+              rel="noopener"
+              >View Current Rebates</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="request" style="padding-top: 0">
+      <div class="wrap">
+        <div class="final-cta reveal">
+          <div class="final-bg">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_d2b463c385954e658e9b8f31e11314e4.jpg/v1/fill/w_1400,h_900,al_c,q_90,enc_auto/98ccad_d2b463c385954e658e9b8f31e11314e4.jpg"
+              alt="BCS Air Solutions HVAC service plan"
+            />
+          </div>
+          <div class="final-content">
+            <h2>Ready to get your<br />comfort back?</h2>
+            <p>
+              Honest, professional HVAC service in Bryan &amp; College Station
+              since day one.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="https://www.airsolutionsbcs.com/service-request"
+                target="_blank"
+                rel="noopener"
+                >Request Service</a
+              >
+              <a
+                class="btn btn-outline"
+                style="color: #fff"
+                href="tel:9796932984"
+                >979.693.2984</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_b3b102a9280d400a9018510573318dc6.png/v1/fill/w_366,h_158,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98ccad_b3b102a9280d400a9018510573318dc6.png"
+              alt="BCS Air Solutions logo"
+            />
+          </div>
+          <div class="bryant-badge">
+            <img
+              src="https://static.wixstatic.com/media/98ccad_d33e33f75a954544a24f9167c80df9c7~mv2.jpg/v1/fill/w_519,h_100,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/98ccad_d33e33f75a954544a24f9167c80df9c7~mv2.jpg"
+              alt="Proud Bryant Dealer badge"
+            />
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div>
+            <p style="max-width: 280px; color: #b8c4cc; font-size: 14px">
+              Air Solutions provides HVAC service in Bryan and College Station,
+              TX — air conditioning, heating, inspections, and preventative
+              maintenance.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#financing">Financing</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="tel:9796932984">979.693.2984</a>
+            <a href="mailto:admin@airsolutionsbcs.com"
+              >admin@airsolutionsbcs.com</a
+            >
+            <p class="line">14262 Tonkaway Lake Road</p>
+            <p class="line">College Station, TX 77845</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p class="line">Mon&ndash;Fri</p>
+            <p class="line">8:00am &ndash; 5:00pm</p>
+            <a
+              href="https://www.facebook.com/airsolutionsbcs"
+              target="_blank"
+              rel="noopener"
+              >Facebook</a
+            >
+            <a href="#request">Request Service</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 BCS Air Solutions &middot; Lic# TACLB713C</span>
+          <span>Bryan &amp; College Station, TX</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.14 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

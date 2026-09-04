@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoneSprings Water Systems & Plumbing — Bastrop, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12232C;
+    --ink-2:#1E3A44;
+    --paper:#F6F3EC;
+    --paper-2:#EBE4D2;
+    --spring:#4FA69C;
+    --spring-deep:#2F7B72;
+    --caliche:#C17A3D;
+    --line: rgba(18,35,44,0.14);
+    --line-light: rgba(246,243,236,0.22);
+    --max: 1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:480;margin:0;letter-spacing:-0.01em;}
+  .eyebrow-label{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--spring-deep);
+    margin:0 0 14px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    font-family:'Inter',sans-serif;
+    font-size:14.5px;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .btn-primary{background:var(--spring);color:#0D1B20;}
+  .btn-primary:hover{background:#3f958a;transform:translateY(-1px);}
+  .btn-outline-light{border-color:rgba(255,255,255,0.55);color:#fff;}
+  .btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+  .btn-outline-dark{border-color:var(--ink);color:var(--ink);}
+  .btn-outline-dark:hover{background:var(--ink);color:var(--paper);}
+  .btn-clay{background:var(--caliche);color:#fff;}
+  .btn-clay:hover{background:#a86530;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:22px 0;
+    transition:padding .35s ease, background .35s ease, box-shadow .35s ease;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{
+    font-family:'Fraunces',serif;font-size:20px;font-weight:520;color:#fff;
+    letter-spacing:-0.01em;text-decoration:none;line-height:1.1;
+  }
+  .brand span{display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.6);margin-top:2px;}
+  nav.links{display:flex;gap:34px;align-items:center;}
+  nav.links a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s;}
+  nav.links a:hover{color:#fff;}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .nav-phone{color:#fff;font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap;}
+  header.scrolled{
+    background:rgba(18,35,44,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 1px 0 var(--line-light);
+  }
+  .menu-btn{display:none;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    overflow:hidden;
+    background:var(--ink);
+  }
+  .hero-media{position:absolute;inset:0;}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 38%;}
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(15,27,34,0.35) 0%, rgba(15,27,34,0.35) 40%, rgba(11,20,26,0.94) 100%);
+  }
+  .hero-content{position:relative;z-index:2;width:100%;padding-bottom:76px;padding-top:180px;}
+  .hero-kicker{
+    font-size:13px;font-weight:600;letter-spacing:0.05em;color:var(--spring);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(44px,7vw,92px);
+    line-height:0.98;
+    max-width:900px;
+    color:#fff;
+  }
+  .hero-sub{
+    max-width:480px;
+    font-size:17.5px;
+    color:rgba(255,255,255,0.82);
+    margin:26px 0 34px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;}
+  .trust-strip{
+    display:flex;gap:28px;flex-wrap:wrap;
+    padding-top:26px;
+    border-top:1px solid var(--line-light);
+    font-size:13px;font-weight:600;letter-spacing:0.03em;color:rgba(255,255,255,0.75);
+  }
+  .trust-strip span{display:flex;align-items:center;gap:8px;}
+  .trust-strip .dot{width:5px;height:5px;border-radius:50%;background:var(--spring);}
+
+  /* ---------- GENERIC SECTION ---------- */
+  section{padding:120px 0;}
+  .section-tight{padding:90px 0;}
+  .head-row{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:40px;
+    margin-bottom:56px;flex-wrap:wrap;
+  }
+  .head-row h2{font-size:clamp(30px,3.6vw,46px);max-width:640px;line-height:1.05;}
+  .head-row p{max-width:360px;color:rgba(18,35,44,0.68);font-size:15.5px;margin:0;}
+
+  /* ---------- TWO PROBLEMS SPLIT ---------- */
+  .split{
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .split-col{
+    position:relative;
+    padding:88px 56px;
+    min-height:460px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;
+  }
+  .split-col:first-child{border-right:1px solid var(--line);}
+  .split-col .split-media{position:absolute;inset:0;}
+  .split-col .split-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+  .split-col:hover .split-media img{transform:scale(1.045);}
+  .split-col .split-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(18,35,44,0.15) 0%, rgba(11,20,26,0.88) 88%);
+  }
+  .split-col .split-tag{position:relative;z-index:2;font-size:12.5px;font-weight:600;letter-spacing:0.05em;color:var(--spring);margin-bottom:14px;}
+  .split-col h3{position:relative;z-index:2;color:#fff;font-size:clamp(28px,3vw,40px);line-height:1.05;margin-bottom:14px;}
+  .split-col p{position:relative;z-index:2;color:rgba(255,255,255,0.78);max-width:360px;margin:0 0 26px;font-size:15px;}
+  .split-col .btn{position:relative;z-index:2;align-self:flex-start;}
+
+  /* ---------- WATER QUALITY ---------- */
+  .water-section{background:var(--ink-2);color:#fff;}
+  .water-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:70px;align-items:center;}
+  .water-grid h2{color:#fff;font-size:clamp(32px,4vw,52px);line-height:1.04;margin-bottom:22px;}
+  .water-lede{font-size:18px;color:rgba(255,255,255,0.82);max-width:440px;margin-bottom:34px;}
+  .water-list{list-style:none;margin:0 0 36px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;}
+  .water-list li{
+    display:flex;align-items:center;gap:12px;
+    font-size:15px;font-weight:500;color:rgba(255,255,255,0.92);
+    padding:14px 0;border-top:1px solid var(--line-light);
+  }
+  .water-list li:nth-last-child(-n+1), .water-list li:nth-last-child(-n+2){
+    border-bottom:1px solid var(--line-light);
+  }
+  .drop{width:7px;height:9px;flex:none;background:var(--spring);border-radius:50% 50% 50% 4px;transform:rotate(45deg);}
+  .water-media{position:relative;}
+  .water-media img{width:100%;border:1px solid var(--line-light);}
+  .water-media .caption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:16px 20px;
+    background:linear-gradient(0deg, rgba(11,20,26,0.85), transparent);
+    font-size:12.5px;color:rgba(255,255,255,0.75);font-weight:500;
+  }
+
+  /* ---------- PLUMBING SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .svc-card{
+    background:var(--paper);
+    padding:34px 26px;
+    min-height:200px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:background .25s ease;
+  }
+  .svc-card:hover{background:var(--paper-2);}
+  .svc-card h4{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;line-height:1.15;}
+  .svc-card p{font-size:13.8px;color:rgba(18,35,44,0.65);margin:0;}
+  .svc-card .idx{font-size:12px;color:var(--spring-deep);font-weight:600;}
+  .svc-card.photo{padding:0;position:relative;color:#fff;min-height:280px;}
+  .svc-card.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .svc-card.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(11,20,26,0.85), rgba(11,20,26,0.05));}
+  .svc-card.photo .txt{position:relative;z-index:2;padding:22px;margin-top:auto;}
+  .svc-card.photo h4{color:#fff;}
+  .services-foot{margin-top:44px;display:flex;justify-content:center;}
+
+  /* ---------- SAME DAY BANNER ---------- */
+  .sameday{
+    position:relative;background:var(--ink);color:#fff;overflow:hidden;
+    min-height:520px;display:flex;align-items:center;
+  }
+  .sameday-media{position:absolute;top:0;right:0;bottom:0;width:52%;}
+  .sameday-media img{width:100%;height:100%;object-fit:cover;}
+  .sameday-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, var(--ink) 0%, rgba(18,35,44,0) 32%);}
+  .sameday-content{position:relative;z-index:2;max-width:520px;}
+  .sameday h2{color:#fff;font-size:clamp(32px,4.4vw,54px);line-height:1.03;margin-bottom:20px;}
+  .sameday p{color:rgba(255,255,255,0.8);font-size:17px;max-width:440px;margin-bottom:32px;}
+
+  /* ---------- WHY LONESPRINGS ---------- */
+  .why-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:start;}
+  .why-points{display:grid;grid-template-columns:1fr 1fr;gap:44px 40px;margin-top:12px;}
+  .why-point h4{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin-bottom:10px;}
+  .why-point p{font-size:14.5px;color:rgba(18,35,44,0.66);margin:0;}
+  .why-point{border-top:1px solid var(--line);padding-top:18px;}
+  .why-lede{font-size:19px;line-height:1.5;color:rgba(18,35,44,0.82);}
+  .why-lede strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- TRANSFORMATIONS ---------- */
+  .transform-section{background:var(--paper-2);}
+  .transform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .t-card{background:var(--paper);border:1px solid var(--line);}
+  .t-card .t-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .t-card .t-media img{width:100%;height:100%;object-fit:cover;}
+  .t-card .t-body{padding:20px 22px 26px;}
+  .t-from{font-size:12px;font-weight:600;color:rgba(18,35,44,0.5);letter-spacing:0.02em;}
+  .t-arrow{color:var(--spring-deep);margin:0 6px;}
+  .t-to{font-size:12px;font-weight:600;color:var(--spring-deep);letter-spacing:0.02em;}
+  .t-body h4{font-family:'Fraunces',serif;font-size:16.5px;font-weight:500;margin:10px 0 0;}
+
+  /* ---------- SERVICE AREA ---------- */
+  .area-section{background:var(--ink);color:#fff;}
+  .area-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:center;}
+  .area-section h2{color:#fff;font-size:clamp(30px,3.8vw,48px);line-height:1.05;margin-bottom:18px;}
+  .area-section .lede{color:rgba(255,255,255,0.78);font-size:16.5px;max-width:420px;margin-bottom:30px;}
+  .town-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line-light);}
+  .town-list li{
+    padding:15px 4px;border-bottom:1px solid var(--line-light);
+    font-family:'Fraunces',serif;font-size:18px;font-weight:400;color:rgba(255,255,255,0.92);
+  }
+  .town-list li:nth-child(3n+1){padding-left:0;}
+  .area-note{
+    margin-top:30px;padding-top:24px;border-top:1px solid var(--line-light);
+    font-size:14.5px;color:rgba(255,255,255,0.68);
+  }
+  .area-note strong{color:#fff;}
+
+  /* ---------- CREDENTIALS / GALLERY (replaces reviews) ---------- */
+  .cred-head{max-width:640px;margin-bottom:56px;}
+  .cred-badges{
+    display:flex;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:56px;flex-wrap:wrap;
+  }
+  .cred-badge{
+    flex:1 1 220px;padding:28px 30px;border-right:1px solid var(--line);
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .cred-badge:last-child{border-right:none;}
+  .cred-badge .num{font-family:'Fraunces',serif;font-size:15px;color:var(--spring-deep);font-weight:500;}
+  .cred-badge .lbl{font-size:14px;color:rgba(18,35,44,0.68);line-height:1.4;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;gap:10px;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;}
+  .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
+  .gallery-grid .g2{grid-column:span 2;grid-row:span 1;}
+  .gallery-grid .g3{grid-column:span 2;grid-row:span 1;}
+  .gallery-grid .g4{grid-column:span 2;grid-row:span 2;}
+  .gallery-grid .g5{grid-column:span 2;grid-row:span 1;}
+  .gallery-grid .g6{grid-column:span 2;grid-row:span 1;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    position:relative;color:#fff;min-height:66vh;display:flex;align-items:center;
+    background:var(--ink);overflow:hidden;
+  }
+  .final-media{position:absolute;inset:0;}
+  .final-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+  .final-media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,18,23,0.96) 10%, rgba(10,18,23,0.55) 60%, rgba(10,18,23,0.7) 100%);}
+  .final-content{position:relative;z-index:2;max-width:640px;}
+  .final-cta h2{color:#fff;font-size:clamp(34px,5vw,64px);line-height:1.02;margin-bottom:22px;}
+  .final-cta p{color:rgba(255,255,255,0.82);font-size:17.5px;max-width:480px;margin-bottom:34px;}
+  .final-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#0E1B21;color:rgba(255,255,255,0.7);padding:64px 0 34px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-light);}
+  .foot-brand{font-family:'Fraunces',serif;color:#fff;font-size:22px;margin-bottom:14px;}
+  .foot-grid p{font-size:14px;color:rgba(255,255,255,0.55);max-width:280px;}
+  .foot-col h5{font-size:12.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.42);margin:0 0 16px;font-weight:600;}
+  .foot-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.72);text-decoration:none;margin-bottom:11px;}
+  .foot-col a:hover{color:#fff;}
+  .foot-bottom{padding-top:28px;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.42);flex-wrap:wrap;gap:10px;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(28px);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .split{grid-template-columns:1fr;}
+    .split-col:first-child{border-right:none;border-bottom:1px solid var(--line);}
+    .water-grid, .why-grid, .area-grid{grid-template-columns:1fr;gap:44px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .transform-grid{grid-template-columns:repeat(2,1fr);}
+    .sameday-media{width:100%;opacity:0.22;}
+    .sameday-media::after{background:linear-gradient(180deg, var(--ink) 0%, rgba(18,35,44,0.2) 60%);}
+    .why-points{grid-template-columns:1fr;}
+    .town-list{grid-template-columns:1fr 1fr;}
+    .cred-badges{flex-direction:column;}
+    .cred-badge{border-right:none;border-bottom:1px solid var(--line);}
+    .gallery-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:100px;}
+    .gallery-grid .g1,.gallery-grid .g4{grid-column:span 2;grid-row:span 2;}
+  }
+  @media (max-width:600px){
+    section{padding:76px 0;}
+    .wrap{padding:0 20px;}
+    .hero-content{padding-top:150px;padding-bottom:56px;}
+    .services-grid{grid-template-columns:1fr;}
+    .transform-grid{grid-template-columns:1fr;}
+    .water-list{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid .g1,.gallery-grid .g4{grid-column:span 2;grid-row:span 1;aspect-ratio:4/3;height:auto;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:30px;}
+    .town-list{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="brand">LoneSprings<span>WATER SYSTEMS &amp; PLUMBING</span></a>
+    <nav class="links">
+      <a href="#plumbing">Plumbing</a>
+      <a href="#water">Water Systems</a>
+      <a href="#areas">Service Area</a>
+      <a href="#credentials">Credentials</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:5127983755" class="nav-phone">512-798-3755</a>
+      <a href="#estimate" class="btn btn-primary">Request Estimate</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="https://lonespringsplumbing.com/cdn/shop/files/lonesprings_plumbing_7dcfcea7-651f-45c8-b604-f366c7e3a646.jpg?v=1770615992&width=1600" alt="LoneSprings Water Systems &amp; Plumbing service truck and home, Bastrop TX">
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-kicker" data-reveal>YOUR PLUMBING. YOUR WATER. DONE RIGHT.</div>
+    <h1 data-reveal>Better plumbing.<br>Better water.</h1>
+    <p class="hero-sub" data-reveal>From urgent plumbing repairs to whole-home water systems, LoneSprings helps Central Texas homeowners keep their homes running right.</p>
+    <div class="hero-ctas" data-reveal>
+      <a href="#estimate" class="btn btn-primary">Request an Estimate</a>
+      <a href="tel:5127983755" class="btn btn-outline-light">Call 512-798-3755</a>
+    </div>
+    <div class="trust-strip" data-reveal>
+      <span><i class="dot"></i>Locally owned, Bastrop TX</span>
+      <span><i class="dot"></i>Responsible Master Plumber Lic. #46341</span>
+      <span><i class="dot"></i>Licensed &amp; insured</span>
+    </div>
+  </div>
+</section>
+
+<!-- TWO PROBLEMS -->
+<section class="split" style="padding:0;">
+  <div class="split-col">
+    <div class="split-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5315.jpg?v=1756039018&width=1200" alt="Plumbing pipe fitting repair in the ground, Central Texas"></div>
+    <div class="split-tag">Plumbing problem?</div>
+    <h3>Leaks, drains, water heaters &amp; repairs</h3>
+    <p>Broken lines, sewer backups, gas lines, tankless installs and everything in between — handled by a licensed local plumber.</p>
+    <a href="#plumbing" class="btn btn-outline-light">Get Plumbing Help</a>
+  </div>
+  <div class="split-col">
+    <div class="split-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/water-over-wicker-baskets.jpg?v=1756610368&width=1200" alt="Clean water pouring, water quality treatment"></div>
+    <div class="split-tag">Water quality problem?</div>
+    <h3>Softening, filtration &amp; well water</h3>
+    <p>Hard water, poor-tasting water, well water concerns and drinking water systems — diagnosed and solved.</p>
+    <a href="#water" class="btn btn-outline-light">Explore Water Systems</a>
+  </div>
+</section>
+
+<!-- WATER QUALITY -->
+<section class="water-section" id="water">
+  <div class="wrap water-grid">
+    <div>
+      <div class="eyebrow-label" style="color:var(--spring);">SPECIALIZING IN WATER SYSTEMS &amp; QUALITY</div>
+      <h2 data-reveal>What's in your water?</h2>
+      <p class="water-lede" data-reveal>Clean-looking water doesn't always mean quality water. As an iSpring authorized dealer, we test, diagnose, and install systems built for Central Texas's hard water and well water conditions.</p>
+      <ul class="water-list" data-reveal>
+        <li><i class="drop"></i>Water testing</li>
+        <li><i class="drop"></i>Water softeners</li>
+        <li><i class="drop"></i>Whole-home filtration</li>
+        <li><i class="drop"></i>Reverse osmosis</li>
+        <li><i class="drop"></i>Well-water filtration</li>
+        <li><i class="drop"></i>Rainwater harvesting</li>
+      </ul>
+      <a href="#estimate" class="btn btn-primary">Find the Right Water System</a>
+    </div>
+    <div class="water-media" data-reveal>
+      <img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_0593.jpg?v=1777674857&width=1200" alt="Custom whole-home water softening and filtration system installation">
+      <div class="caption">Custom whole-home softening &amp; filtration install — iSpring authorized dealer</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLUMBING SERVICES -->
+<section id="plumbing">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 data-reveal>When your plumbing needs attention, we're ready.</h2>
+      <p>Residential and commercial plumbing across Bastrop and Central Texas — from small repairs to full system upgrades.</p>
+    </div>
+    <div class="services-grid" data-reveal>
+      <div class="svc-card">
+        <div class="idx">Repair</div>
+        <div><h4>Plumbing Repair</h4><p>Leaking pipes, burst lines, faulty valves and low water pressure, fixed for good.</p></div>
+      </div>
+      <div class="svc-card photo">
+        <img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5389.jpg?v=1756073053&width=800" alt="Tankless water heater installation">
+        <div class="txt"><h4>Tankless Water Heaters</h4></div>
+      </div>
+      <div class="svc-card">
+        <div class="idx">Water Heaters</div>
+        <div><h4>Water Heater Repair &amp; Install</h4><p>Tank and tankless, gas and electric — diagnostics, replacement and maintenance.</p></div>
+      </div>
+      <div class="svc-card">
+        <div class="idx">Drains</div>
+        <div><h4>Drain Cleaning</h4><p>Kitchen, bathroom and main line clogs cleared with professional equipment.</p></div>
+      </div>
+      <div class="svc-card">
+        <div class="idx">Sewer</div>
+        <div><h4>Sewer Line Services</h4><p>Camera inspections, hydrostatic testing, spot repair and full replacement.</p></div>
+      </div>
+      <div class="svc-card photo">
+        <img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5401.jpg?v=1769059700&width=800" alt="Foundation repair plumbing work">
+        <div class="txt"><h4>Foundation Repair Plumbing</h4></div>
+      </div>
+      <div class="svc-card">
+        <div class="idx">Leak Detection</div>
+        <div><h4>Leak Detection</h4><p>Slab leaks and hidden leaks found early, before they become foundation damage.</p></div>
+      </div>
+      <div class="svc-card">
+        <div class="idx">Gas</div>
+        <div><h4>Gas Line Services</h4><p>Installation and repair for water heaters, stoves, generators and outdoor kitchens.</p></div>
+      </div>
+    </div>
+    <div class="services-foot">
+      <a href="#" class="btn btn-outline-dark">View All Plumbing Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SAME DAY -->
+<section class="sameday">
+  <div class="sameday-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_8098.jpg?v=1769059627&width=1200" alt="LoneSprings technician working on an underground leak repair, Smithville TX"></div>
+  <div class="wrap">
+    <div class="sameday-content">
+      <div class="eyebrow-label" style="color:var(--spring);">SAME-DAY SERVICE</div>
+      <h2 data-reveal>Plumbing problems don't wait.</h2>
+      <p data-reveal>When you need help today, LoneSprings provides same-day plumbing service for many common repairs and emergencies across Bastrop and Central Texas.</p>
+      <a href="#estimate" class="btn btn-primary">Book Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LONESPRINGS -->
+<section>
+  <div class="wrap why-grid">
+    <div>
+      <div class="eyebrow-label">LOCAL PEOPLE. REAL PLUMBING EXPERTISE.</div>
+      <p class="why-lede" data-reveal>LoneSprings is <strong>locally owned and operated out of Bastrop</strong>, built around a straightforward idea: a homeowner shouldn't have to figure out whether they need a plumber or a water-treatment company. <strong>One licensed team handles both.</strong></p>
+    </div>
+    <div class="why-points" data-reveal>
+      <div class="why-point">
+        <h4>Locally Owned</h4>
+        <p>Based in Bastrop and serving Central Texas — not a regional franchise.</p>
+      </div>
+      <div class="why-point">
+        <h4>Licensed Professionals</h4>
+        <p>Work performed under Responsible Master Plumber License #46341.</p>
+      </div>
+      <div class="why-point">
+        <h4>Upfront Communication</h4>
+        <p>A clear explanation of the problem, the solution and the cost — before we start.</p>
+      </div>
+      <div class="why-point">
+        <h4>Plumbing + Water Systems</h4>
+        <p>One team for both your plumbing repairs and your water-quality needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATIONS -->
+<section class="transform-section">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 data-reveal>Found your problem? Here's the fix.</h2>
+      <p>Real issues we solve every week across Bastrop County and Central Texas.</p>
+    </div>
+    <div class="transform-grid" data-reveal>
+      <div class="t-card">
+        <div class="t-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/main.jpg?v=1754829839&width=600" alt="Whole house water softener system"></div>
+        <div class="t-body">
+          <span class="t-from">Hard Water</span><span class="t-arrow">&rarr;</span><span class="t-to">Water Softening</span>
+          <h4>Whole-Home Softener Install</h4>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/ro_system_with_logo.png?v=1775191787&width=600" alt="Reverse osmosis drinking water system"></div>
+        <div class="t-body">
+          <span class="t-from">Poor Water Quality</span><span class="t-arrow">&rarr;</span><span class="t-to">Filtration</span>
+          <h4>Reverse Osmosis &amp; Filtration</h4>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5389.jpg?v=1756073053&width=600" alt="Tankless water heater installed"></div>
+        <div class="t-body">
+          <span class="t-from">No Hot Water</span><span class="t-arrow">&rarr;</span><span class="t-to">Water Heater Fix</span>
+          <h4>Tankless Water Heater Install</h4>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-media"><img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5401.jpg?v=1769059700&width=600" alt="Plumbing leak repair at a foundation"></div>
+        <div class="t-body">
+          <span class="t-from">Plumbing Leak</span><span class="t-arrow">&rarr;</span><span class="t-to">Professional Repair</span>
+          <h4>Foundation &amp; Leak Repair</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section" id="areas">
+  <div class="wrap area-grid">
+    <div>
+      <div class="eyebrow-label" style="color:var(--spring);">WHERE WE WORK</div>
+      <h2 data-reveal>Serving Central Texas.</h2>
+      <p class="lede" data-reveal>From Bastrop out through Bastrop County and the surrounding Central Texas communities — licensed residential and commercial plumbing.</p>
+      <div class="area-note">Not sure if you're in our service area? <strong>Give us a call.</strong></div>
+      <div style="margin-top:26px;"><a href="tel:5127983755" class="btn btn-primary">Check Service Area</a></div>
+    </div>
+    <ul class="town-list" data-reveal>
+      <li>Bastrop</li><li>Elgin</li><li>Cedar Creek</li>
+      <li>Smithville</li><li>Lockhart</li><li>Buda</li>
+      <li>Kyle</li><li>Manor</li><li>Del Valle</li>
+      <li>La Grange</li><li>Giddings</li><li>Paige</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CREDENTIALS / GALLERY (real project photos + verified credentials, in place of unverified testimonials) -->
+<section id="credentials">
+  <div class="wrap">
+    <div class="cred-head">
+      <div class="eyebrow-label">GOOD WORK SPEAKS FOR ITSELF</div>
+      <h2 data-reveal>Real projects. Verified credentials.</h2>
+    </div>
+    <div class="cred-badges" data-reveal>
+      <div class="cred-badge"><span class="num">Lic. #46341</span><span class="lbl">Responsible Master Plumber, Texas State Board of Plumbing Examiners</span></div>
+      <div class="cred-badge"><span class="num">BBB</span><span class="lbl">Accredited Business</span></div>
+      <div class="cred-badge"><span class="num">iSpring</span><span class="lbl">Authorized Dealer — installation &amp; service</span></div>
+      <div class="cred-badge"><span class="num">Bastrop</span><span class="lbl">Chamber of Commerce member</span></div>
+    </div>
+    <div class="gallery-grid" data-reveal>
+      <img class="g1" src="https://lonespringsplumbing.com/cdn/shop/files/IMG_0584_6d5df209-4deb-4b59-941a-3c8e1088ac74.jpg?v=1777674903&width=800" alt="LoneSprings plumbing service work, Central Texas">
+      <img class="g2" src="https://lonespringsplumbing.com/cdn/shop/files/hands-adding-toothpaste-to-an-electric-toothbrush.jpg?v=1756610504&width=600" alt="Clean water for everyday home use">
+      <img class="g3" src="https://lonespringsplumbing.com/cdn/shop/files/01983f93-7b1e-7440-b104-6d20c7801dbc.jpg?v=1769059727&width=600" alt="Shower valve repair, bathroom plumbing">
+      <img class="g4" src="https://lonespringsplumbing.com/cdn/shop/files/IMG_0593.jpg?v=1777674857&width=800" alt="Whole-home water softening and filtration install">
+      <img class="g5" src="https://lonespringsplumbing.com/cdn/shop/files/white-pump-bottle-sits-on-a-white-porcelain-sink.jpg?v=1756610544&width=600" alt="Clean water fixture in a Central Texas home">
+      <img class="g6" src="https://lonespringsplumbing.com/cdn/shop/files/IMG_5315.jpg?v=1756039018&width=600" alt="Plumbing pipe fitting repair">
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="estimate">
+  <div class="final-media">
+    <img src="https://lonespringsplumbing.com/cdn/shop/files/IMG_0584_6d5df209-4deb-4b59-941a-3c8e1088ac74.jpg?v=1777674903&width=1600" alt="LoneSprings plumbing and water systems, Bastrop TX">
+  </div>
+  <div class="wrap">
+    <div class="final-content">
+      <h2 data-reveal>Ready to fix the problem?</h2>
+      <p data-reveal>Whether it's a plumbing repair, water heater, leak or a better water system, let's find the right solution for your home.</p>
+      <div class="final-ctas" data-reveal>
+        <a href="#" class="btn btn-primary">Request an Estimate</a>
+        <a href="tel:5127983755" class="btn btn-outline-light">Call 512-798-3755</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">LoneSprings</div>
+        <p>Water Systems &amp; Plumbing. Locally owned and operated out of Bastrop, TX. Lic. #46341.</p>
+      </div>
+      <div class="foot-col">
+        <h5>SERVICES</h5>
+        <a href="#plumbing">Plumbing Repair</a>
+        <a href="#plumbing">Water Heaters</a>
+        <a href="#plumbing">Drain &amp; Sewer</a>
+        <a href="#plumbing">Leak Detection</a>
+      </div>
+      <div class="foot-col">
+        <h5>WATER SYSTEMS</h5>
+        <a href="#water">Water Softeners</a>
+        <a href="#water">Reverse Osmosis</a>
+        <a href="#water">Well Water Filtration</a>
+        <a href="#water">Water Testing</a>
+      </div>
+      <div class="foot-col">
+        <h5>COMPANY</h5>
+        <a href="#areas">Service Areas</a>
+        <a href="#credentials">Credentials</a>
+        <a href="tel:5127983755">512-798-3755</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 LoneSprings Water Systems &amp; Plumbing</span>
+      <span>Bastrop, TX &middot; Responsible Master Plumber License #46341</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // sticky nav state
+  const header = document.getElementById('siteHeader');
+  ScrollTrigger.create({
+    start: 60,
+    end: 99999,
+    onUpdate: self => {
+      header.classList.toggle('scrolled', self.scroll() > 40);
+    }
+  });
+
+  // hero load sequence
+  gsap.timeline({defaults:{ease:'power3.out'}})
+    .to('.hero-media img', {scale:1, duration:1.6, ease:'power2.out'}, 0)
+    .from('.hero [data-reveal]', {y:26, opacity:0, duration:0.9, stagger:0.12}, 0.2);
+
+  gsap.set('.hero-media img', {scale:1.12});
+
+  // gentle parallax on hero + same-day + final cta
+  [['.hero-media img', .18], ['.sameday-media img', .12], ['.final-media img', .12]].forEach(([sel, amt])=>{
+    gsap.to(sel, {
+      yPercent: amt*100,
+      ease:'none',
+      scrollTrigger:{trigger:sel, scrub:true}
+    });
+  });
+
+  // scroll reveals
+  document.querySelectorAll('[data-reveal]').forEach(el=>{
+    if(el.closest('.hero')) return;
+    gsap.fromTo(el, {y:24, opacity:0}, {
+      y:0, opacity:1, duration:0.85, ease:'power2.out',
+      scrollTrigger:{trigger:el, start:'top 88%'}
+    });
+  });
+</script>
+</body>
+</html>

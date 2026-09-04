@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth Fabrication — Turn-Key Industrial Maintenance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171b1f;
+    --steel-900:#1c2126;
+    --steel-800:#242b31;
+    --steel-700:#3a444c;
+    --steel-500:#5c6870;
+    --steel-300:#98a2a9;
+    --steel-200:#c7ccd0;
+    --paper:#e9e5da;
+    --paper-dim:#ddd8ca;
+    --white:#f7f5ef;
+    --spark:#e2a03e;
+    --spark-dim:#c98a2e;
+    --rust:#8c3a2c;
+    --line: rgba(23,27,31,0.14);
+    --line-onDark: rgba(233,229,218,0.18);
+    --maxw: 1200px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:0.005em;
+    margin:0;
+    color:var(--ink);
+    text-transform:uppercase;
+  }
+
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 40px;
+  }
+  @media (max-width:720px){ .wrap{padding:0 22px;} }
+
+  /* ---------- photo treatment: unify real + supplemental photography ---------- */
+  .photo{
+    position:relative;
+    overflow:hidden;
+    background:var(--steel-900);
+  }
+  .photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    filter:grayscale(0.28) contrast(1.08) saturate(0.92) brightness(0.94);
+    transform:scale(1.0);
+  }
+  .photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(23,27,31,0) 0%, rgba(23,27,31,0.55) 100%);
+    mix-blend-mode:multiply;
+    pointer-events:none;
+  }
+  .photo.tint::before{
+    content:"";
+    position:absolute; inset:0;
+    background:rgba(28,33,38,0.28);
+    mix-blend-mode:color;
+    pointer-events:none;
+    z-index:1;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(233,229,218,0.0);
+    border-bottom:1px solid transparent;
+    transition:background 0.25s ease, border-color 0.25s ease;
+  }
+  header.scrolled{
+    background:rgba(233,229,218,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:19px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .brand .mark{
+    width:30px; height:30px;
+    background:var(--ink);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:700;
+    flex-shrink:0;
+  }
+  nav.primary-nav{
+    display:flex; align-items:center; gap:34px;
+  }
+  nav.primary-nav a{
+    font-size:14px;
+    color:var(--steel-700);
+    padding:4px 0;
+    border-bottom:1px solid transparent;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  nav.primary-nav a:hover{ color:var(--ink); border-color:var(--spark-dim); }
+  .header-cta{ display:flex; align-items:center; gap:22px; }
+  .call-link{
+    font-size:14px;
+    color:var(--steel-700);
+    white-space:nowrap;
+  }
+  .call-link strong{ color:var(--ink); font-weight:600; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    padding:12px 22px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    background:transparent;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-solid{ background:var(--ink); color:var(--white); }
+  .btn-solid:hover{ background:var(--spark-dim); border-color:var(--spark-dim); color:var(--ink); }
+  .btn-outline:hover{ border-color:var(--ink); background:var(--ink); color:var(--white); }
+  .btn-onDark{ border-color:var(--white); color:var(--white); }
+  .btn-onDark:hover{ background:var(--spark); border-color:var(--spark); color:var(--ink); }
+  .btn-spark{ background:var(--spark); border-color:var(--spark); color:var(--ink); }
+  .btn-spark:hover{ background:var(--ink); border-color:var(--ink); color:var(--spark); }
+
+  .mobile-toggle{ display:none; }
+  @media (max-width: 980px){
+    nav.primary-nav, .call-link{ display:none; }
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{
+    opacity:0; transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; align-items:flex-end;
+    color:var(--white);
+  }
+  .hero .photo{ position:absolute; inset:0; }
+  .hero .photo::after{
+    background:linear-gradient(180deg, rgba(23,27,31,0.35) 0%, rgba(23,27,31,0.35) 35%, rgba(23,27,31,0.92) 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    padding-bottom:76px;
+  }
+  .hero-eyebrow{
+    font-size:14px;
+    color:var(--paper);
+    letter-spacing:0.02em;
+    margin-bottom:18px;
+    max-width:520px;
+    opacity:0.86;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.6vw, 76px);
+    line-height:1.02;
+    color:var(--white);
+    max-width:920px;
+  }
+  .hero-sub{
+    margin-top:24px;
+    font-size:17px;
+    max-width:540px;
+    color:var(--paper);
+    opacity:0.92;
+  }
+  .hero-actions{
+    margin-top:36px;
+    display:flex; gap:16px; flex-wrap:wrap;
+    align-items:center;
+  }
+  .hero-phone{
+    font-size:14px; color:var(--paper); opacity:0.85;
+  }
+  .value-strip{
+    position:relative; z-index:2;
+    border-top:1px solid var(--line-onDark);
+    margin-top:52px;
+  }
+  .value-strip .wrap{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .value-strip span{
+    display:block;
+    padding:18px 0;
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-size:14px;
+    letter-spacing:0.05em;
+    color:var(--paper);
+    border-right:1px solid var(--line-onDark);
+  }
+  .value-strip span:last-child{ border-right:none; }
+  @media (max-width:720px){
+    .value-strip .wrap{ grid-template-columns:repeat(2,1fr); }
+    .value-strip span{ font-size:12px; }
+  }
+
+  /* ---------- section basics ---------- */
+  section{ padding:110px 0; }
+  @media (max-width:720px){ section{ padding:70px 0; } }
+  .section-head{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    margin-bottom:56px;
+    align-items:end;
+  }
+  @media (max-width:860px){
+    .section-head{ grid-template-columns:1fr; gap:20px; }
+  }
+  .section-head h2{
+    font-size:clamp(28px, 3.4vw, 44px);
+    line-height:1.08;
+  }
+  .section-head .lede{
+    font-size:16px;
+    color:var(--steel-700);
+    max-width:44ch;
+  }
+  .rule{
+    height:1px; background:var(--line); border:none; margin:0;
+  }
+
+  /* ---------- downtime problem ---------- */
+  .problem{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .problem-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    align-items:stretch;
+    border:1px solid var(--line-onDark);
+  }
+  @media (max-width:860px){ .problem-grid{ grid-template-columns:1fr; } }
+  .problem-text{
+    padding:60px 56px;
+    display:flex; flex-direction:column; justify-content:center;
+    gap:26px;
+    border-right:1px solid var(--line-onDark);
+  }
+  @media (max-width:860px){ .problem-text{ border-right:none; border-bottom:1px solid var(--line-onDark); padding:44px 30px;} }
+  .problem-text h2{
+    color:var(--white);
+    font-size:clamp(28px, 3.6vw, 42px);
+    line-height:1.05;
+  }
+  .problem-text p{ color:var(--steel-200); font-size:16px; max-width:46ch; }
+  .problem .photo{ min-height:380px; }
+
+  /* ---------- capabilities ---------- */
+  .cap-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  @media (max-width:980px){ .cap-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cap-grid{ grid-template-columns:1fr;} }
+  .cap-card{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    display:flex; flex-direction:column;
+  }
+  .cap-card .photo{ aspect-ratio:4/3; }
+  .cap-card-body{
+    padding:26px 24px 30px;
+    display:flex; flex-direction:column; gap:12px; flex:1;
+  }
+  .cap-card-body h3{ font-size:19px; }
+  .cap-card-body p{ font-size:14.5px; color:var(--steel-700); flex:1; }
+  .cap-card-body .cap-link{
+    font-size:13.5px; font-weight:600;
+    color:var(--ink);
+    display:inline-flex; align-items:center; gap:6px;
+    width:fit-content;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:2px;
+  }
+
+  /* ---------- 90% stat ---------- */
+  .stat-section{
+    position:relative;
+    color:var(--white);
+    min-height:78vh;
+    display:flex; align-items:center;
+  }
+  .stat-section .photo{ position:absolute; inset:0; }
+  .stat-section .photo::after{
+    background:linear-gradient(90deg, rgba(23,27,31,0.94) 0%, rgba(23,27,31,0.72) 46%, rgba(23,27,31,0.3) 100%);
+  }
+  .stat-content{ position:relative; z-index:2; display:grid; grid-template-columns:auto 1fr; gap:44px; align-items:center; }
+  @media (max-width:760px){ .stat-content{ grid-template-columns:1fr; } }
+  .stat-number{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(120px, 17vw, 220px);
+    line-height:0.86;
+    color:var(--white);
+    border-bottom:6px solid var(--spark);
+    padding-bottom:6px;
+    width:fit-content;
+  }
+  .stat-copy{ max-width:440px; }
+  .stat-copy h3{
+    font-size:22px;
+    color:var(--spark);
+    margin-bottom:14px;
+  }
+  .stat-copy p{ color:var(--paper); font-size:16px; margin-bottom:10px; }
+
+  /* ---------- how we work ---------- */
+  .process-list{
+    border-top:1px solid var(--line);
+  }
+  .process-row{
+    display:grid;
+    grid-template-columns:110px 1fr 2fr;
+    gap:32px;
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  @media (max-width:760px){
+    .process-row{ grid-template-columns:60px 1fr; }
+    .process-row .process-desc{ grid-column:2/3; margin-top:8px; }
+  }
+  .process-num{
+    font-family:'Oswald', sans-serif;
+    font-size:15px;
+    color:var(--steel-500);
+    letter-spacing:0.04em;
+  }
+  .process-name{ font-size:22px; }
+  .process-desc{ font-size:15px; color:var(--steel-700); max-width:52ch; }
+
+  /* ---------- project / field work ---------- */
+  .field-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    grid-auto-rows:220px;
+    gap:2px;
+  }
+  .field-grid .photo:nth-child(1){ grid-row:span 2; }
+  @media (max-width:860px){
+    .field-grid{ grid-template-columns:1fr 1fr; grid-auto-rows:180px; }
+    .field-grid .photo:nth-child(1){ grid-column:span 2; grid-row:span 1; }
+  }
+  @media (max-width:560px){
+    .field-grid{ grid-template-columns:1fr; }
+    .field-grid .photo:nth-child(1){ grid-column:span 1; }
+  }
+  .field-item{ position:relative; }
+  .field-caption{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:16px 18px;
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color:var(--white);
+  }
+
+  /* ---------- why smooth fabrication ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .why-grid{ grid-template-columns:1fr; gap:40px; } }
+  .why-grid .photo{ aspect-ratio:4/5; }
+  .why-list{ display:flex; flex-direction:column; }
+  .why-item{
+    padding:26px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:24px;
+  }
+  .why-item:last-child{ border-bottom:1px solid var(--line); }
+  @media (max-width:560px){ .why-item{ grid-template-columns:1fr; gap:8px; } }
+  .why-item h3{ font-size:18px; }
+  .why-item p{ font-size:14.5px; color:var(--steel-700); }
+
+  /* ---------- about / story ---------- */
+  .about-section{ background:var(--white); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:64px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:34px; } }
+  .about-grid .photo{ aspect-ratio:5/6; }
+  .about-copy h2{
+    font-size:clamp(26px, 3.2vw, 40px);
+    line-height:1.08;
+    margin-bottom:24px;
+  }
+  .about-copy p{ font-size:15.5px; color:var(--steel-700); margin-bottom:16px; max-width:52ch; }
+  .about-tags{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+  .about-tags span{
+    font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em;
+    padding:8px 14px; border:1px solid var(--line); color:var(--steel-700);
+  }
+
+  /* ---------- service area ---------- */
+  .area-section{ background:var(--steel-900); color:var(--paper); }
+  .area-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  @media (max-width:860px){ .area-grid{ grid-template-columns:1fr; gap:36px; } }
+  .area-grid h2{ color:var(--white); font-size:clamp(26px,3.2vw,38px); margin-bottom:20px; }
+  .area-grid p{ color:var(--steel-200); font-size:15.5px; margin-bottom:14px; max-width:50ch; }
+  .area-list{ display:flex; flex-direction:column; }
+  .area-list-item{
+    padding:20px 0;
+    border-top:1px solid var(--line-onDark);
+    display:flex; justify-content:space-between; gap:20px;
+    font-size:15px;
+  }
+  .area-list-item:last-child{ border-bottom:1px solid var(--line-onDark); }
+  .area-list-item .label{ color:var(--white); font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:14px; letter-spacing:0.03em; }
+  .area-list-item .val{ color:var(--steel-200); text-align:right; }
+
+  /* ---------- contact / quote ---------- */
+  .contact-section{ background:var(--paper); }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:64px;
+  }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+  .contact-intro h2{ font-size:clamp(28px,3.6vw,44px); line-height:1.05; margin-bottom:20px; }
+  .contact-intro p{ font-size:16px; color:var(--steel-700); max-width:42ch; margin-bottom:28px; }
+  .contact-detail{ display:flex; flex-direction:column; gap:6px; margin-top:6px; }
+  .contact-detail a, .contact-detail span{ font-size:15px; color:var(--ink); }
+  .contact-detail .phone{ font-family:'Oswald', sans-serif; font-size:24px; }
+
+  form.quote-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    border-top:1px solid var(--line);
+    padding-top:34px;
+  }
+  form.quote-form .full{ grid-column:1/3; }
+  @media (max-width:560px){
+    form.quote-form{ grid-template-columns:1fr; }
+    form.quote-form .full{ grid-column:1/2; }
+  }
+  .field label{
+    display:block; font-size:13px; color:var(--steel-700);
+    margin-bottom:8px; text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--steel-500);
+    background:transparent;
+    padding:10px 2px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+    outline:none;
+    transition:border-color 0.15s ease;
+  }
+  .field textarea{ resize:vertical; min-height:70px; }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--ink); }
+  .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible{
+    outline:2px solid var(--spark-dim); outline-offset:3px;
+  }
+  form.quote-form .btn{ margin-top:6px; }
+
+  /* ---------- final CTA ---------- */
+  .final-cta{
+    position:relative;
+    color:var(--white);
+    min-height:64vh;
+    display:flex; align-items:center;
+  }
+  .final-cta .photo{ position:absolute; inset:0; }
+  .final-cta .photo::after{
+    background:linear-gradient(180deg, rgba(23,27,31,0.55) 0%, rgba(23,27,31,0.86) 100%);
+  }
+  .final-cta-content{ position:relative; z-index:2; text-align:left; }
+  .final-cta h2{
+    font-size:clamp(32px, 5vw, 60px);
+    color:var(--white);
+    max-width:760px;
+    line-height:1.03;
+  }
+  .final-cta p{ margin-top:18px; font-size:17px; color:var(--paper); max-width:44ch; }
+  .final-cta-actions{ margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); color:var(--steel-300); padding:64px 0 30px; }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:44px;
+    border-bottom:1px solid var(--line-onDark);
+  }
+  @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  .footer-brand{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .footer-brand .mark{
+    width:28px; height:28px; background:var(--paper); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:14px;
+  }
+  .footer-brand span{ font-family:'Oswald', sans-serif; text-transform:uppercase; font-size:17px; color:var(--white); letter-spacing:0.03em; }
+  .footer-col h4{
+    font-size:13px; text-transform:uppercase; letter-spacing:0.04em; color:var(--steel-300);
+    font-family:'IBM Plex Sans', sans-serif; font-weight:600; margin-bottom:16px;
+  }
+  .footer-col a, .footer-col p{ display:block; font-size:14.5px; color:var(--steel-200); margin-bottom:10px; }
+  .footer-col a:hover{ color:var(--spark); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    padding-top:26px; font-size:12.5px; color:var(--steel-500);
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand"><span class="mark">SF</span>Smooth Fabrication</a>
+    <nav class="primary-nav">
+      <a href="#capabilities">Services</a>
+      <a href="#how-we-work">Capabilities</a>
+      <a href="#field-work">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+14302012201" class="call-link">Call <strong>(430) 201-2201</strong></a>
+      <a href="#contact" class="btn btn-solid">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="photo tint">
+      <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_020-min.jpg" alt="Smooth Fabrication crew on an active industrial job site in East Texas">
+    </div>
+    <div class="wrap hero-content reveal" id="heroContent">
+      <p class="hero-eyebrow">Turn-key industrial maintenance — piping, rigging, fabrication, dirt work &amp; concrete flooring</p>
+      <h1>Turn-key industrial maintenance,<br>built around your operation.</h1>
+      <p class="hero-sub">Family-owned and based in East Texas, Smooth Fabrication delivers piping, rigging, metal fabrication and dirt work with one priority: getting your operation back up and running with minimal disruption.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-spark">Request a Quote</a>
+        <a href="#capabilities" class="btn btn-onDark">Explore Our Services</a>
+      </div>
+    </div>
+    <div class="value-strip">
+      <div class="wrap">
+        <span>Piping</span>
+        <span>Rigging</span>
+        <span>Fabrication</span>
+        <span>Dirt Work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNTIME PROBLEM -->
+  <section class="problem">
+    <div class="wrap">
+      <div class="problem-grid reveal">
+        <div class="problem-text">
+          <h2>Downtime costs more than the job.</h2>
+          <p>Every hour a shutdown runs long is an hour your operation isn't producing. That's why Smooth Fabrication prioritizes rapid response and services built around your actual schedule &mdash; not a generic timeline.</p>
+          <p>We plan around your operational windows, work the site directly, and deliver a finished result built to your specifications the first time.</p>
+          <a href="#contact" class="btn btn-onDark" style="width:fit-content;">Talk About Your Project</a>
+        </div>
+        <div class="photo">
+          <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_007-min.jpg" alt="Smooth Fabrication technician working on industrial piping onsite">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE CAPABILITIES -->
+  <section id="capabilities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Core capabilities</h2>
+        <p class="lede">One partner for the industrial services your operation needs most &mdash; from the first weld to the finished floor.</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0;">
+      <div class="cap-grid reveal">
+        <div class="cap-card">
+          <div class="photo"><img src="https://smoothfab.com/wp-content/uploads/2026/01/piping-min.jpg" alt="Industrial piping installation"></div>
+          <div class="cap-card-body">
+            <h3>Piping</h3>
+            <p>Installation and maintenance of high-quality industrial pipelines, custom-designed for your operational demands.</p>
+            <a href="#contact" class="cap-link">Learn more →</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="photo"><img src="https://smoothfab.com/wp-content/uploads/2026/01/rigging-min.jpg" alt="Rigging crew positioning heavy equipment"></div>
+          <div class="cap-card-body">
+            <h3>Rigging</h3>
+            <p>Safe lifting, moving and positioning of heavy equipment and materials, planned and executed with precision.</p>
+            <a href="#contact" class="cap-link">Learn more →</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1647586028042-1de4d4a935e6?fm=jpg&q=80&w=900&auto=format&fit=crop" alt="Metal fabrication and welding work"></div>
+          <div class="cap-card-body">
+            <h3>Metal Fabrication</h3>
+            <p>Custom fabrication work tailored to project requirements, assembled and finished to spec.</p>
+            <a href="#contact" class="cap-link">Learn more →</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="photo"><img src="https://smoothfab.com/wp-content/uploads/2026/01/dirt-work-min.jpg" alt="Dirt work site preparation and grading"></div>
+          <div class="cap-card-body">
+            <h3>Dirt Work</h3>
+            <p>Site preparation, excavation and grading that lays a solid foundation for the next phase of your project.</p>
+            <a href="#contact" class="cap-link">Learn more →</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1772306814076-ff65f53ac438?fm=jpg&q=80&w=900&auto=format&fit=crop" alt="Industrial concrete flooring in a commercial facility"></div>
+          <div class="cap-card-body">
+            <h3>Concrete Flooring</h3>
+            <p>Industrial concrete flooring services delivered as part of a turn-key project scope.</p>
+            <a href="#contact" class="cap-link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR THE FIELD -->
+  <section class="stat-section" id="onsite">
+    <div class="photo">
+      <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_019-min.jpg" alt="Smooth Fabrication team working directly on an industrial site">
+    </div>
+    <div class="wrap stat-content reveal">
+      <div class="stat-number" id="statNumber">0%</div>
+      <div class="stat-copy">
+        <h3>Built for the field.</h3>
+        <p>90% of our fabrication and piping jobs are completed onsite &mdash; not in a distant shop.</p>
+        <p>Less disruption. More direct control. Work built around the way your facility actually operates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="how-we-work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>How we work</h2>
+        <p class="lede">A straightforward process built for industrial timelines, not administrative ones.</p>
+      </div>
+      <div class="process-list reveal">
+        <div class="process-row">
+          <span class="process-num">01</span>
+          <span class="process-name">Assess</span>
+          <span class="process-desc">We walk the site and understand the project, the operational constraints and what "done" needs to look like.</span>
+        </div>
+        <div class="process-row">
+          <span class="process-num">02</span>
+          <span class="process-name">Plan</span>
+          <span class="process-desc">We put together the right crew, equipment and sequencing for the work &mdash; built around your schedule.</span>
+        </div>
+        <div class="process-row">
+          <span class="process-num">03</span>
+          <span class="process-name">Execute</span>
+          <span class="process-desc">Work gets done safely and efficiently, with the majority of fabrication and piping completed directly onsite.</span>
+        </div>
+        <div class="process-row">
+          <span class="process-num">04</span>
+          <span class="process-name">Deliver</span>
+          <span class="process-desc">We hand off a finished result built to spec, and your operation moves into its next phase.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT / FIELD WORK -->
+  <section id="field-work" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Field work</h2>
+        <p class="lede">This is the work itself &mdash; piping runs, rigging jobs and site work completed across East Texas and beyond.</p>
+      </div>
+    </div>
+    <div class="field-grid reveal">
+      <div class="field-item photo">
+        <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_004-min.jpg" alt="Piping fabrication project completed onsite">
+        <span class="field-caption">Piping</span>
+      </div>
+      <div class="field-item photo">
+        <img src="https://smoothfab.com/wp-content/uploads/2026/01/rigging-min.jpg" alt="Rigging equipment positioning">
+        <span class="field-caption">Rigging</span>
+      </div>
+      <div class="field-item photo">
+        <img src="https://images.unsplash.com/photo-1647586028042-1de4d4a935e6?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Custom metal fabrication work">
+        <span class="field-caption">Fabrication</span>
+      </div>
+      <div class="field-item photo">
+        <img src="https://smoothfab.com/wp-content/uploads/2026/01/dirt-work-min.jpg" alt="Dirt work site preparation">
+        <span class="field-caption">Site Work</span>
+      </div>
+      <div class="field-item photo">
+        <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_007-min.jpg" alt="Technician assembling industrial piping">
+        <span class="field-caption">Piping</span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:40px;">
+      <a href="#contact" class="btn btn-outline">View Our Work</a>
+    </div>
+  </section>
+
+  <!-- WHY SMOOTH FABRICATION -->
+  <section id="why">
+    <div class="wrap">
+      <div class="why-grid reveal">
+        <div class="photo">
+          <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_020-min.jpg" alt="Smooth Fabrication crew member on the job">
+        </div>
+        <div>
+          <h2 style="font-size:clamp(26px,3vw,36px); margin-bottom:8px;">Why Smooth Fabrication</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <h3>Turn-key capability</h3>
+              <p>Piping, rigging, fabrication, dirt work and concrete flooring under one partner &mdash; not five different vendors.</p>
+            </div>
+            <div class="why-item">
+              <h3>Onsite fabrication</h3>
+              <p>90% of our fabrication and piping work happens directly onsite, minimizing disruption to your operation.</p>
+            </div>
+            <div class="why-item">
+              <h3>Safety first</h3>
+              <p>Safety and quality workmanship are treated as a standard, not an afterthought, on every job.</p>
+            </div>
+            <div class="why-item">
+              <h3>Family-owned</h3>
+              <p>A family-owned, faith-based business built on reliability and long-term relationships with the people we work for.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / COMPANY STORY -->
+  <section id="about" class="about-section">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div class="photo">
+          <img src="https://smoothfab.com/wp-content/uploads/2026/01/SF_009-min.jpg" alt="Smooth Fabrication team member on a job site">
+        </div>
+        <div class="about-copy">
+          <h2>From five employees in a garage to a growing industrial partner.</h2>
+          <p>Smooth Fabrication is a family-owned and faith-based business that started in a garage with five employees. That start still shapes how we work today &mdash; taking care of our customers and our team, and building a culture of respect and reliability as we've grown.</p>
+          <p>When you choose Smooth Fabrication, you're partnering with a team that genuinely cares about your success, not just a service provider working through a checklist.</p>
+          <div class="about-tags">
+            <span>Family-Owned</span>
+            <span>Faith-Based</span>
+            <span>East Texas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area-section">
+    <div class="wrap">
+      <div class="area-grid reveal">
+        <div>
+          <h2>Based in East Texas. Built for operations nationwide.</h2>
+          <p>Smooth Fabrication is based in White Oak, Texas, and works as a reliable partner for industrial operations nationwide &mdash; bringing an onsite, hands-on approach to every project regardless of location.</p>
+          <p>Whatever the scope, our team mobilizes with the piping, rigging, fabrication and site-work capability to get the job done without unnecessary handoffs.</p>
+        </div>
+        <div class="area-list">
+          <div class="area-list-item"><span class="label">Headquarters</span><span class="val">White Oak, Texas</span></div>
+          <div class="area-list-item"><span class="label">Service Reach</span><span class="val">Industrial operations nationwide</span></div>
+          <div class="area-list-item"><span class="label">Core Services</span><span class="val">Piping, Rigging, Fabrication, Dirt Work, Concrete</span></div>
+          <div class="area-list-item"><span class="label">Onsite Work</span><span class="val">90% of fabrication &amp; piping jobs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / QUOTE -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-intro reveal">
+          <h2>Have a project coming up?</h2>
+          <p>Tell us what you're working on and we'll talk through the right solution for your operation.</p>
+          <div class="contact-detail">
+            <a href="tel:+14302012201" class="phone">(430) 201-2201</a>
+            <span>1800 Cherokee Trce, White Oak, TX 75693</span>
+            <span>Mon&ndash;Fri, 7:00 AM&ndash;4:00 PM</span>
+          </div>
+        </div>
+        <form class="quote-form reveal" onsubmit="event.preventDefault(); alert('This is a homepage design concept — form submission is not connected.');">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" required></div>
+          <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+          <div class="field full"><label for="service">Service</label>
+            <select id="service">
+              <option>Piping</option>
+              <option>Rigging</option>
+              <option>Metal Fabrication</option>
+              <option>Dirt Work</option>
+              <option>Concrete Flooring</option>
+            </select>
+          </div>
+          <div class="field full"><label for="details">Project Details</label><textarea id="details" rows="4"></textarea></div>
+          <div class="full"><button type="submit" class="btn btn-solid">Request a Quote</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="photo">
+      <img src="https://smoothfab.com/wp-content/uploads/2026/02/Smooth-Fabrication.jpg" alt="Smooth Fabrication industrial job site">
+    </div>
+    <div class="wrap final-cta-content reveal">
+      <h2>Keep your operation moving.</h2>
+      <p>Turn-key piping, rigging, fabrication and site work &mdash; built around your schedule, not ours.</p>
+      <div class="final-cta-actions">
+        <a href="#contact" class="btn btn-spark">Request a Quote</a>
+        <a href="tel:+14302012201" class="btn btn-onDark">Call Smooth Fabrication</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="mark">SF</span><span>Smooth Fabrication</span></div>
+        <p style="max-width:30ch;">1800 Cherokee Trce<br>White Oak, TX 75693</p>
+        <a href="tel:+14302012201">(430) 201-2201</a>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="#capabilities">Services</a>
+        <a href="#field-work">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#capabilities">Piping</a>
+        <a href="#capabilities">Rigging</a>
+        <a href="#capabilities">Metal Fabrication</a>
+        <a href="#capabilities">Dirt Work</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.facebook.com/profile.php?id=61575398107860" target="_blank" rel="noopener">Facebook</a>
+        <a href="tel:+14302012201">Call Us</a>
+        <a href="#contact">Request a Quote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Smooth Fabrication. Homepage redesign concept.</span>
+      <span>Photography: Smooth Fabrication; supplemental industrial photography via Unsplash.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header background on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    if (window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero entrance
+  const heroContent = document.getElementById('heroContent');
+  if (prefersReduced) {
+    heroContent.classList.add('in');
+  } else {
+    requestAnimationFrame(() => setTimeout(() => heroContent.classList.add('in'), 120));
+  }
+
+  // Scroll reveal for sections
+  const revealEls = document.querySelectorAll('.reveal:not(#heroContent)');
+  if (prefersReduced) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15 });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // 90% stat count-up
+  const statEl = document.getElementById('statNumber');
+  const statSection = document.getElementById('onsite');
+  let statAnimated = false;
+  function animateStat(){
+    if (statAnimated) return;
+    statAnimated = true;
+    if (prefersReduced) { statEl.textContent = '90%'; return; }
+    let current = 0;
+    const target = 90;
+    const duration = 1400;
+    const start = performance.now();
+    function step(now){
+      const progress = Math.min((now - start) / duration, 1);
+      current = Math.round(progress * target);
+      statEl.textContent = current + '%';
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const statIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) animateStat(); });
+  }, { threshold:0.4 });
+  statIo.observe(statSection);
+</script>
+
+</body>
+</html>

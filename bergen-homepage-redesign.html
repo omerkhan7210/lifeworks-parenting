@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bergen Insurance Agency — Weatherford, Texas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C2B3A;
+    --ink-soft:#33475C;
+    --parchment:#F8F4EB;
+    --parchment-dim:#EFE9DB;
+    --white:#FFFFFF;
+    --rust:#B4482E;
+    --rust-dark:#8F3821;
+    --gold:#C89B3C;
+    --green:#2F4A3C;
+    --green-light:#3E5F4E;
+    --line: rgba(28,43,58,0.14);
+    --line-light: rgba(248,244,235,0.22);
+    --shadow: 0 20px 50px -25px rgba(28,43,58,0.35);
+    --maxw: 1180px;
+    --serif: 'Zilla Slab', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--parchment);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; margin:0; line-height:1.08; letter-spacing:-0.01em;}
+  p{margin:0;}
+  .eyebrow-line{display:flex; align-items:center; gap:12px; color:var(--rust); font-size:13px; font-weight:600; letter-spacing:0.02em;}
+  .eyebrow-line .rule{width:28px; height:2px; background:var(--rust); display:block;}
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--sans); font-weight:600; font-size:15.5px;
+    padding:15px 26px; border-radius:3px; border:1.5px solid transparent;
+    cursor:pointer; transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn svg{width:15px;height:15px; transition:transform .25s ease;}
+  .btn:hover svg{transform:translateX(3px);}
+  .btn-primary{ background:var(--rust); color:var(--white); }
+  .btn-primary:hover{ background:var(--rust-dark); transform:translateY(-1px); }
+  .btn-ghost-dark{ border-color:rgba(28,43,58,0.3); color:var(--ink); }
+  .btn-ghost-dark:hover{ border-color:var(--ink); background:rgba(28,43,58,0.05); }
+  .btn-ghost-light{ border-color:rgba(248,244,235,0.4); color:var(--parchment); }
+  .btn-ghost-light:hover{ border-color:var(--parchment); background:rgba(248,244,235,0.08); }
+  .btn-text{ padding:0; font-weight:600; font-size:15px; color:var(--rust); display:inline-flex; align-items:center; gap:7px; }
+  .btn-text svg{width:13px;height:13px;}
+  .btn-text:hover svg{transform:translateX(3px);}
+
+  /* ============ TOP UTILITY BAR ============ */
+  .topbar{
+    background:var(--ink); color:rgba(248,244,235,0.75);
+    font-size:13px; padding:8px 0;
+  }
+  .topbar .wrap{display:flex; justify-content:space-between; align-items:center;}
+  .topbar a{color:rgba(248,244,235,0.75);}
+  .topbar a:hover{color:var(--parchment);}
+  .topbar-links{display:flex; gap:22px;}
+  @media (max-width:720px){ .topbar-links span:nth-child(2){display:none;} }
+
+  /* ============ HEADER ============ */
+  header.site{
+    position:sticky; top:0; z-index:100;
+    background:rgba(248,244,235,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease, padding .3s ease;
+  }
+  header.site.scrolled{ box-shadow:0 6px 24px -12px rgba(28,43,58,0.25); }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; transition:padding .3s ease;}
+  header.site.scrolled .nav-row{ padding:12px 0; }
+  .logo{ display:flex; align-items:center; gap:11px; font-family:var(--serif); font-weight:700; font-size:21px; color:var(--ink); }
+  .logo .mark{
+    width:38px;height:38px; border-radius:50%; background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--parchment); font-size:15px; font-weight:700; letter-spacing:0.02em;
+    flex-shrink:0;
+  }
+  .logo .sub{display:block; font-family:var(--sans); font-weight:500; font-size:11.5px; color:var(--ink-soft); letter-spacing:0.03em; margin-top:1px;}
+  nav.main{ display:flex; align-items:center; gap:34px; }
+  nav.main a{ font-size:14.5px; font-weight:600; color:var(--ink-soft); padding:6px 0; position:relative; }
+  nav.main a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--rust); transform:scaleX(0); transition:transform .25s ease; transform-origin:left;}
+  nav.main a:hover{ color:var(--ink); }
+  nav.main a:hover::after{ transform:scaleX(1); }
+  .nav-actions{ display:flex; align-items:center; gap:18px; }
+  .nav-phone{ font-family:var(--serif); font-weight:600; font-size:16.5px; color:var(--ink); display:flex; align-items:center; gap:8px;}
+  .nav-phone svg{width:16px;height:16px; color:var(--rust);}
+  .menu-btn{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  @media (max-width:980px){
+    nav.main{ display:none; }
+    .nav-phone span{display:none;}
+    .menu-btn{ display:block; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--ink);
+    color:var(--parchment);
+    padding:108px 0 96px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 900px 600px at 82% 8%, rgba(200,155,60,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 100%, rgba(180,72,46,0.18), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-grid{ position:relative; display:grid; grid-template-columns:1.05fr 0.85fr; gap:64px; align-items:center; }
+  @media (max-width:960px){ .hero-grid{ grid-template-columns:1fr; gap:48px;} }
+  .hero-eyebrow{ color:var(--gold); font-size:13.5px; font-weight:600; letter-spacing:0.03em; margin-bottom:22px; display:flex; align-items:center; gap:10px;}
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%; background:var(--rust);}
+  .hero h1{ font-size:clamp(40px, 5.4vw, 66px); color:var(--white); max-width:13ch; }
+  .hero-lede{ margin-top:24px; font-size:19px; line-height:1.6; color:rgba(248,244,235,0.78); max-width:46ch; }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap:16px; margin-top:38px; }
+  .hero-trustline{
+    margin-top:44px; padding-top:26px; border-top:1px solid var(--line-light);
+    display:flex; flex-wrap:wrap; gap:10px 28px; font-size:13.5px; color:rgba(248,244,235,0.62); font-weight:500;
+  }
+  .hero-trustline strong{color:rgba(248,244,235,0.9); font-weight:600;}
+
+  /* hero illustration panel */
+  .hero-art{ position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; box-shadow:var(--shadow);}
+  .hero-art svg{ width:100%; height:100%; }
+  .hero-card{
+    position:absolute; left:22px; right:22px; bottom:22px;
+    background:rgba(248,244,235,0.96); color:var(--ink);
+    border-radius:4px; padding:18px 20px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:0 16px 32px -14px rgba(0,0,0,0.4);
+  }
+  .hero-card .label{font-size:12px; color:var(--ink-soft); font-weight:600;}
+  .hero-card .value{font-family:var(--serif); font-size:20px; font-weight:600; margin-top:2px;}
+
+  /* reveal-on-load */
+  [data-reveal]{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  [data-reveal].in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){
+    [data-reveal]{ opacity:1 !important; transform:none !important; transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ============ SECTION SCAFFOLD ============ */
+  section{ padding:104px 0; }
+  @media (max-width:720px){ section{padding:72px 0;} }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(30px,3.6vw,42px); margin-top:16px; }
+  .section-head p.lede{ margin-top:18px; font-size:17px; line-height:1.65; color:var(--ink-soft); }
+  .light-on-dark .section-head p.lede{ color:rgba(248,244,235,0.72); }
+
+  /* ============ PATHWAYS (what can we help protect) ============ */
+  .pathways{ background:var(--white); }
+  .pathway-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  @media (max-width:960px){ .pathway-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .pathway-grid{grid-template-columns:1fr;} }
+  .pathway{
+    background:var(--white); padding:38px 28px; min-height:260px;
+    display:flex; flex-direction:column; justify-content:space-between; gap:26px;
+    cursor:pointer; transition:background .3s ease;
+    position:relative;
+  }
+  .pathway:hover{ background:var(--parchment); }
+  .pathway .num{ font-family:var(--serif); font-size:13px; color:var(--rust); font-weight:600; }
+  .pathway .icon{ width:44px; height:44px; color:var(--ink); }
+  .pathway h3{ font-size:22px; margin-top:14px; }
+  .pathway p{ font-size:14.5px; color:var(--ink-soft); margin-top:8px; line-height:1.55; }
+  .pathway .go{ display:flex; align-items:center; gap:8px; font-weight:600; font-size:13.5px; color:var(--rust); }
+  .pathway .go svg{ width:13px;height:13px; transition:transform .25s ease;}
+  .pathway:hover .go svg{ transform:translateX(4px); }
+
+  /* ============ ADVANTAGE (captive vs bergen) ============ */
+  .advantage{ background:var(--parchment-dim); }
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:4px; overflow:hidden; background:var(--white);}
+  @media (max-width:760px){ .compare{ grid-template-columns:1fr; } }
+  .compare > div{ padding:44px 38px; }
+  .compare .captive{ background:var(--parchment-dim); border-right:1px solid var(--line); }
+  @media (max-width:760px){ .compare .captive{ border-right:none; border-bottom:1px solid var(--line);} }
+  .compare .bergen{ background:var(--ink); color:var(--parchment); position:relative; }
+  .compare-label{ font-size:13px; font-weight:700; letter-spacing:0.02em; }
+  .compare .captive .compare-label{ color:var(--ink-soft); }
+  .compare .bergen .compare-label{ color:var(--gold); }
+  .compare-title{ font-family:var(--serif); font-size:25px; margin-top:10px; }
+  .compare ul{ list-style:none; margin:26px 0 0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .compare li{ display:flex; gap:12px; font-size:15px; line-height:1.5; }
+  .compare .captive li{ color:var(--ink-soft); }
+  .compare .bergen li{ color:rgba(248,244,235,0.88); }
+  .compare li svg{ flex-shrink:0; width:17px; height:17px; margin-top:2px; }
+  .compare .captive li svg{ color:#9AA6AF; }
+  .compare .bergen li svg{ color:var(--gold); }
+  .advantage-note{ max-width:640px; margin:40px auto 0; text-align:center; font-size:16.5px; color:var(--ink-soft); line-height:1.65; }
+
+  /* ============ TEAM ============ */
+  .team{ background:var(--white); }
+  .team-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:64px; align-items:start; }
+  @media (max-width:900px){ .team-grid{ grid-template-columns:1fr; gap:44px; } }
+  .team-cards{ display:flex; flex-direction:column; gap:22px; }
+  .team-card{ display:flex; gap:20px; align-items:flex-start; padding:24px; border:1px solid var(--line); border-radius:4px; }
+  .monogram{
+    width:64px; height:64px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-weight:600; font-size:22px; color:var(--white);
+  }
+  .monogram.sb{ background:var(--ink); }
+  .monogram.vb{ background:var(--rust); }
+  .team-card h4{ font-size:19px; }
+  .team-card .role{ font-size:13px; color:var(--rust); font-weight:600; margin-top:2px; }
+  .team-card p.bio{ margin-top:10px; font-size:14.5px; color:var(--ink-soft); line-height:1.6; }
+  .team-story{ background:var(--parchment-dim); border-radius:4px; padding:40px 38px; position:relative; }
+  .team-story .quote-mark{ font-family:var(--serif); font-size:64px; color:var(--rust); line-height:0.5; display:block; margin-bottom:18px; }
+  .team-story p{ font-family:var(--serif); font-size:22px; font-style:italic; line-height:1.5; color:var(--ink); }
+  .team-story .attr{ margin-top:22px; font-family:var(--sans); font-style:normal; font-size:14px; font-weight:600; color:var(--ink-soft); }
+
+  /* ============ COVERAGE ACCORDION ============ */
+  .coverage{ background:var(--parchment); }
+  .accordion{ border-top:1px solid var(--line); }
+  .acc-item{ border-bottom:1px solid var(--line); }
+  .acc-head{
+    width:100%; background:none; border:none; text-align:left; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:28px 4px; font-family:var(--serif); font-size:24px; font-weight:600; color:var(--ink);
+  }
+  .acc-head .tag{ font-family:var(--sans); font-size:13px; font-weight:600; color:var(--ink-soft); margin-right:auto; margin-left:20px; }
+  @media (max-width:640px){ .acc-head .tag{display:none;} }
+  .acc-head .plus{ width:26px; height:26px; border-radius:50%; border:1.5px solid var(--line); flex-shrink:0; position:relative; transition:transform .3s ease, border-color .3s ease; }
+  .acc-head .plus::before, .acc-head .plus::after{ content:""; position:absolute; background:var(--ink); top:50%; left:50%; transform:translate(-50%,-50%); }
+  .acc-head .plus::before{ width:10px; height:1.5px; }
+  .acc-head .plus::after{ width:1.5px; height:10px; transition:opacity .25s ease; }
+  .acc-item.open .plus{ transform:rotate(180deg); border-color:var(--rust); }
+  .acc-item.open .plus::after{ opacity:0; }
+  .acc-body{ max-height:0; overflow:hidden; transition:max-height .4s ease; }
+  .acc-item.open .acc-body{ max-height:600px; }
+  .acc-body-inner{ padding:0 4px 34px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px 24px; }
+  @media (max-width:760px){ .acc-body-inner{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .acc-body-inner{ grid-template-columns:1fr;} }
+  .acc-body-inner a{ font-size:15px; color:var(--ink-soft); padding:8px 0; border-bottom:1px solid transparent; }
+  .acc-body-inner a:hover{ color:var(--rust); }
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials{ background:var(--ink); color:var(--parchment); }
+  .tt-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:1px; background:var(--line-light); border:1px solid var(--line-light); border-radius:4px; overflow:hidden; }
+  @media (max-width:860px){ .tt-grid{ grid-template-columns:1fr; } }
+  .tt-feature{ background:rgba(248,244,235,0.04); padding:48px 44px; display:flex; flex-direction:column; justify-content:space-between; gap:32px; }
+  .tt-feature .quote-mark{ font-family:var(--serif); font-size:70px; color:var(--gold); line-height:0.4; display:block; }
+  .tt-feature p.quote{ font-family:var(--serif); font-size:24px; line-height:1.5; font-style:italic; color:var(--white); }
+  .tt-feature .attr{ font-size:14px; font-weight:600; color:rgba(248,244,235,0.65); }
+  .tt-side{ display:flex; flex-direction:column; }
+  .tt-mini{ padding:30px 34px; border-bottom:1px solid var(--line-light); }
+  .tt-mini:last-child{ border-bottom:none; }
+  .tt-mini p{ font-size:15.5px; line-height:1.55; color:rgba(248,244,235,0.85); }
+  .tt-mini .attr{ margin-top:14px; font-size:13px; font-weight:600; color:var(--gold); }
+  .tt-footer{ margin-top:36px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; }
+
+  /* ============ BUSINESS SECTION ============ */
+  .business{ background:var(--green); color:var(--parchment); position:relative; overflow:hidden; }
+  .business::before{
+    content:"";
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse 800px 500px at 90% 0%, rgba(200,155,60,0.14), transparent 60%);
+    pointer-events:none;
+  }
+  .biz-grid{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+  @media (max-width:900px){ .biz-grid{ grid-template-columns:1fr; gap:40px;} }
+  .biz-grid h2{ font-size:clamp(30px,3.6vw,44px); color:var(--white); max-width:12ch; }
+  .biz-grid .lede{ margin-top:20px; font-size:17px; line-height:1.65; color:rgba(248,244,235,0.78); max-width:44ch; }
+  .biz-list{ display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; margin-top:0; }
+  .biz-list div{ display:flex; align-items:center; gap:10px; font-size:15px; padding:12px 0; border-bottom:1px solid var(--line-light); color:rgba(248,244,235,0.9); }
+  .biz-list svg{ width:15px; height:15px; color:var(--gold); flex-shrink:0; }
+
+  /* ============ PROCESS ============ */
+  .process{ background:var(--parchment); }
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px; }
+  @media (max-width:820px){ .steps{ grid-template-columns:1fr; gap:36px;} }
+  .step{ position:relative; padding-top:26px; border-top:2px solid var(--ink); }
+  .step .stepnum{ font-family:var(--serif); font-size:15px; color:var(--rust); font-weight:600; }
+  .step h3{ font-size:21px; margin-top:14px; }
+  .step p{ margin-top:12px; font-size:15px; color:var(--ink-soft); line-height:1.6; }
+
+  /* ============ LOCAL ROOTS ============ */
+  .local{ background:var(--white); }
+  .local-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  @media (max-width:900px){ .local-grid{ grid-template-columns:1fr; gap:40px;} }
+  .county-list{ display:flex; flex-direction:column; gap:0; }
+  .county-row{ display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--line); gap:20px; }
+  .county-row .county{ font-family:var(--serif); font-weight:600; font-size:17px; flex-shrink:0; }
+  .county-row .towns{ font-size:14px; color:var(--ink-soft); text-align:right; line-height:1.6; }
+  .map-panel{ border-radius:4px; overflow:hidden; border:1px solid var(--line); background:var(--parchment-dim); aspect-ratio:1/1; }
+  .map-panel svg{ width:100%; height:100%; }
+
+  /* ============ CARRIERS ============ */
+  .carriers{ background:var(--parchment-dim); }
+  .carrier-strip{ display:flex; flex-wrap:wrap; gap:14px; }
+  .carrier-chip{
+    border:1px solid var(--line); background:var(--white);
+    border-radius:3px; padding:16px 22px;
+    font-family:var(--serif); font-weight:600; font-size:16px; color:var(--ink-soft);
+    transition:border-color .25s ease, color .25s ease, background .25s ease;
+  }
+  .carrier-chip:hover{ border-color:var(--rust); color:var(--ink); background:var(--white); }
+  .carriers-note{ margin-top:30px; font-size:14.5px; color:var(--ink-soft); max-width:56ch; }
+
+  /* ============ QUOTE CTA ============ */
+  .quote-cta{ background:var(--ink); color:var(--parchment); text-align:center; }
+  .quote-cta .wrap{ max-width:760px; }
+  .quote-cta h2{ font-size:clamp(32px,4.4vw,48px); color:var(--white); }
+  .quote-cta .lede{ margin-top:20px; font-size:18px; color:rgba(248,244,235,0.75); }
+  .quote-cta .ctas{ margin-top:38px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta{ background:var(--rust); color:var(--white); }
+  .final-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:center; }
+  @media (max-width:860px){ .final-grid{ grid-template-columns:1fr; gap:36px; } }
+  .final-cta h2{ font-size:clamp(28px,3.6vw,40px); color:var(--white); max-width:13ch; }
+  .final-cta .lede{ margin-top:16px; font-size:16.5px; color:rgba(255,255,255,0.85); max-width:42ch; }
+  .final-cta .ctas{ margin-top:30px; display:flex; gap:16px; flex-wrap:wrap; }
+  .final-cta .btn-ghost-light{ border-color:rgba(255,255,255,0.5); color:var(--white); }
+  .final-cta .btn-ghost-light:hover{ border-color:#fff; background:rgba(255,255,255,0.1); }
+  .final-card{ background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:4px; padding:32px; }
+  .final-card .row{ display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .final-card .row:last-child{ border-bottom:none; }
+  .final-card svg{ width:19px;height:19px; flex-shrink:0; margin-top:2px; }
+  .final-card .row .t{ font-size:12.5px; text-transform:none; color:rgba(255,255,255,0.7); font-weight:600; }
+  .final-card .row .v{ font-family:var(--serif); font-size:17px; font-weight:600; margin-top:2px; }
+
+  /* ============ FOOTER ============ */
+  footer{ background:#141F2A; color:rgba(248,244,235,0.65); padding:64px 0 30px; font-size:14px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid rgba(248,244,235,0.12); }
+  @media (max-width:860px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .footer-grid{ grid-template-columns:1fr; } }
+  .footer-brand .logo{ color:var(--parchment); }
+  .footer-brand p{ margin-top:16px; line-height:1.6; max-width:34ch; }
+  .footer-col h5{ font-family:var(--sans); font-size:13px; font-weight:700; color:rgba(248,244,235,0.85); letter-spacing:0.02em; margin-bottom:16px; }
+  .footer-col a, .footer-col p{ display:block; margin-bottom:10px; line-height:1.5; }
+  .footer-col a:hover{ color:var(--parchment); }
+  .footer-social{ display:flex; gap:12px; margin-top:6px; }
+  .footer-social a{ width:34px; height:34px; border-radius:50%; border:1px solid rgba(248,244,235,0.25); display:flex; align-items:center; justify-content:center; }
+  .footer-social a:hover{ border-color:var(--gold); color:var(--gold); }
+  .footer-social svg{ width:15px;height:15px; }
+  .footer-bottom{ padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-size:12.5px; color:rgba(248,244,235,0.45); }
+  .footer-bottom a{ color:rgba(248,244,235,0.45); }
+  .footer-bottom a:hover{ color:rgba(248,244,235,0.75); }
+  .footer-license{ max-width:900px; margin-top:14px; font-size:12px; line-height:1.7; color:rgba(248,244,235,0.4); }
+
+  /* mobile nav drawer */
+  .mnav{ position:fixed; inset:0; background:var(--ink); z-index:200; padding:24px 28px; transform:translateX(100%); transition:transform .35s ease; display:flex; flex-direction:column; }
+  .mnav.open{ transform:translateX(0); }
+  .mnav-top{ display:flex; justify-content:space-between; align-items:center; }
+  .mnav a{ font-family:var(--serif); font-size:26px; color:var(--parchment); padding:16px 0; border-bottom:1px solid var(--line-light); }
+  .mnav-links{ margin-top:36px; display:flex; flex-direction:column; }
+  .mnav-close{ background:none;border:none; color:var(--parchment); cursor:pointer; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-links">
+      <span>1752 N Main Street, Weatherford, TX 76085</span>
+      <span>Mon–Fri, 9am–5pm</span>
+    </div>
+    <a href="#">Customer Portal</a>
+  </div>
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav-row">
+    <a href="#" class="logo">
+      <span class="mark">BI</span>
+      <span>Bergen Insurance
+        <span class="sub">Independent Agency · Weatherford, TX</span>
+      </span>
+    </a>
+    <nav class="main">
+      <a href="#coverage">Personal</a>
+      <a href="#business">Business</a>
+      <a href="#team">Our Team</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#local">Service Areas</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:8179305022" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>817-930-5022</span>
+      </a>
+      <a href="#quote" class="btn btn-primary">Get a Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="menu-btn" id="menuOpen" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--ink)" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <div class="mnav-top">
+    <span class="logo" style="color:var(--parchment)"><span class="mark">BI</span></span>
+    <button class="mnav-close" id="menuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mnav-links">
+    <a href="#coverage">Personal</a>
+    <a href="#business">Business</a>
+    <a href="#team">Our Team</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#local">Service Areas</a>
+    <a href="tel:8179305022">Call 817-930-5022</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <div class="hero-eyebrow"><span class="dot"></span> Independent Agency · Weatherford, TX</div>
+      <h1>Insurance that works for you.</h1>
+      <p class="hero-lede">As an independent agency, we compare coverage from multiple carriers to help you find protection that fits your needs — not a one-size-fits-all policy.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-primary">Get a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:8179305022" class="btn btn-ghost-light">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 817-930-5022
+        </a>
+      </div>
+      <div class="hero-trustline">
+        <span><strong>Independent</strong> agency</span>
+        <span><strong>Weatherford, TX</strong> since 1996</span>
+        <span><strong>Personal</strong> &amp; commercial coverage</span>
+      </div>
+    </div>
+    <div class="hero-art" data-reveal>
+      <svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2A3D4F"/>
+            <stop offset="55%" stop-color="#33475C"/>
+            <stop offset="100%" stop-color="#1C2B3A"/>
+          </linearGradient>
+          <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C89B3C"/>
+            <stop offset="100%" stop-color="#B4482E"/>
+          </linearGradient>
+        </defs>
+        <rect width="480" height="600" fill="url(#skyGrad)"/>
+        <circle cx="360" cy="150" r="86" fill="url(#sunGrad)" opacity="0.85"/>
+        <g opacity="0.5">
+          <path d="M0 330 Q120 290 240 320 T480 300 V600 H0 Z" fill="#243747"/>
+        </g>
+        <g opacity="0.75">
+          <path d="M0 390 Q140 350 260 385 T480 370 V600 H0 Z" fill="#1C2B3A"/>
+        </g>
+        <!-- simple rooftop silhouette -->
+        <g fill="#141F2A">
+          <path d="M60 470 L130 415 L200 470 V470 H60 Z"/>
+          <rect x="72" y="470" width="116" height="70"/>
+          <rect x="118" y="500" width="26" height="40" fill="#0F1720"/>
+        </g>
+        <g fill="#141F2A" opacity="0.9">
+          <path d="M220 480 L270 445 L320 480 Z"/>
+          <rect x="230" y="480" width="80" height="60"/>
+        </g>
+        <!-- road line motif -->
+        <g stroke="#C89B3C" stroke-width="3" stroke-dasharray="14 12" opacity="0.55">
+          <line x1="0" y1="560" x2="480" y2="560"/>
+        </g>
+      </svg>
+      <div class="hero-card">
+        <div>
+          <div class="label">Insurance partners</div>
+          <div class="value">20+ carriers</div>
+        </div>
+        <div>
+          <div class="label">Serving</div>
+          <div class="value">North Texas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATHWAYS ============ -->
+<section class="pathways" id="pathways">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Where to start</div>
+      <h2>What can we help protect?</h2>
+      <p class="lede">Tell us what matters most, and we'll point you toward the right coverage — no need to sort through every policy type yourself.</p>
+    </div>
+    <div class="pathway-grid" data-reveal>
+      <a class="pathway" href="#coverage">
+        <div>
+          <div class="num">01</div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+          <h3>Your Home</h3>
+          <p>Homeowners, renters, mobile home, landlord and related coverage.</p>
+        </div>
+        <span class="go">Find your coverage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pathway" href="#coverage">
+        <div>
+          <div class="num">02</div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 17h14M6 17V9l2-4h8l2 4v8M9 17v3M15 17v3M6 12h12"/></svg>
+          <h3>Your Vehicles</h3>
+          <p>Auto, motorcycle, RV, classic car, boat and specialty vehicles.</p>
+        </div>
+        <span class="go">Find your coverage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pathway" href="#business">
+        <div>
+          <div class="num">03</div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>
+          <h3>Your Business</h3>
+          <p>Business, commercial auto, property, liability, contractors, restaurants and more.</p>
+        </div>
+        <span class="go">Find your coverage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pathway" href="#coverage">
+        <div>
+          <div class="num">04</div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg>
+          <h3>Your Future</h3>
+          <p>Flood coverage and other specialty policies worth planning ahead for.</p>
+        </div>
+        <span class="go">Find your coverage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADVANTAGE ============ -->
+<section class="advantage" id="advantage">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>The independent difference</div>
+      <h2>One agency. More options.</h2>
+    </div>
+    <div class="compare" data-reveal>
+      <div class="captive">
+        <div class="compare-label">Captive Agent</div>
+        <div class="compare-title">One company's options</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>Locked into a single carrier's rates and rules</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>No comparison if your rate goes up</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>Coverage shaped around one insurer's underwriting</li>
+        </ul>
+      </div>
+      <div class="bergen">
+        <div class="compare-label">Bergen Insurance Agency</div>
+        <div class="compare-title">Multiple carrier options</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Access to 20+ reputable, top-rated carriers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Policies compared side by side on your behalf</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Coverage built around your needs, goals and budget</li>
+        </ul>
+      </div>
+    </div>
+    <p class="advantage-note" data-reveal>Because Bergen is independent, the agency can compare policies from multiple insurance companies rather than being limited to one carrier — more choice, better comparison, coverage tailored to you.</p>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="team" id="team">
+  <div class="wrap team-grid">
+    <div data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Who you'll talk to</div>
+      <h2 style="margin-top:16px;">People you can actually talk to.</h2>
+      <p class="lede" style="margin-top:18px; color:var(--ink-soft); font-size:16.5px; line-height:1.65;">No call centers, no ticket queues — just two agents who pick up the phone.</p>
+      <div class="team-cards" style="margin-top:32px;">
+        <div class="team-card">
+          <div class="monogram sb">SB</div>
+          <div>
+            <h4>Steve Bergen</h4>
+            <div class="role">Agency Owner</div>
+            <p class="bio">Spent 22 years as a captive agent before going independent, so he can point to exactly what that difference feels like from the client's side.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="monogram vb">VB</div>
+          <div>
+            <h4>Veronica Bergen</h4>
+            <div class="role">Agent</div>
+            <p class="bio">Handles new policies, closings, and the coverage questions clients want answered in plain English.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#reviews" class="btn-text" style="margin-top:28px;">See what clients say <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="team-story" data-reveal>
+      <span class="quote-mark">"</span>
+      <p>After 22 years with Allstate Insurance, I made the decision to become an independent agent here in Weatherford so I can better help families, homeowners, and local businesses throughout Parker County.</p>
+      <div class="attr">— Steve Bergen, Agency Owner</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COVERAGE ACCORDION ============ -->
+<section class="coverage" id="coverage">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Full lineup</div>
+      <h2>Coverage for real life.</h2>
+      <p class="lede">Organized by who it's for, not alphabetized into a wall of links.</p>
+    </div>
+    <div class="accordion" data-reveal>
+      <div class="acc-item open">
+        <button class="acc-head">
+          Personal
+          <span class="tag">9 policy types</span>
+          <span class="plus"></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <a href="#">Auto Insurance</a>
+            <a href="#">Homeowners Insurance</a>
+            <a href="#">Renters Insurance</a>
+            <a href="#">Mobile Home Insurance</a>
+            <a href="#">Landlord Insurance</a>
+            <a href="#">Boat Insurance</a>
+            <a href="#">RV Insurance</a>
+            <a href="#">Motorcycle Insurance</a>
+            <a href="#">Classic Car Insurance</a>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">
+          Business
+          <span class="tag">9 policy types</span>
+          <span class="plus"></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <a href="#">Business Insurance</a>
+            <a href="#">General Liability</a>
+            <a href="#">Commercial Auto</a>
+            <a href="#">Commercial Property</a>
+            <a href="#">Workers Compensation</a>
+            <a href="#">Contractor Insurance</a>
+            <a href="#">Restaurant Insurance</a>
+            <a href="#">Builders Risk</a>
+            <a href="#">Bonds</a>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">
+          Specialty
+          <span class="tag">3 policy types</span>
+          <span class="plus"></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <a href="#">Flood Insurance</a>
+            <a href="#">Texas Plumbers Insurance</a>
+            <a href="#">Specialty Vehicle Coverage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn-text" style="margin-top:32px;">Explore all coverage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials light-on-dark" id="reviews">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Why customers stay</div>
+      <h2 style="color:var(--white);">The difference is how you're treated.</h2>
+    </div>
+    <div class="tt-grid" data-reveal>
+      <div class="tt-feature">
+        <div>
+          <span class="quote-mark">"</span>
+          <p class="quote">After dealing with an expensive and inflexible one-size-fits-all company with a take-it-or-leave-it attitude, I've found it refreshing dealing with an independent agent that can shop for the best coverage that fits your needs. I wish I'd done this 20 years ago.</p>
+        </div>
+        <div class="attr">— David S., client since switching from Allstate</div>
+      </div>
+      <div class="tt-side">
+        <div class="tt-mini">
+          <p>"Steve saved us nearly $3,000 a year on insurance. Thank you so much!"</p>
+          <div class="attr">— Angie D.</div>
+        </div>
+        <div class="tt-mini">
+          <p>"By far the easiest insurance agency I've worked with. Every request I've made was answered within 10 minutes."</p>
+          <div class="attr">— KC Jackson</div>
+        </div>
+        <div class="tt-mini">
+          <p>"I'd been searching for the right commercial policy for months. Bergen made it happen the same day."</p>
+          <div class="attr">— Tim W.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tt-footer" data-reveal>
+      <span style="font-size:14.5px; color:rgba(248,244,235,0.6);">Real client testimonials, unedited for content.</span>
+      <a href="#" class="btn-text" style="color:var(--gold);">Read more reviews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUSINESS ============ -->
+<section class="business" id="business">
+  <div class="wrap biz-grid">
+    <div data-reveal>
+      <div class="eyebrow-line" style="color:var(--gold);"><span class="rule" style="background:var(--gold);"></span>For business owners</div>
+      <h2 style="margin-top:16px;">You built the business. We'll help protect it.</h2>
+      <p class="lede">Customized commercial insurance for small and mid-sized businesses across Weatherford and Parker County — built around your industry and operations, not a generic template.</p>
+      <a href="#" class="btn btn-ghost-light" style="margin-top:30px;">Explore business insurance
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="biz-list" data-reveal>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>General Liability</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Commercial Auto</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Commercial Property</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Workers Compensation</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Contractor Insurance</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Restaurant Insurance</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Builders Risk</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonds</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>How it works</div>
+      <h2>Insurance without the runaround.</h2>
+    </div>
+    <div class="steps" data-reveal>
+      <div class="step">
+        <div class="stepnum">01</div>
+        <h3>Tell us what you need</h3>
+        <p>Tell us about your home, vehicle, business or other coverage needs — takes a few minutes, no pressure.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">02</div>
+        <h3>We compare your options</h3>
+        <p>Because Bergen is independent, the team works with multiple carriers to line up real options side by side.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">03</div>
+        <h3>Choose with confidence</h3>
+        <p>Get clear guidance, explained in plain terms, so you can make an informed coverage decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCAL ROOTS ============ -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Proudly local</div>
+      <h2 style="margin-top:16px;">Rooted in Weatherford. Connected across North Texas.</h2>
+      <p class="lede" style="margin-top:18px; color:var(--ink-soft); font-size:16.5px;">Local knowledge means understanding the specific risks — Texas wind, hail, and everything in between — that come with insuring this part of the state.</p>
+      <div class="county-list" style="margin-top:36px;">
+        <div class="county-row"><span class="county">Parker County</span><span class="towns">Weatherford, Springtown, Aledo, Hudson Oaks, Willow Park</span></div>
+        <div class="county-row"><span class="county">Wise County</span><span class="towns">Decatur, Bridgeport, Newark, Paradise</span></div>
+        <div class="county-row"><span class="county">Palo Pinto County</span><span class="towns">Mineral Wells, Peaster</span></div>
+        <div class="county-row"><span class="county">Hood &amp; Jack Counties</span><span class="towns">Granbury and surrounding areas</span></div>
+        <div class="county-row"><span class="county">Denton &amp; Tarrant Counties</span><span class="towns">Azle, Haslet, Boyd, Reno, Poolville, Brock</span></div>
+      </div>
+    </div>
+    <div class="map-panel" data-reveal>
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="500" fill="#F8F4EB"/>
+        <g stroke="#1C2B3A" stroke-width="1" opacity="0.12">
+          <line x1="0" y1="100" x2="500" y2="100"/>
+          <line x1="0" y1="200" x2="500" y2="200"/>
+          <line x1="0" y1="300" x2="500" y2="300"/>
+          <line x1="0" y1="400" x2="500" y2="400"/>
+          <line x1="100" y1="0" x2="100" y2="500"/>
+          <line x1="200" y1="0" x2="200" y2="500"/>
+          <line x1="300" y1="0" x2="300" y2="500"/>
+          <line x1="400" y1="0" x2="400" y2="500"/>
+        </g>
+        <path d="M60 140 L220 90 L400 130 L440 260 L360 400 L180 420 L70 320 Z" fill="none" stroke="#1C2B3A" stroke-width="2" opacity="0.35"/>
+        <circle cx="250" cy="250" r="9" fill="#B4482E"/>
+        <circle cx="250" cy="250" r="20" fill="none" stroke="#B4482E" stroke-width="1.5" opacity="0.5"/>
+        <text x="264" y="245" font-family="Zilla Slab, serif" font-size="15" fill="#1C2B3A" font-weight="600">Weatherford</text>
+        <circle cx="150" cy="180" r="4" fill="#2F4A3C"/>
+        <circle cx="360" cy="170" r="4" fill="#2F4A3C"/>
+        <circle cx="120" cy="330" r="4" fill="#2F4A3C"/>
+        <circle cx="330" cy="350" r="4" fill="#2F4A3C"/>
+        <circle cx="400" cy="280" r="4" fill="#2F4A3C"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARRIERS ============ -->
+<section class="carriers">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow-line"><span class="rule"></span>Carrier network</div>
+      <h2>More carriers. More possibilities.</h2>
+    </div>
+    <div class="carrier-strip" data-reveal>
+      <span class="carrier-chip">Safeco</span>
+      <span class="carrier-chip">Kemper</span>
+      <span class="carrier-chip">Allstate</span>
+      <span class="carrier-chip">Chubb</span>
+      <span class="carrier-chip">Progressive</span>
+      <span class="carrier-chip">Nationwide</span>
+      <span class="carrier-chip">Travelers</span>
+      <span class="carrier-chip">The Hartford</span>
+      <span class="carrier-chip">Mercury</span>
+      <span class="carrier-chip">Foremost</span>
+    </div>
+    <p class="carriers-note" data-reveal>A curated selection of Bergen's insurance partners — the full list, including specialty and commercial carriers, is available on request.</p>
+  </div>
+</section>
+
+<!-- ============ QUOTE CTA ============ -->
+<section class="quote-cta" id="quote">
+  <div class="wrap">
+    <div data-reveal>
+      <h2>Let's find the right coverage for you.</h2>
+      <p class="lede">Tell us what you're looking to protect and we'll help you explore your options — no obligation, no pressure.</p>
+      <div class="ctas">
+        <a href="#" class="btn btn-primary">Request a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:8179305022" class="btn btn-ghost-light">Call 817-930-5022</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL HUMAN CTA ============ -->
+<section class="final-cta">
+  <div class="wrap final-grid">
+    <div data-reveal>
+      <h2>Questions? Talk to a local agent.</h2>
+      <p class="lede">Insurance can be complicated. Getting help shouldn't be.</p>
+      <div class="ctas">
+        <a href="tel:8179305022" class="btn" style="background:var(--white); color:var(--rust);">Talk to Bergen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost-light">Get Directions</a>
+      </div>
+    </div>
+    <div class="final-card" data-reveal>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><div class="t">Call the office</div><div class="v">817-930-5022</div></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        <div><div class="t">Visit us</div><div class="v">1752 N Main St, Weatherford, TX</div></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><div class="t">Office hours</div><div class="v">Mon–Fri, 9am–5pm</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo"><span class="mark">BI</span> Bergen Insurance</span>
+        <p>An independent insurance agency in Weatherford, Texas, serving Parker County and North Texas since 1996.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/bergeninsuranceagency" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://www.instagram.com/bergen_insurance_agency/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.linkedin.com/company/bergen-insurance-agency/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3 8.5h4V21H3V8.5Zm6.5 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-6.1c0-1.46-.03-3.34-2.03-3.34-2.04 0-2.35 1.6-2.35 3.24V21h-4V8.5Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Personal</h5>
+        <a href="#coverage">Auto Insurance</a>
+        <a href="#coverage">Homeowners</a>
+        <a href="#coverage">Renters</a>
+        <a href="#coverage">Boat &amp; RV</a>
+      </div>
+      <div class="footer-col">
+        <h5>Business</h5>
+        <a href="#business">General Liability</a>
+        <a href="#business">Commercial Auto</a>
+        <a href="#business">Contractor Insurance</a>
+        <a href="#business">Bonds</a>
+      </div>
+      <div class="footer-col">
+        <h5>Agency</h5>
+        <a href="#team">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#local">Service Areas</a>
+        <a href="#">Contact</a>
+        <a href="#">Customer Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bergen Insurance Agency LLC</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a> · <a href="#">Sitemap</a></span>
+    </div>
+    <div class="footer-license">Licensed in Texas (360545), Arkansas (16244071), Mississippi (10941053), Louisiana (1062687), New Mexico (16244071), Oklahoma (3002484314), and Alabama (3002483458).</div>
+  </div>
+</footer>
+
+<script>
+  // header scroll shadow
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // mobile nav
+  const mnav = document.getElementById('mnav');
+  document.getElementById('menuOpen').addEventListener('click', () => mnav.classList.add('open'));
+  document.getElementById('menuClose').addEventListener('click', () => mnav.classList.remove('open'));
+  mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.classList.remove('open')));
+
+  // accordion
+  document.querySelectorAll('.acc-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.acc-item');
+      const wasOpen = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
